@@ -20,9 +20,6 @@
         .social-link { transition: all 0.3s ease; color: #9ca3af; }
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
-        /* فلتر سينمائي داكن للخريطة */
-        .map-cinematic { filter: grayscale(100%) invert(90%) contrast(80%); transition: all 0.5s ease; }
-        .map-cinematic:hover { filter: grayscale(50%) invert(90%) contrast(100%); }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
@@ -50,15 +47,15 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-6 text-center HeroContent">
+    <section class="pt-48 pb-20 px-4 md:px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto">
-            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
-            <h2 id="hero-title" class="text-5xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
-            <p id="hero-desc" class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
+            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
+            <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
+            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed px-2">
                 I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.
             </p>
             
-            <div class="flex flex-wrap justify-center gap-6 mb-12 text-2xl" dir="ltr">
+            <div class="flex flex-wrap justify-center gap-5 mb-12 text-2xl" dir="ltr">
                 <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/balbarae" target="_blank" class="social-link hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
                 <a href="https://vimeo.com/balbarae" target="_blank" class="social-link hover:text-sky-400"><i class="fab fa-vimeo-v"></i></a>
@@ -67,26 +64,26 @@
                 <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons">
+            <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons px-4">
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
                 <a href="#services" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">My Services</a>
             </div>
         </div>
     </section>
 
-    <section id="manifesto" class="py-24 px-6 relative overflow-hidden bg-black/30">
+    <section id="manifesto" class="py-24 px-4 md:px-6 relative bg-black/30 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             
-            <div class="flex justify-center md:justify-end order-2 md:order-1 ManifestoImage">
-                <img src="portrait.jpg" alt="Albarae Bourkadi" class="rounded-3xl shadow-2xl shadow-yellow-500/10 border-4 border-yellow-500 max-w-sm md:max-w-full aspect-[3/4] object-cover">
+            <div class="flex justify-center md:justify-end order-2 md:order-1 ManifestoImage px-4">
+                <img src="portrait.jpg" alt="Albarae Bourkadi" class="rounded-3xl shadow-2xl shadow-yellow-500/10 border-4 border-yellow-500 w-full max-w-sm md:max-w-md aspect-[3/4] object-cover">
             </div>
             
-            <div class="space-y-8 order-1 md:order-2 text-right md:text-left rtl:md:text-right ManifestoContent">
-                <i class="fas fa-quote-right text-yellow-500 text-6xl block QuoteIcon"></i>
-                <h3 id="quote-text" class="text-2xl md:text-4xl font-light italic leading-relaxed quote-glow text-gray-100 QuoteText">
+            <div class="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left rtl:md:text-right ManifestoContent px-2">
+                <i class="fas fa-quote-right text-yellow-500 text-4xl md:text-6xl block QuoteIcon"></i>
+                <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed quote-glow text-gray-100 QuoteText break-words">
                     "A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."
                 </h3>
-                <p id="quote-attribution" class="text-xl font-bold gradient-text tracking-wider AttributionName">
+                <p id="quote-attribution" class="text-lg md:text-xl font-bold gradient-text tracking-wider AttributionName">
                     — Albarae Bourkadi
                 </p>
             </div>
@@ -114,13 +111,13 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-6 border-t border-white/5 ContactSection">
-        <div class="max-w-4xl mx-auto glass p-10 rounded-3xl text-center ContactFormContainer">
+    <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5 ContactSection">
+        <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center ContactFormContainer">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-gray-400 mb-10" dir="ltr">
                 <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Şişli, Istanbul</p>
-                <p><a href="mailto:contact@balbarae.com" class="hover:text-yellow-500 transition"><i class="fas fa-envelope text-yellow-500 mr-2"></i> contact@balbarae.com</a></p>
+                <p><a href="mailto:contact@balbarae.com" class="hover:text-yellow-500 transition break-all"><i class="fas fa-envelope text-yellow-500 mr-2"></i> contact@balbarae.com</a></p>
             </div>
 
             <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="text-left mb-12" dir="ltr">
@@ -146,7 +143,7 @@
             </form>
 
             <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10">
-                <iframe src="https://maps.google.com/maps?q=Şişli,%20Istanbul,%20Turkey&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-cinematic"></iframe>
+                <iframe src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-2xl"></iframe>
             </div>
 
         </div>
@@ -237,6 +234,7 @@
                 fCont.classList.add('text-right');
                 mCont.classList.add('text-right', 'md:text-right');
                 mImg.classList.add('md:justify-start');
+                mCont.classList.remove('text-center', 'md:text-left');
             } else {
                 document.body.classList.remove('rtl');
                 sGrid.classList.remove('text-right');
@@ -244,6 +242,7 @@
                 fCont.classList.remove('text-right');
                 mCont.classList.remove('text-right', 'md:text-right');
                 mImg.classList.remove('md:justify-start');
+                mCont.classList.add('text-center', 'md:text-left');
             }
 
             ['en', 'ar', 'tr'].forEach(l => {
