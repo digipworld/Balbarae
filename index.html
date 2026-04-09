@@ -27,8 +27,11 @@
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
             outline: none;
         }
-        /* عند النقر في الهاتف أو الحوم يذهب الفلتر تماماً وتصبح الخريطة واضحة */
-        .map-golden:hover, .map-golden:active, .map-golden:focus { 
+        
+        /* إزالة الفلتر عند الحوم بالحاسوب أو اللمس بالهاتف */
+        .map-container:hover .map-golden, 
+        .map-container:active .map-golden, 
+        .map-container:focus-within .map-golden { 
             filter: none !important; 
         }
     </style>
@@ -150,117 +153,4 @@
                     <label id="label-msg" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
                     <textarea name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none"></textarea>
                 </div>
-                <button type="submit" id="btn-submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
-            </form>
-
-            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black">
-                <iframe src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-golden" tabindex="0"></iframe>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p id="footer-text" class="text-gray-500 font-medium">© 2026 All rights reserved to <span class="text-white">Balbarae</span></p>
-    </footer>
-
-    <script>
-        const translations = {
-            en: {
-                tag: "Filmmaker, AI Consultant & Digital Visionary",
-                title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
-                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
-                quote: "\"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be.\"",
-                attribution: "— Albarae Bourkadi",
-                btn: "Let's Talk", btn2: "My Services",
-                s1_t: "Cinematic Branding", s1_d: "Transforming brands through high-end cinematic visual identity.",
-                s2_t: "AI Integration", s2_d: "Mentoring businesses on AI integration in creative workflows.",
-                s3_t: "Digital Advocacy", s3_d: "Using visual storytelling for social justice and global awareness.",
-                c_t: "Get In Touch", f_name: "Name", f_email: "Email", f_msg: "Message", f_btn: "Send Message",
-                footer: "© 2026 All rights reserved to <span class='text-white'>Balbarae</span>",
-                dir: "ltr"
-            },
-            ar: {
-                tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية مستقبلية",
-                title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
-                desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
-                quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"",
-                attribution: "— البراء البرقادي",
-                btn: "تحدث معي", btn2: "خدماتي",
-                s1_t: "الهوية السينمائية", s1_d: "تحويل العلامات التجارية من خلال هوية بصرية سينمائية راقية.",
-                s2_t: "دمج الذكاء الاصطناعي", s2_d: "توجيه الشركات حول دمج الذكاء الاصطناعي في بيئة العمل الإبداعية.",
-                s3_t: "المناصرة الرقمية", s3_d: "استخدام السرد البصري للعدالة الاجتماعية والتوعية العالمية.",
-                c_t: "أرسل رسالة", f_name: "الاسم", f_email: "البريد الإلكتروني", f_msg: "الرسالة", f_btn: "إرسال الرسالة",
-                footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>",
-                dir: "rtl"
-            },
-            tr: {
-                tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
-                title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
-                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
-                quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—başkalarının beklediği yerde değil, tam olarak kendi beklediğim yerde.\"",
-                attribution: "— Albarae Bourkadi",
-                btn: "Konuşalım", btn2: "Hizmetlerim",
-                s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlik ile markaları dönüştürmek.",
-                s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı iş akışlarında yapay zeka entegrasyonu konusunda danışمانlık.",
-                s3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanmak.",
-                c_t: "İletişime Geç", f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
-                footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir",
-                dir: "ltr"
-            }
-        };
-
-        function setLanguage(lang) {
-            const t = translations[lang];
-            document.getElementById('hero-tag').innerText = t.tag;
-            document.getElementById('hero-title').innerHTML = t.title;
-            document.getElementById('hero-desc').innerHTML = t.desc;
-            document.getElementById('quote-text').innerText = t.quote;
-            document.getElementById('quote-attribution').innerText = t.attribution;
-            document.getElementById('btn-main').innerText = t.btn;
-            document.getElementById('btn-sec').innerText = t.btn2;
-            document.getElementById('footer-text').innerHTML = t.footer;
-            document.getElementById('contact-title').innerText = t.c_t;
-            document.getElementById('srv1-title').innerText = t.s1_t;
-            document.getElementById('srv1-desc').innerText = t.s1_d;
-            document.getElementById('srv2-title').innerText = t.s2_t;
-            document.getElementById('srv2-desc').innerText = t.s2_d;
-            document.getElementById('srv3-title').innerText = t.s3_t;
-            document.getElementById('srv3-desc').innerText = t.s3_d;
-            document.getElementById('label-name').innerText = t.f_name;
-            document.getElementById('label-email').innerText = t.f_email;
-            document.getElementById('label-msg').innerText = t.f_msg;
-            document.getElementById('btn-submit').innerText = t.f_btn;
-
-            document.body.dir = t.dir;
-            const sGrid = document.querySelector('.ServicesGrid');
-            const fCont = document.getElementById('contact-form');
-            const mCont = document.querySelector('.ManifestoContent');
-            const mImg = document.querySelector('.ManifestoImage');
-
-            if(t.dir === 'rtl') {
-                document.body.classList.add('rtl');
-                sGrid.classList.add('text-right');
-                fCont.setAttribute('dir', 'rtl');
-                fCont.classList.add('text-right');
-                mCont.classList.add('text-right', 'md:text-right');
-                mImg.classList.add('md:justify-start');
-                mCont.classList.remove('text-center', 'md:text-left');
-            } else {
-                document.body.classList.remove('rtl');
-                sGrid.classList.remove('text-right');
-                fCont.setAttribute('dir', 'ltr');
-                fCont.classList.remove('text-right');
-                mCont.classList.remove('text-right', 'md:text-right');
-                mImg.classList.remove('md:justify-start');
-                mCont.classList.add('text-center', 'md:text-left');
-            }
-
-            ['en', 'ar', 'tr'].forEach(l => {
-                const btn = document.getElementById(`btn-${l}`);
-                btn.className = (l === lang) ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white";
-            });
-        }
-    </script>
-</body>
-</html>
+                <button type="submit" id="btn-submit" class="w-full bg-yellow-500 text-black font-
