@@ -12,7 +12,9 @@
 
     <style>
         :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
-        body { font-family: var(--font-en); scroll-behavior: smooth; transition: all 0.3s ease; }
+        /* هنا السر: النزول السلس يجب أن يكون في html ليعمل على كل الأزرار بكفاءة */
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-en); transition: all 0.3s ease; }
         body.rtl { font-family: var(--font-ar); direction: rtl; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
         .gradient-text { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -82,7 +84,7 @@
 
             <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons px-4">
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
-                <a href="#skills" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">Who is Albarae?</a>
+                <a href="#manifesto" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">Who is Albarae?</a>
             </div>
         </div>
     </section>
