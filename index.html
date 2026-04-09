@@ -28,9 +28,8 @@
             outline: none;
         }
         
-        /* إزالة الفلتر عند الحوم بالحاسوب أو اللمس بالهاتف */
+        /* إزالة الفلتر عند الحوم بالحاسوب */
         .map-container:hover .map-golden, 
-        .map-container:active .map-golden, 
         .map-container:focus-within .map-golden { 
             filter: none !important; 
         }
@@ -156,8 +155,10 @@
                 <button type="submit" id="btn-submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
             </form>
 
-            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24076.621288927978!2d28.96645501865997!3d41.0617947137839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab6fca3b3b3b3%3A0x6b6b6b6b6b6b6b6b!2zxZ5pxZ9saSwgxLBzdGFuYnVs!5e0!3m2!1sen!2str!4v1712695000000!5m2!1sen!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-golden" tabindex="0"></iframe>
+            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container"
+                 ontouchstart="document.getElementById('gmap').style.filter='none'" 
+                 onclick="document.getElementById('gmap').style.filter='none'">
+                <iframe id="gmap" src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-golden"></iframe>
             </div>
 
         </div>
@@ -207,7 +208,7 @@
                 s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlik ile markaları dönüştürmek.",
                 s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı iş akışlarında yapay zeka entegrasyonu konusunda danışmanlık.",
                 s3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanmak.",
-                c_t: "İletيشime Geç", f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
+                c_t: "İletişime Geç", f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
                 footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir",
                 dir: "ltr"
             }
