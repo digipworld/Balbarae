@@ -82,12 +82,12 @@
             ar: {
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، ورائد أعمال",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
-                desc: "أنا <span class='text-white font-bold'>البراء بورقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
+                desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
                 btn: "استكشف أعمالي",
                 s1_t: "الهوية السينمائية", s1_d: "صناعة هوية بصرية وسرد قصصي عالي الجودة لتمييز علامتك التجارية.",
                 s2_t: "استشارات الذكاء الاصطناعي", s2_d: "دمج أدوات الذكاء الاصطناعي في بيئة عملك لتسريع الإنتاج والابتكار.",
                 s3_t: "ريادة الأعمال الرقمية", s3_d: "توسيع نطاق الشركات من خلال التسويق الاستراتيجي والقيادة الرقمية عبر DIGIPWORLD.",
-                footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء بورقادي</span>",
+                footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>",
                 dir: "rtl"
             },
             tr: {
@@ -105,14 +105,12 @@
 
         function setLanguage(lang) {
             const t = translations[lang];
-            // Main Text
             document.getElementById('hero-tag').innerText = t.tag;
             document.getElementById('hero-title').innerHTML = t.title;
             document.getElementById('hero-desc').innerHTML = t.desc;
             document.getElementById('btn-main').innerText = t.btn;
             document.getElementById('footer-text').innerHTML = t.footer;
             
-            // Services Text
             document.getElementById('srv1-title').innerText = t.s1_t;
             document.getElementById('srv1-desc').innerText = t.s1_d;
             document.getElementById('srv2-title').innerText = t.s2_t;
@@ -120,7 +118,6 @@
             document.getElementById('srv3-title').innerText = t.s3_t;
             document.getElementById('srv3-desc').innerText = t.s3_d;
 
-            // Direction & Alignment
             document.body.dir = t.dir;
             const servicesContainer = document.querySelector('#services .grid');
             
@@ -134,7 +131,6 @@
                 servicesContainer.classList.add('text-left');
             }
 
-            // Button Styles
             ['en', 'ar', 'tr'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
                 if(l === lang) {
