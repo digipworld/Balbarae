@@ -21,9 +21,9 @@
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
         
-        /* الفلتر الذهبي الداكن للخريطة */
-        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: all 0.5s ease; }
-        .map-golden:hover { filter: brightness(85%) sepia(20%) contrast(105%); }
+        /* الفلتر الذهبي الداكن للخريطة مع دعم اللمس في الهاتف */
+        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: all 0.5s ease; outline: none; }
+        .map-golden:hover, .map-golden:active, .map-golden:focus { filter: brightness(85%) sepia(20%) contrast(105%); }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
