@@ -22,35 +22,16 @@
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
         
-        /* تصميم سهم العودة للأعلى */
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            z-index: 100;
-        }
-        #backToTop.show {
-            opacity: 1;
-            visibility: visible;
-        }
+        #backToTop { position: fixed; bottom: 30px; right: 30px; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 100; }
+        #backToTop.show { opacity: 1; visibility: visible; }
 
-        .map-golden { 
-            filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); 
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
-            outline: none;
-        }
-        
-        .map-container:hover .map-golden, 
-        .map-container:focus-within .map-golden { 
-            filter: none !important; 
-        }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: transform 0.5s ease; }
+        .video-container:hover { transform: scale(1.02); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        @media (pointer: coarse) {
-            .map-golden { filter: none !important; }
-        }
+        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); outline: none; }
+        .map-container:hover .map-golden, .map-container:focus-within .map-golden { filter: none !important; }
+        @media (pointer: coarse) { .map-golden { filter: none !important; } }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
@@ -62,7 +43,6 @@
     <nav class="fixed w-full z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
             <h1 class="text-2xl font-black tracking-tighter gradient-text">BALBARAE</h1>
-            
             <div class="flex items-center gap-4">
                 <div class="hidden md:flex gap-4 border-r border-white/10 pr-4 mr-2" dir="ltr">
                     <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -72,7 +52,6 @@
                     <a href="https://www.facebook.com/balbarae" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     <a href="#contact" class="social-link"><i class="fas fa-envelope"></i></a>
                 </div>
-                
                 <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl" dir="ltr">
                     <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black">EN</button>
                     <button onclick="setLanguage('ar')" id="btn-ar" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white">AR</button>
@@ -82,23 +61,11 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-4 md:px-6 text-center HeroContent">
+    <section class="pt-48 pb-20 px-4 md:px-6 text-center">
         <div class="max-w-5xl mx-auto">
             <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
-            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed px-2">
-                I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-5 mb-12 text-2xl" dir="ltr">
-                <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/balbarae" target="_blank" class="social-link hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
-                <a href="https://vimeo.com/balbarae" target="_blank" class="social-link hover:text-sky-400"><i class="fab fa-vimeo-v"></i></a>
-                <a href="https://www.youtube.com/c/albaraebourkadi" target="_blank" class="social-link hover:text-red-500"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.facebook.com/balbarae" target="_blank" class="social-link hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
-                <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
-            </div>
-
+            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed px-2">I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.</p>
             <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons px-4">
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
                 <a href="#manifesto" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">Who is Albarae?</a>
@@ -106,30 +73,41 @@
         </div>
     </section>
 
+    <section id="filmography" class="py-24 px-4 md:px-6 border-t border-white/5 bg-black/20">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic tracking-tight">Selected <span class="gradient-text">Works.</span></h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/76979871" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/100868352" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <a href="https://vimeo.com/balbarae" target="_blank" class="text-yellow-500 font-bold hover:text-white transition flex items-center justify-center gap-2">
+                    <span id="film-more">View full portfolio on Vimeo</span> <i class="fas fa-external-link-alt text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="manifesto" class="py-24 px-4 md:px-6 relative bg-black/30 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            
             <div class="flex justify-center md:justify-end order-2 md:order-1 ManifestoImage px-4">
                 <img src="portrait.jpg" alt="Albarae Bourkadi" class="rounded-3xl shadow-2xl shadow-yellow-500/10 border-4 border-yellow-500 w-full max-w-sm md:max-w-md aspect-[3/4] object-cover">
             </div>
-            
             <div class="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left rtl:md:text-right ManifestoContent px-2">
                 <i class="fas fa-quote-right text-yellow-500 text-4xl md:text-6xl block QuoteIcon"></i>
-                <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed quote-glow text-gray-100 QuoteText break-words">
-                    "A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."
-                </h3>
-                <p id="quote-attribution" class="text-lg md:text-xl font-bold gradient-text tracking-wider AttributionName">
-                    — Albarae Bourkadi
-                </p>
+                <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed quote-glow text-gray-100 QuoteText break-words">"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."</h3>
+                <p id="quote-attribution" class="text-lg md:text-xl font-bold gradient-text tracking-wider AttributionName">— Albarae Bourkadi</p>
             </div>
-            
         </div>
     </section>
 
     <section id="skills" class="py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16">Who is <span class="gradient-text">Albarae?</span></h2>
-            
             <div class="grid md:grid-cols-3 gap-8 ServicesGrid">
                 <div class="glass p-8 rounded-3xl hover:border-yellow-500/50 transition group">
                     <div class="w-12 h-12 bg-yellow-500/20 text-yellow-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
@@ -153,40 +131,22 @@
     <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5 ContactSection">
         <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center ContactFormContainer">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
-            
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-gray-400 mb-10" dir="ltr">
                 <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Şişli, Istanbul</p>
                 <p><a href="mailto:contact@balbarae.com" class="hover:text-yellow-500 transition break-all"><i class="fas fa-envelope text-yellow-500 mr-2"></i> contact@balbarae.com</a></p>
             </div>
-
             <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="text-left mb-12" dir="ltr">
                 <input type="hidden" name="access_key" value="419e0596-7284-49bf-bf8a-ba65156494f6">
-                <input type="hidden" name="subject" value="New Message from Balbarae.com">
-                <input type="hidden" name="redirect" value="https://balbarae.com">
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label id="label-name" class="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                        <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
-                    </div>
-                    <div>
-                        <label id="label-email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
-                    </div>
+                    <div><label id="label-name" class="block text-sm font-medium text-gray-400 mb-2">Name</label><input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition"></div>
+                    <div><label id="label-email" class="block text-sm font-medium text-gray-400 mb-2">Email</label><input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition"></div>
                 </div>
-                <div class="mb-6">
-                    <label id="label-msg" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                    <textarea name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none"></textarea>
-                </div>
+                <div class="mb-6"><label id="label-msg" class="block text-sm font-medium text-gray-400 mb-2">Message</label><textarea name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none"></textarea></div>
                 <button type="submit" id="btn-submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
             </form>
-
-            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container"
-                 ontouchstart="document.getElementById('gmap').style.filter='none'" 
-                 onclick="document.getElementById('gmap').style.filter='none'">
-                <iframe id="gmap" src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-golden"></iframe>
+            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container" ontouchstart="document.getElementById('gmap').style.filter='none'" onclick="document.getElementById('gmap').style.filter='none'">
+                <iframe id="gmap" src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
         </div>
     </section>
 
@@ -195,14 +155,10 @@
     </footer>
 
     <script>
-        // كود التحكم في ظهور السهم
         window.onscroll = function() {
             const btn = document.getElementById("backToTop");
-            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                btn.classList.add("show");
-            } else {
-                btn.classList.remove("show");
-            }
+            if (document.documentElement.scrollTop > 500) btn.classList.add("show");
+            else btn.classList.remove("show");
         };
 
         const translations = {
@@ -210,6 +166,8 @@
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
+                film_t: "Selected <span class='gradient-text'>Works.</span>",
+                film_m: "View full portfolio on Vimeo",
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be.\"",
                 attribution: "— Albarae Bourkadi",
                 btn: "Let's Talk", btn2: "Who is Albarae?",
@@ -225,6 +183,8 @@
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية مستقبلية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
+                film_t: "أعمال <span class='gradient-text'>مختارة.</span>",
+                film_m: "شاهد معرض الأعمال الكامل على Vimeo",
                 quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"",
                 attribution: "— البراء البرقادي",
                 btn: "تحدث معي", btn2: "من هو البراء؟",
@@ -240,6 +200,8 @@
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
+                film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>",
+                film_m: "Vimeo'daki tüm portföyü görüntüle",
                 quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—başkalarının beklediği yerde değil, tam olarak kendi beklediğim yerde.\"",
                 attribution: "— Albarae Bourkadi",
                 btn: "Konuşalım", btn2: "Albarae Kimdir?",
@@ -258,6 +220,8 @@
             document.getElementById('hero-tag').innerText = t.tag;
             document.getElementById('hero-title').innerHTML = t.title;
             document.getElementById('hero-desc').innerHTML = t.desc;
+            document.getElementById('film-title').innerHTML = t.film_t;
+            document.getElementById('film-more').innerText = t.film_m;
             document.getElementById('quote-text').innerText = t.quote;
             document.getElementById('quote-attribution').innerText = t.attribution;
             document.getElementById('btn-main').innerText = t.btn;
@@ -275,35 +239,9 @@
             document.getElementById('label-email').innerText = t.f_email;
             document.getElementById('label-msg').innerText = t.f_msg;
             document.getElementById('btn-submit').innerText = t.f_btn;
-
             document.body.dir = t.dir;
-            const sGrid = document.querySelector('.ServicesGrid');
-            const fCont = document.getElementById('contact-form');
-            const mCont = document.querySelector('.ManifestoContent');
-            const mImg = document.querySelector('.ManifestoImage');
-
-            if(t.dir === 'rtl') {
-                document.body.classList.add('rtl');
-                sGrid.classList.add('text-right');
-                fCont.setAttribute('dir', 'rtl');
-                fCont.classList.add('text-right');
-                mCont.classList.add('text-right', 'md:text-right');
-                mImg.classList.add('md:justify-start');
-                mCont.classList.remove('text-center', 'md:text-left');
-            } else {
-                document.body.classList.remove('rtl');
-                sGrid.classList.remove('text-right');
-                fCont.setAttribute('dir', 'ltr');
-                fCont.classList.remove('text-right');
-                mCont.classList.remove('text-right', 'md:text-right');
-                mImg.classList.remove('md:justify-start');
-                mCont.classList.add('text-center', 'md:text-left');
-            }
-
-            ['en', 'ar', 'tr'].forEach(l => {
-                const btn = document.getElementById(`btn-${l}`);
-                btn.className = (l === lang) ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white";
-            });
+            document.body.classList.toggle('rtl', t.dir === 'rtl');
+            ['en', 'ar', 'tr'].forEach(l => document.getElementById(`btn-${l}`).className = (l === lang) ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white");
         }
     </script>
 </body>
