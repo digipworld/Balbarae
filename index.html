@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="icon" type="image/jpeg" href="favicon.jpg?v=3">
 
     <style>
@@ -21,15 +20,13 @@
         .social-link { transition: all 0.3s ease; color: #9ca3af; }
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
-        
         #backToTop { position: fixed; bottom: 30px; right: 30px; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 100; }
         #backToTop.show { opacity: 1; visibility: visible; }
-
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: transform 0.5s ease; }
-        .video-container:hover { transform: scale(1.02); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); outline: none; }
+        
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; background: #000; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
         .map-container:hover .map-golden, .map-container:focus-within .map-golden { filter: none !important; }
         @media (pointer: coarse) { .map-golden { filter: none !important; } }
     </style>
@@ -61,7 +58,7 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-4 md:px-6 text-center">
+    <section class="pt-48 pb-20 px-4 md:px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto">
             <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
@@ -73,34 +70,13 @@
         </div>
     </section>
 
-    <section id="filmography" class="py-24 px-4 md:px-6 border-t border-white/5 bg-black/20">
-        <div class="max-w-7xl mx-auto">
-            <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic tracking-tight">Selected <span class="gradient-text">Works.</span></h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/76979871" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/100868352" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="mt-16 text-center">
-                <a href="https://vimeo.com/balbarae" target="_blank" class="text-yellow-500 font-bold hover:text-white transition flex items-center justify-center gap-2">
-                    <span id="film-more">View full portfolio on Vimeo</span> <i class="fas fa-external-link-alt text-sm"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <section id="manifesto" class="py-24 px-4 md:px-6 relative bg-black/30 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="flex justify-center md:justify-end order-2 md:order-1 ManifestoImage px-4">
-                <img src="portrait.jpg" alt="Albarae Bourkadi" class="rounded-3xl shadow-2xl shadow-yellow-500/10 border-4 border-yellow-500 w-full max-w-sm md:max-w-md aspect-[3/4] object-cover">
-            </div>
-            <div class="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left rtl:md:text-right ManifestoContent px-2">
-                <i class="fas fa-quote-right text-yellow-500 text-4xl md:text-6xl block QuoteIcon"></i>
-                <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed quote-glow text-gray-100 QuoteText break-words">"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."</h3>
-                <p id="quote-attribution" class="text-lg md:text-xl font-bold gradient-text tracking-wider AttributionName">— Albarae Bourkadi</p>
+            <div class="flex justify-center md:justify-end order-2 md:order-1 px-4"><img src="portrait.jpg" class="rounded-3xl shadow-2xl border-4 border-yellow-500 w-full max-w-sm aspect-[3/4] object-cover"></div>
+            <div class="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left rtl:md:text-right px-2">
+                <i class="fas fa-quote-right text-yellow-500 text-4xl md:text-6xl block"></i>
+                <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl font-light italic leading-relaxed quote-glow text-gray-100">"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."</h3>
+                <p id="quote-attribution" class="text-lg md:text-xl font-bold gradient-text">— Albarae Bourkadi</p>
             </div>
         </div>
     </section>
@@ -108,51 +84,75 @@
     <section id="skills" class="py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16">Who is <span class="gradient-text">Albarae?</span></h2>
-            <div class="grid md:grid-cols-3 gap-8 ServicesGrid">
-                <div class="glass p-8 rounded-3xl hover:border-yellow-500/50 transition group">
-                    <div class="w-12 h-12 bg-yellow-500/20 text-yellow-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
-                    <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
-                    <p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-24">
+                <div class="glass p-8 rounded-3xl group"><div class="text-2xl mb-6">🎬</div><h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3><p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p></div>
+                <div class="glass p-8 rounded-3xl group"><div class="text-2xl mb-6">🤖</div><h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3><p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p></div>
+                <div class="glass p-8 rounded-3xl group"><div class="text-2xl mb-6">🌍</div><h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3><p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p></div>
+            </div>
+
+            <div id="filmography" class="max-w-4xl mx-auto space-y-20">
+                <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic">Selected <span class="gradient-text">Works.</span></h2>
+                
+                <div class="space-y-6">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yyoPEFQ_Pe8" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 class="text-2xl font-bold text-yellow-500">NOT ACHIEVED SHORT FILM (2020)</h4><p class="text-gray-400 italic">Filmmaker of all movie</p></div>
                 </div>
-                <div class="glass p-8 rounded-3xl hover:border-orange-500/50 transition group">
-                    <div class="w-12 h-12 bg-orange-500/20 text-orange-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🤖</div>
-                    <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3>
-                    <p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p>
+
+                <div class="space-y-6">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 class="text-2xl font-bold text-yellow-500">BETTER DAYS SHORT FILM (2019)</h4><p class="text-gray-400 italic">Filmmaker of all movie</p></div>
                 </div>
-                <div class="glass p-8 rounded-3xl hover:border-amber-500/50 transition group">
-                    <div class="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🌍</div>
-                    <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3>
-                    <p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p>
+
+                <div class="space-y-6">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/UD4UYnAtwp4" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 class="text-2xl font-bold text-yellow-500">Behind scenes of Better Days (2019)</h4><p class="text-gray-400 italic">Filmmaker of all movie</p></div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="video-wrapper"><iframe src="https://player.vimeo.com/video/357218069" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 class="text-2xl font-bold text-yellow-500">100 YEARS ELECTROLUX VIDEO PROMOTION (2019)</h4><p class="text-gray-400 italic">1st Director Assistant and Editor</p></div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/33FBhr-dD7w" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 class="text-2xl font-bold text-yellow-500">THE OTHER SIDE SHORT FILM (2018)</h4><p class="text-gray-400 italic">Filmmaker of all movie</p></div>
+                </div>
+
+                <div class="glass p-8 md:p-12 rounded-3xl border-l-4 border-yellow-500 mt-24">
+                    <h3 id="ind-credits-title" class="text-3xl font-black mb-8 gradient-text">International Industry Credits</h3>
+                    <ul class="space-y-6 text-lg md:text-xl text-gray-300">
+                        <li><strong class="text-white">Assistant Director Trainee:</strong> On the Netflix/Dune Films feature <span class="italic">"His House"</span> (2020), directed by Remi Weekes.</li>
+                        <li><strong class="text-white">2nd Assistant Director:</strong> On Yassine Idrissi’s post-apocalyptic short film <span class="italic">Exodus</span>.</li>
+                        <li><strong class="text-white">Sound Recordist:</strong> On Naima's Movie.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5 ContactSection">
-        <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center ContactFormContainer">
+    <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5">
+        <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-gray-400 mb-10" dir="ltr">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-400 mb-10" dir="ltr">
                 <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Şişli, Istanbul</p>
                 <p><a href="mailto:contact@balbarae.com" class="hover:text-yellow-500 transition break-all"><i class="fas fa-envelope text-yellow-500 mr-2"></i> contact@balbarae.com</a></p>
             </div>
-            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="text-left mb-12" dir="ltr">
+            <form action="https://api.web3forms.com/submit" method="POST" class="text-left mb-12" dir="ltr">
                 <input type="hidden" name="access_key" value="419e0596-7284-49bf-bf8a-ba65156494f6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div><label id="label-name" class="block text-sm font-medium text-gray-400 mb-2">Name</label><input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition"></div>
-                    <div><label id="label-email" class="block text-sm font-medium text-gray-400 mb-2">Email</label><input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition"></div>
+                    <input type="text" name="name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white">
+                    <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white">
                 </div>
-                <div class="mb-6"><label id="label-msg" class="block text-sm font-medium text-gray-400 mb-2">Message</label><textarea name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none"></textarea></div>
-                <button type="submit" id="btn-submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
+                <textarea name="message" rows="4" placeholder="Message" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white mb-6"></textarea>
+                <button type="submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
             </form>
             <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container" ontouchstart="document.getElementById('gmap').style.filter='none'" onclick="document.getElementById('gmap').style.filter='none'">
-                <iframe id="gmap" src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe id="gmap" src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p id="footer-text" class="text-gray-500 font-medium">© 2026 All rights reserved to <span class="text-white">Balbarae</span></p>
-    </footer>
+    <footer class="py-12 border-t border-white/5 text-center text-gray-500 font-medium">© 2026 All rights reserved to <span class="text-white">Balbarae</span></footer>
 
     <script>
         window.onscroll = function() {
@@ -166,52 +166,37 @@
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
-                film_t: "Selected <span class='gradient-text'>Works.</span>",
-                film_m: "View full portfolio on Vimeo",
-                quote: "\"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be.\"",
-                attribution: "— Albarae Bourkadi",
-                btn: "Let's Talk", btn2: "Who is Albarae?",
-                skills_title: "Who is <span class='gradient-text'>Albarae?</span>",
+                film_t: "Selected <span class='gradient-text'>Works.</span>", ind_t: "International Industry Credits",
+                quote: "\"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be.\"", attribution: "— Albarae Bourkadi",
+                btn: "Let's Talk", btn2: "Who is Albarae?", skills_title: "Who is <span class='gradient-text'>Albarae?</span>",
                 s1_t: "Cinematic Branding", s1_d: "Mastering the creation of high-end cinematic visual identities.",
                 s2_t: "AI Integration", s2_d: "Pioneering the use of advanced AI in creative production workflows.",
                 s3_t: "Digital Advocacy", s3_d: "Leveraging visual storytelling to drive social justice and global awareness.",
-                c_t: "Get In Touch", f_name: "Name", f_email: "Email", f_msg: "Message", f_btn: "Send Message",
-                footer: "© 2026 All rights reserved to <span class='text-white'>Balbarae</span>",
-                dir: "ltr"
+                c_t: "Get In Touch", footer: "© 2026 All rights reserved to <span class='text-white'>Balbarae</span>", dir: "ltr"
             },
             ar: {
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية مستقبلية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
-                film_t: "أعمال <span class='gradient-text'>مختارة.</span>",
-                film_m: "شاهد معرض الأعمال الكامل على Vimeo",
-                quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"",
-                attribution: "— البراء البرقادي",
-                btn: "تحدث معي", btn2: "من هو البراء؟",
-                skills_title: "من هو <span class='gradient-text'>البراء؟</span>",
+                film_t: "أعمال <span class='gradient-text'>مختارة.</span>", ind_t: "خبرات في الصناعة العالمية",
+                quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"", attribution: "— البراء البرقادي",
+                btn: "تحدث معي", btn2: "من هو البراء؟", skills_title: "من هو <span class='gradient-text'>البراء؟</span>",
                 s1_t: "الهوية السينمائية", s1_d: "إتقان فن بناء الهوية البصرية السينمائية الراقية.",
                 s2_t: "دمج الذكاء الاصطناعي", s2_d: "الريادة في توظيف الذكاء الاصطناعي داخل بيئات الإنتاج الإبداعي.",
                 s3_t: "المناصرة الرقمية", s3_d: "توظيف السرد البصري لدعم قضايا العدالة الاجتماعية ورفع الوعي العالمي.",
-                c_t: "أرسل رسالة", f_name: "الاسم", f_email: "البريد الإلكتروني", f_msg: "الرسالة", f_btn: "إرسال الرسالة",
-                footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>",
-                dir: "rtl"
+                c_t: "تواصل معي", footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>", dir: "rtl"
             },
             tr: {
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
-                film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>",
-                film_m: "Vimeo'daki tüm portföyü görüntüle",
-                quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—başkalarının beklediği yerde değil, tam olarak kendi beklediğim yerde.\"",
-                attribution: "— Albarae Bourkadi",
-                btn: "Konuşalım", btn2: "Albarae Kimdir?",
-                skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
+                film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", ind_t: "Uluslararası Sektör Deneyimi",
+                quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—başkalarının beklediği yerde değil, tam olarak kendi beklediğim yerde.\"", attribution: "— Albarae Bourkadi",
+                btn: "Konuşalım", btn2: "Albarae Kimdir?", skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
                 s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlikler oluşturma sanatında ustalık.",
                 s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı üretim iş akışlarında gelişmiş yapay zeka kullanımına öncülük.",
                 s3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanma.",
-                c_t: "İletişime Geç", f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
-                footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir",
-                dir: "ltr"
+                c_t: "İletişime Geç", footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir", dir: "ltr"
             }
         };
 
@@ -221,24 +206,19 @@
             document.getElementById('hero-title').innerHTML = t.title;
             document.getElementById('hero-desc').innerHTML = t.desc;
             document.getElementById('film-title').innerHTML = t.film_t;
-            document.getElementById('film-more').innerText = t.film_m;
+            document.getElementById('ind-credits-title').innerText = t.ind_t;
             document.getElementById('quote-text').innerText = t.quote;
             document.getElementById('quote-attribution').innerText = t.attribution;
             document.getElementById('btn-main').innerText = t.btn;
             document.getElementById('btn-sec').innerText = t.btn2;
             document.getElementById('skills-main-title').innerHTML = t.skills_title;
-            document.getElementById('footer-text').innerHTML = t.footer;
-            document.getElementById('contact-title').innerText = t.c_t;
             document.getElementById('srv1-title').innerText = t.s1_t;
             document.getElementById('srv1-desc').innerText = t.s1_d;
             document.getElementById('srv2-title').innerText = t.s2_t;
             document.getElementById('srv2-desc').innerText = t.s2_d;
             document.getElementById('srv3-title').innerText = t.s3_t;
             document.getElementById('srv3-desc').innerText = t.s3_d;
-            document.getElementById('label-name').innerText = t.f_name;
-            document.getElementById('label-email').innerText = t.f_email;
-            document.getElementById('label-msg').innerText = t.f_msg;
-            document.getElementById('btn-submit').innerText = t.f_btn;
+            document.getElementById('contact-title').innerText = t.c_t;
             document.body.dir = t.dir;
             document.body.classList.toggle('rtl', t.dir === 'rtl');
             ['en', 'ar', 'tr'].forEach(l => document.getElementById(`btn-${l}`).className = (l === lang) ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white");
