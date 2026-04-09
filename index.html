@@ -6,56 +6,61 @@
     <title>Balbarae | Digital Visionary & Filmmaker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+
     <style>
         :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
         body { font-family: var(--font-en); scroll-behavior: smooth; transition: all 0.3s ease; }
         body.rtl { font-family: var(--font-ar); direction: rtl; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-bg { background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent), radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.1), transparent); }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
+        
+        /* التدرج اللوني الجديد المستلهم من الأصفر */
+        .gradient-text { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-bg { background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.1), transparent), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent); }
     </style>
 </head>
-<body class="bg-[#0b0f1a] text-white hero-bg min-h-screen">
+<body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
 
     <nav class="fixed w-full z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
             <h1 class="text-2xl font-black tracking-tighter gradient-text">BALBARAE</h1>
             
             <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl" dir="ltr">
-                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-lg text-xs font-bold transition bg-indigo-600">EN</button>
-                <button onclick="setLanguage('ar')" id="btn-ar" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10">AR</button>
-                <button onclick="setLanguage('tr')" id="btn-tr" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10">TR</button>
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black">EN</button>
+                <button onclick="setLanguage('ar')" id="btn-ar" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white">AR</button>
+                <button onclick="setLanguage('tr')" id="btn-tr" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white">TR</button>
             </div>
         </div>
     </nav>
 
     <section class="pt-40 pb-20 px-6">
         <div class="max-w-5xl mx-auto text-center">
-            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-sm font-bold text-indigo-400 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
+            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-5xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
             <p id="hero-desc" class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
                 I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#services" id="btn-main" class="bg-indigo-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition">Discover My Work</a>
+                <a href="#services" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Discover My Work</a>
             </div>
         </div>
     </section>
 
     <section id="services" class="py-20 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-3xl hover:border-indigo-500/50 transition group">
-                <div class="w-12 h-12 bg-indigo-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
+            <div class="glass p-8 rounded-3xl hover:border-yellow-500/50 transition group">
+                <div class="w-12 h-12 bg-yellow-500/20 text-yellow-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
                 <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
                 <p id="srv1-desc" class="text-gray-400">High-quality visual identity and storytelling to make your business stand out.</p>
             </div>
-            <div class="glass p-8 rounded-3xl hover:border-purple-500/50 transition group">
-                <div class="w-12 h-12 bg-purple-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🤖</div>
+            <div class="glass p-8 rounded-3xl hover:border-orange-500/50 transition group">
+                <div class="w-12 h-12 bg-orange-500/20 text-orange-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🤖</div>
                 <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Consulting</h3>
                 <p id="srv2-desc" class="text-gray-400">Integrating Artificial Intelligence into creative workflows to optimize your production.</p>
             </div>
-            <div class="glass p-8 rounded-3xl hover:border-pink-500/50 transition group">
-                <div class="w-12 h-12 bg-pink-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🚀</div>
+            <div class="glass p-8 rounded-3xl hover:border-amber-500/50 transition group">
+                <div class="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🚀</div>
                 <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Entrepreneurship</h3>
                 <p id="srv3-desc" class="text-gray-400">Scaling businesses through strategic marketing and digital leadership via DIGIPWORLD.</p>
             </div>
@@ -134,11 +139,9 @@
             ['en', 'ar', 'tr'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
                 if(l === lang) {
-                    btn.classList.add('bg-indigo-600');
-                    btn.classList.remove('hover:bg-white/10');
+                    btn.className = "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black";
                 } else {
-                    btn.classList.remove('bg-indigo-600');
-                    btn.classList.add('hover:bg-white/10');
+                    btn.className = "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white";
                 }
             });
         }
