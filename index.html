@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
 
     <style>
@@ -42,7 +43,7 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-6 text-center">
+    <section class="pt-48 pb-20 px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto">
             <span id="hero-tag" class="px-4 py-2 rounded-full glass text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-5xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
@@ -57,24 +58,35 @@
                 <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-center gap-4">
+            <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons">
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
                 <a href="#services" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">My Services</a>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center border-y border-white/5 py-16">
-            <i class="fas fa-quote-right text-yellow-500/20 text-6xl mb-8 block"></i>
-            <h3 id="quote-text" class="text-2xl md:text-4xl font-light italic leading-relaxed quote-glow">
-                "A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."
-            </h3>
+    <section id="manifesto" class="py-24 px-6 relative overflow-hidden bg-black/30">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="flex justify-center md:justify-end order-2 md:order-1 ManifestoImage">
+                <img src="favicon.jpg" alt="Albarae Bourkadi" class="rounded-3xl shadow-2xl shadow-yellow-500/10 border-4 border-yellow-500 max-w-sm md:max-w-full aspect-[3/4] object-cover">
+            </div>
+            
+            <div class="space-y-8 order-1 md:order-2 text-right md:text-left rtl:md:text-right ManifestoContent">
+                <i class="fas fa-quote-right text-yellow-500 text-6xl block QuoteIcon"></i>
+                <h3 id="quote-text" class="text-2xl md:text-4xl font-light italic leading-relaxed quote-glow text-gray-100 QuoteText">
+                    "A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."
+                </h3>
+                <p id="quote-attribution" class="text-xl font-bold gradient-text tracking-wider AttributionName">
+                    — Albarae Bourkadi
+                </p>
+            </div>
+            
         </div>
     </section>
 
-    <section id="services" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+    <section id="services" class="py-20 px-6 ServicesGridContainer">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 ServicesGrid">
             <div class="glass p-8 rounded-3xl hover:border-yellow-500/50 transition group">
                 <div class="w-12 h-12 bg-yellow-500/20 text-yellow-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
                 <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
@@ -93,8 +105,8 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-3xl mx-auto glass p-10 rounded-3xl text-center">
+    <section id="contact" class="py-20 px-6 border-t border-white/5 ContactSection">
+        <div class="max-w-3xl mx-auto glass p-10 rounded-3xl text-center ContactFormContainer">
             <h3 id="contact-title" class="text-3xl font-bold mb-4">Get In Touch</h3>
             <div class="flex justify-center items-center gap-6 text-gray-400 mb-8" dir="ltr">
                 <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Istanbul, Turkey</p>
@@ -136,6 +148,7 @@
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be.\"",
+                attribution: "— Albarae Bourkadi",
                 btn: "Let's Talk", btn2: "My Services",
                 s1_t: "Cinematic Branding", s1_d: "Transforming brands through high-end cinematic visual identity.",
                 s2_t: "AI Integration", s2_d: "Mentoring businesses on AI integration in creative workflows.",
@@ -149,6 +162,7 @@
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
                 quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"",
+                attribution: "— البراء البرقادي",
                 btn: "تحدث معي", btn2: "خدماتي",
                 s1_t: "الهوية السينمائية", s1_d: "تحويل العلامات التجارية من خلال هوية بصرية سينمائية راقية.",
                 s2_t: "دمج الذكاء الاصطناعي", s2_d: "توجيه الشركات حول دمج الذكاء الاصطناعي في بيئة العمل الإبداعية.",
@@ -162,6 +176,7 @@
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
                 quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—başkalarının beklediği yerde değil, tam olarak kendi beklediğim yerde.\"",
+                attribution: "— Albarae Bourkadi",
                 btn: "Konuşalım", btn2: "Hizmetlerim",
                 s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlik ile markaları dönüştürmek.",
                 s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı iş akışlarında yapay zeka entegrasyonu konusunda danışmanlık.",
@@ -174,15 +189,24 @@
 
         function setLanguage(lang) {
             const t = translations[lang];
+            // Main Text
             document.getElementById('hero-tag').innerText = t.tag;
             document.getElementById('hero-title').innerHTML = t.title;
             document.getElementById('hero-desc').innerHTML = t.desc;
+            
+            // Manifesto
             document.getElementById('quote-text').innerText = t.quote;
+            document.getElementById('quote-attribution').innerText = t.attribution; // التوقيع باسمك
+
+            // Buttons
             document.getElementById('btn-main').innerText = t.btn;
             document.getElementById('btn-sec').innerText = t.btn2;
+            
+            // Footer & Contact
             document.getElementById('footer-text').innerHTML = t.footer;
             document.getElementById('contact-title').innerText = t.c_t;
             
+            // Services
             document.getElementById('srv1-title').innerText = t.s1_t;
             document.getElementById('srv1-desc').innerText = t.s1_d;
             document.getElementById('srv2-title').innerText = t.s2_t;
@@ -190,31 +214,78 @@
             document.getElementById('srv3-title').innerText = t.s3_t;
             document.getElementById('srv3-desc').innerText = t.s3_d;
 
+            // Form Labels
             document.getElementById('label-name').innerText = t.f_name;
             document.getElementById('label-email').innerText = t.f_email;
             document.getElementById('label-msg').innerText = t.f_msg;
             document.getElementById('btn-submit').innerText = t.f_btn;
 
+            // Direction & Alignment
             document.body.dir = t.dir;
-            const servicesContainer = document.querySelector('#services .grid');
+            const servicesContainer = document.querySelector('.ServicesGrid');
             const formContainer = document.getElementById('contact-form');
+            const manifestoContent = document.querySelector('.ManifestoContent');
+            const manifestoImageDiv = document.querySelector('.ManifestoImage');
+            const heroContent = document.querySelector('.HeroContent');
+            const heroButtons = document.querySelector('.HeroButtons');
+            const contactSection = document.querySelector('.ContactSection');
+            const contactFormContainer = document.querySelector('.ContactFormContainer');
             
             if(t.dir === 'rtl') {
                 document.body.classList.add('rtl');
                 servicesContainer.classList.add('text-right');
                 servicesContainer.classList.remove('text-left');
+                
                 formContainer.setAttribute('dir', 'rtl');
                 formContainer.classList.add('text-right');
                 formContainer.classList.remove('text-left');
+
+                manifestoContent.classList.add('text-right', 'md:text-right');
+                manifestoContent.classList.remove('text-left', 'md:text-left');
+                manifestoImageDiv.classList.add('md:justify-start');
+                manifestoImageDiv.classList.remove('md:justify-end');
+
+                // Hero & Contact alignment for Arabic vibe coding
+                heroContent.classList.add('text-right');
+                heroContent.classList.remove('text-center');
+                heroButtons.classList.add('justify-end');
+                heroButtons.classList.remove('justify-center');
+                contactSection.classList.add('text-right');
+                contactSection.classList.remove('text-center');
+                contactFormContainer.classList.add('text-right');
+                contactFormContainer.classList.remove('text-center');
+                contactFormContainer.querySelector('div').classList.add('justify-end');
+                contactFormContainer.querySelector('div').classList.remove('justify-center');
+
+
             } else {
                 document.body.classList.remove('rtl');
                 servicesContainer.classList.remove('text-right');
                 servicesContainer.classList.add('text-left');
+                
                 formContainer.setAttribute('dir', 'ltr');
                 formContainer.classList.remove('text-right');
                 formContainer.classList.add('text-left');
+
+                manifestoContent.classList.remove('text-right', 'md:text-right');
+                manifestoContent.classList.add('text-left', 'md:text-left');
+                manifestoImageDiv.classList.remove('md:justify-start');
+                manifestoImageDiv.classList.add('md:justify-end');
+
+                 // Hero & Contact alignment for Western vibe coding
+                heroContent.classList.remove('text-right');
+                heroContent.classList.add('text-center');
+                heroButtons.classList.remove('justify-end');
+                heroButtons.classList.add('justify-center');
+                contactSection.classList.remove('text-right');
+                contactSection.classList.add('text-center');
+                contactFormContainer.classList.remove('text-right');
+                contactFormContainer.classList.add('text-center');
+                contactFormContainer.querySelector('div').classList.remove('justify-end');
+                contactFormContainer.querySelector('div').classList.add('justify-center');
             }
 
+            // Update language button styles
             ['en', 'ar', 'tr'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
                 if(l === lang) {
