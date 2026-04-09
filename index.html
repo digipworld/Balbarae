@@ -18,6 +18,7 @@
         .hero-bg { background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.1), transparent), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent); }
         .social-link { transition: all 0.3s ease; color: #9ca3af; }
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
+        .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
@@ -41,8 +42,8 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-6">
-        <div class="max-w-5xl mx-auto text-center">
+    <section class="pt-48 pb-20 px-6 text-center">
+        <div class="max-w-5xl mx-auto">
             <span id="hero-tag" class="px-4 py-2 rounded-full glass text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-5xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
             <p id="hero-desc" class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -60,6 +61,15 @@
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
                 <a href="#services" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">My Services</a>
             </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center border-y border-white/5 py-16">
+            <i class="fas fa-quote-right text-yellow-500/20 text-6xl mb-8 block"></i>
+            <h3 id="quote-text" class="text-2xl md:text-4xl font-light italic leading-relaxed quote-glow">
+                "A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be."
+            </h3>
         </div>
     </section>
 
@@ -92,29 +102,26 @@
             </div>
 
             <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="text-left" dir="ltr">
-                
                 <input type="hidden" name="access_key" value="419e0596-7284-49bf-bf8a-ba65156494f6">
-                
                 <input type="hidden" name="subject" value="New Message from Balbarae.com">
                 <input type="hidden" name="redirect" value="https://balbarae.com">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label id="label-name" class="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                        <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition placeholder-gray-600">
+                        <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
                     </div>
                     <div>
                         <label id="label-email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition placeholder-gray-600">
+                        <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
                     </div>
                 </div>
                 <div class="mb-6">
                     <label id="label-msg" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                    <textarea name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none placeholder-gray-600"></textarea>
+                    <textarea name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none"></textarea>
                 </div>
                 <button type="submit" id="btn-submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
             </form>
-
         </div>
     </section>
 
@@ -128,12 +135,12 @@
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
+                quote: "\"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be.\"",
                 btn: "Let's Talk", btn2: "My Services",
                 s1_t: "Cinematic Branding", s1_d: "Transforming brands through high-end cinematic visual identity.",
                 s2_t: "AI Integration", s2_d: "Mentoring businesses on AI integration in creative workflows.",
                 s3_t: "Digital Advocacy", s3_d: "Using visual storytelling for social justice and global awareness.",
-                c_t: "Get In Touch",
-                f_name: "Name", f_email: "Email", f_msg: "Message", f_btn: "Send Message",
+                c_t: "Get In Touch", f_name: "Name", f_email: "Email", f_msg: "Message", f_btn: "Send Message",
                 footer: "© 2026 All rights reserved to <span class='text-white'>Balbarae</span>",
                 dir: "ltr"
             },
@@ -141,12 +148,12 @@
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، ورائد أعمال",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
-                btn: "تواصل معي", btn2: "خدماتي",
+                quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"",
+                btn: "تحدث معي", btn2: "خدماتي",
                 s1_t: "الهوية السينمائية", s1_d: "تحويل العلامات التجارية من خلال هوية بصرية سينمائية راقية.",
                 s2_t: "دمج الذكاء الاصطناعي", s2_d: "توجيه الشركات حول دمج الذكاء الاصطناعي في بيئة العمل الإبداعية.",
                 s3_t: "المناصرة الرقمية", s3_d: "استخدام السرد البصري للعدالة الاجتماعية والتوعية العالمية.",
-                c_t: "أرسل رسالة",
-                f_name: "الاسم", f_email: "البريد الإلكتروني", f_msg: "الرسالة", f_btn: "إرسال الرسالة",
+                c_t: "أرسل رسالة", f_name: "الاسم", f_email: "البريد الإلكتروني", f_msg: "الرسالة", f_btn: "إرسال الرسالة",
                 footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>",
                 dir: "rtl"
             },
@@ -154,12 +161,12 @@
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
+                quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—başkalarının beklediği yerde değil, tam olarak kendi beklediğim yerde.\"",
                 btn: "Konuşalım", btn2: "Hizmetlerim",
                 s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlik ile markaları dönüştürmek.",
                 s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı iş akışlarında yapay zeka entegrasyonu konusunda danışmanlık.",
                 s3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanmak.",
-                c_t: "İletişime Geç",
-                f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
+                c_t: "İletişime Geç", f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
                 footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir",
                 dir: "ltr"
             }
@@ -170,6 +177,7 @@
             document.getElementById('hero-tag').innerText = t.tag;
             document.getElementById('hero-title').innerHTML = t.title;
             document.getElementById('hero-desc').innerHTML = t.desc;
+            document.getElementById('quote-text').innerText = t.quote;
             document.getElementById('btn-main').innerText = t.btn;
             document.getElementById('btn-sec').innerText = t.btn2;
             document.getElementById('footer-text').innerHTML = t.footer;
@@ -182,7 +190,6 @@
             document.getElementById('srv3-title').innerText = t.s3_t;
             document.getElementById('srv3-desc').innerText = t.s3_d;
 
-            // Form Translations
             document.getElementById('label-name').innerText = t.f_name;
             document.getElementById('label-email').innerText = t.f_email;
             document.getElementById('label-msg').innerText = t.f_msg;
