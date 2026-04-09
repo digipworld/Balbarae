@@ -3,40 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balbarae | العلامة الشخصية</title>
+    <title>Balbarae | بالبرع - القمة الرقمية</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .gradient-text {
-            background: linear-gradient(90deg, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-bg { background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent), radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.1), transparent); }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-[#0b0f1a] text-white hero-bg min-h-screen">
 
-    <nav class="p-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold gradient-text">BALBARAE</h1>
-        <div class="space-x-reverse space-x-4">
-            <a href="#about" class="hover:text-indigo-400">عني</a>
-            <a href="#contact" class="bg-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-700">تواصل معي</a>
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+            <h1 class="text-2xl font-black tracking-tighter gradient-text">BALBARAE</h1>
+            <div class="hidden md:flex space-x-reverse space-x-8 font-medium">
+                <a href="#about" class="hover:text-indigo-400 transition">عنّي</a>
+                <a href="#services" class="hover:text-indigo-400 transition">خدماتي</a>
+                <a href="#contact" class="bg-white text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition active:scale-95">تواصل الآن</a>
+            </div>
         </div>
     </nav>
 
-    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-6">مرحباً بك في عالم <span class="gradient-text">بالبرع</span></h2>
-        <p class="text-gray-400 text-xl max-w-2xl">
-            هنا نصنع المستقبل الرقمي. أنا متخصص في [أضف تخصصك هنا]، أساعد الأفراد والشركات على النمو من خلال الابتكار.
-        </p>
-        <div class="mt-10">
-            <button class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">استكشف أعمالي</button>
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="px-4 py-2 rounded-full glass text-sm font-bold text-indigo-400 mb-6 inline-block">مرحباً بك في عالم التميز الرقمي</span>
+            <h2 class="text-6xl md:text-8xl font-black mb-8 leading-tight">نصنع <span class="gradient-text">المستقبل</span> بلمسة إبداع.</h2>
+            <p class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
+                أنا <span class="text-white font-bold">بالبرع</span>، متخصص في تحويل الأفكار المعقدة إلى تجارب رقمية بسيطة ومبهرة. أساعدك على بناء هويتك الشخصية وتنمية أعمالك.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-indigo-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition">ابدأ مشروعك معي</a>
+                <a href="#services" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">استكشف خدماتي</a>
+            </div>
         </div>
     </section>
 
-    <footer class="border-t border-gray-800 p-8 text-center text-gray-500">
-        <p>&copy; 2026 Balbarae. جميع الحقوق محفوظة.</p>
+    <section id="services" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-right">
+            <div class="glass p-8 rounded-3xl hover:border-indigo-500/50 transition group">
+                <div class="w-12 h-12 bg-indigo-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🚀</div>
+                <h3 class="text-2xl font-bold mb-4">استراتيجية النمو</h3>
+                <p class="text-gray-400">نخطط معاً للوصول إلى جمهورك المستهدف بأقصر الطرق وأكثرها فاعلية.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl hover:border-purple-500/50 transition group text-right">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎨</div>
+                <h3 class="text-2xl font-bold mb-4">الهوية الرقمية</h3>
+                <p class="text-gray-400">تصميم وتطوير مواقع وتطبيقات تعكس احترافيتك وتترك أثراً لا ينسى.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl hover:border-pink-500/50 transition group text-right">
+                <div class="w-12 h-12 bg-pink-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🤖</div>
+                <h3 class="text-2xl font-bold mb-4">ذكاء الأعمال</h3>
+                <p class="text-gray-400">استخدام أدوات الذكاء الاصطناعي والـ Agents لتسريع وتيرة عملك اليومي.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-12 border-t border-white/5 text-center">
+        <p class="text-gray-500 font-medium">© 2026 جميع الحقوق محفوظة لـ <span class="text-white">Balbarae</span></p>
     </footer>
 
 </body>
