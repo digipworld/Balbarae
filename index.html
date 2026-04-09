@@ -21,9 +21,16 @@
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
         
-        /* الفلتر الذهبي الداكن للخريطة مع دعم اللمس في الهاتف */
-        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: all 0.5s ease; outline: none; }
-        .map-golden:hover, .map-golden:active, .map-golden:focus { filter: brightness(85%) sepia(20%) contrast(105%); }
+        /* الفلتر الذهبي الداكن للخريطة */
+        .map-golden { 
+            filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); 
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+            outline: none;
+        }
+        /* عند النقر في الهاتف أو الحوم يذهب الفلتر تماماً وتصبح الخريطة واضحة */
+        .map-golden:hover, .map-golden:active, .map-golden:focus { 
+            filter: none !important; 
+        }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
@@ -147,7 +154,7 @@
             </form>
 
             <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black">
-                <iframe src="https://maps.google.com/maps?q=%C5%9Ei%C5%9Fli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-golden"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d12035.795556276717!2d28.9806!3d41.0603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab70802e3b207%3A0xc63b51b72e90c9b0!2zxZ5pxZ9saS_EsHN0YW5idWw!5e0!3m2!1sen!2str!4v1712690000000!5m2!1sen!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-golden" tabindex="0"></iframe>
             </div>
 
         </div>
@@ -174,7 +181,7 @@
                 dir: "ltr"
             },
             ar: {
-                tag: "صانع أفلام، مستشار ذكاء اصطناعي، ورائد أعمال",
+                tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية مستقبلية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
                 quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"",
@@ -195,7 +202,7 @@
                 attribution: "— Albarae Bourkadi",
                 btn: "Konuşalım", btn2: "Hizmetlerim",
                 s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlik ile markaları dönüştürmek.",
-                s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı iş akışlarında yapay zeka entegrasyonu konusunda danışmanlık.",
+                s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı iş akışlarında yapay zeka entegrasyonu konusunda danışمانlık.",
                 s3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanmak.",
                 c_t: "İletişime Geç", f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
                 footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir",
