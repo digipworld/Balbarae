@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balbarae | Global Personal Brand</title>
+    <title>Balbarae | Digital Visionary & Filmmaker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -21,7 +21,7 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
             <h1 class="text-2xl font-black tracking-tighter gradient-text">BALBARAE</h1>
             
-            <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl">
+            <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl" dir="ltr">
                 <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-lg text-xs font-bold transition bg-indigo-600">EN</button>
                 <button onclick="setLanguage('ar')" id="btn-ar" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10">AR</button>
                 <button onclick="setLanguage('tr')" id="btn-tr" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10">TR</button>
@@ -31,13 +31,33 @@
 
     <section class="pt-40 pb-20 px-6">
         <div class="max-w-5xl mx-auto text-center">
-            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-sm font-bold text-indigo-400 mb-6 inline-block">Welcome to the Digital Excellence</span>
-            <h2 id="hero-title" class="text-5xl md:text-8xl font-black mb-8 leading-tight">Crafting the <span class="gradient-text">Future</span> with Creativity.</h2>
+            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-sm font-bold text-indigo-400 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
+            <h2 id="hero-title" class="text-5xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
             <p id="hero-desc" class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
-                I am <span class="text-white font-bold">Balbarae</span>, specialized in turning complex ideas into simple and stunning digital experiences.
+                I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://wa.me/YOURNUMBER" id="btn-main" class="bg-indigo-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition">Start Project</a>
+                <a href="#services" id="btn-main" class="bg-indigo-600 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition">Discover My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-3xl hover:border-indigo-500/50 transition group">
+                <div class="w-12 h-12 bg-indigo-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
+                <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
+                <p id="srv1-desc" class="text-gray-400">High-quality visual identity and storytelling to make your business stand out.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl hover:border-purple-500/50 transition group">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🤖</div>
+                <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Consulting</h3>
+                <p id="srv2-desc" class="text-gray-400">Integrating Artificial Intelligence into creative workflows to optimize your production.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl hover:border-pink-500/50 transition group">
+                <div class="w-12 h-12 bg-pink-500/20 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🚀</div>
+                <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Entrepreneurship</h3>
+                <p id="srv3-desc" class="text-gray-400">Scaling businesses through strategic marketing and digital leadership via DIGIPWORLD.</p>
             </div>
         </div>
     </section>
@@ -49,26 +69,35 @@
     <script>
         const translations = {
             en: {
-                tag: "Welcome to the Digital Excellence",
-                title: "Crafting the <span class='gradient-text'>Future</span> with Creativity.",
-                desc: "I am <span class='text-white font-bold'>Balbarae</span>, specialized in turning complex ideas into simple and stunning digital experiences.",
-                btn: "Start Project",
+                tag: "Filmmaker, AI Consultant & Digital Visionary",
+                title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
+                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
+                btn: "Discover My Work",
+                s1_t: "Cinematic Branding", s1_d: "High-quality visual identity and storytelling to make your business stand out.",
+                s2_t: "AI Consulting", s2_d: "Integrating Artificial Intelligence into creative workflows to optimize your production.",
+                s3_t: "Digital Entrepreneurship", s3_d: "Scaling businesses through strategic marketing and digital leadership via DIGIPWORLD.",
                 footer: "© 2026 All rights reserved to <span class='text-white'>Balbarae</span>",
                 dir: "ltr"
             },
             ar: {
-                tag: "مرحباً بك في عالم التميز الرقمي",
-                title: "نصنع <span class='gradient-text'>المستقبل</span> بلمسة إبداع.",
-                desc: "أنا <span class='text-white font-bold'>بالبرع</span>، متخصص في تحويل الأفكار المعقدة إلى تجارب رقمية بسيطة ومبهرة.",
-                btn: "ابدأ مشروعك",
-                footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>بالبرع</span>",
+                tag: "صانع أفلام، مستشار ذكاء اصطناعي، ورائد أعمال",
+                title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
+                desc: "أنا <span class='text-white font-bold'>البراء بورقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
+                btn: "استكشف أعمالي",
+                s1_t: "الهوية السينمائية", s1_d: "صناعة هوية بصرية وسرد قصصي عالي الجودة لتمييز علامتك التجارية.",
+                s2_t: "استشارات الذكاء الاصطناعي", s2_d: "دمج أدوات الذكاء الاصطناعي في بيئة عملك لتسريع الإنتاج والابتكار.",
+                s3_t: "ريادة الأعمال الرقمية", s3_d: "توسيع نطاق الشركات من خلال التسويق الاستراتيجي والقيادة الرقمية عبر DIGIPWORLD.",
+                footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء بورقادي</span>",
                 dir: "rtl"
             },
             tr: {
-                tag: "Dijital Mükemmelliğe Hoş Geldiniz",
-                title: "Yaratıcılıkla <span class='gradient-text'>Geleceği</span> Şekillendiriyoruz.",
-                desc: "Ben <span class='text-white font-bold'>Balbarae</span>, karmaşık fikirleri basit ve çarpıcı dijital deneyimlere dönüştürme konusunda uzmanım.",
-                btn: "Projeye Başla",
+                tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
+                title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
+                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
+                btn: "Projelerimi Keşfet",
+                s1_t: "Sinematik Markalaşma", s1_d: "İşletmenizi öne çıkarmak için yüksek kaliteli görsel kimlik ve hikaye anlatımı.",
+                s2_t: "Yapay Zeka Danışmanlığı", s2_d: "Üretiminizi optimize etmek için Yapay Zekayı yaratıcı iş akışlarına entegre etme.",
+                s3_t: "Dijital Girişimcilik", s3_d: "DIGIPWORLD aracılığıyla stratejik pazarlama ve dijital liderlik ile işletmeleri büyütme.",
                 footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir",
                 dir: "ltr"
             }
@@ -76,21 +105,36 @@
 
         function setLanguage(lang) {
             const t = translations[lang];
+            // Main Text
             document.getElementById('hero-tag').innerText = t.tag;
             document.getElementById('hero-title').innerHTML = t.title;
             document.getElementById('hero-desc').innerHTML = t.desc;
             document.getElementById('btn-main').innerText = t.btn;
             document.getElementById('footer-text').innerHTML = t.footer;
             
-            // Set direction
+            // Services Text
+            document.getElementById('srv1-title').innerText = t.s1_t;
+            document.getElementById('srv1-desc').innerText = t.s1_d;
+            document.getElementById('srv2-title').innerText = t.s2_t;
+            document.getElementById('srv2-desc').innerText = t.s2_d;
+            document.getElementById('srv3-title').innerText = t.s3_t;
+            document.getElementById('srv3-desc').innerText = t.s3_d;
+
+            // Direction & Alignment
             document.body.dir = t.dir;
+            const servicesContainer = document.querySelector('#services .grid');
+            
             if(t.dir === 'rtl') {
                 document.body.classList.add('rtl');
+                servicesContainer.classList.add('text-right');
+                servicesContainer.classList.remove('text-left');
             } else {
                 document.body.classList.remove('rtl');
+                servicesContainer.classList.remove('text-right');
+                servicesContainer.classList.add('text-left');
             }
 
-            // Update buttons style
+            // Button Styles
             ['en', 'ar', 'tr'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
                 if(l === lang) {
