@@ -21,7 +21,7 @@
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
         
-        /* الفلتر الذهبي الداكن للخريطة (شاشات الحاسوب) */
+        /* الفلتر الذهبي الداكن للخريطة */
         .map-golden { 
             filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); 
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
@@ -33,7 +33,6 @@
             filter: none !important; 
         }
 
-        /* إلغاء الفلتر تماماً على شاشات الهواتف التي تعتمد على اللمس */
         @media (pointer: coarse) {
             .map-golden { filter: none !important; }
         }
@@ -108,22 +107,26 @@
         </div>
     </section>
 
-    <section id="skills" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 ServicesGrid">
-            <div class="glass p-8 rounded-3xl hover:border-yellow-500/50 transition group">
-                <div class="w-12 h-12 bg-yellow-500/20 text-yellow-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
-                <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
-                <p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p>
-            </div>
-            <div class="glass p-8 rounded-3xl hover:border-orange-500/50 transition group">
-                <div class="w-12 h-12 bg-orange-500/20 text-orange-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🤖</div>
-                <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3>
-                <p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p>
-            </div>
-            <div class="glass p-8 rounded-3xl hover:border-amber-500/50 transition group">
-                <div class="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🌍</div>
-                <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3>
-                <p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p>
+    <section id="skills" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16">Who is <span class="gradient-text">Albarae?</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 ServicesGrid">
+                <div class="glass p-8 rounded-3xl hover:border-yellow-500/50 transition group">
+                    <div class="w-12 h-12 bg-yellow-500/20 text-yellow-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🎬</div>
+                    <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
+                    <p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:border-orange-500/50 transition group">
+                    <div class="w-12 h-12 bg-orange-500/20 text-orange-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🤖</div>
+                    <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3>
+                    <p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:border-amber-500/50 transition group">
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition">🌍</div>
+                    <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3>
+                    <p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -159,7 +162,9 @@
                 <button type="submit" id="btn-submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
             </form>
 
-            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container">
+            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container"
+                 ontouchstart="document.getElementById('gmap').style.filter='none'" 
+                 onclick="document.getElementById('gmap').style.filter='none'">
                 <iframe id="gmap" src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-golden"></iframe>
             </div>
 
@@ -179,6 +184,7 @@
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where others expect me to be, but exactly where I expect to be.\"",
                 attribution: "— Albarae Bourkadi",
                 btn: "Let's Talk", btn2: "Who is Albarae?",
+                skills_title: "Who is <span class='gradient-text'>Albarae?</span>",
                 s1_t: "Cinematic Branding", s1_d: "Mastering the creation of high-end cinematic visual identities.",
                 s2_t: "AI Integration", s2_d: "Pioneering the use of advanced AI in creative production workflows.",
                 s3_t: "Digital Advocacy", s3_d: "Leveraging visual storytelling to drive social justice and global awareness.",
@@ -187,4 +193,89 @@
                 dir: "ltr"
             },
             ar: {
-                tag: "ص
+                tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية مستقبلية",
+                title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
+                desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
+                quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يتوقع الآخرون، بل حيث أتوقع أنا أن أكون.\"",
+                attribution: "— البراء البرقادي",
+                btn: "تحدث معي", btn2: "من هو البراء؟",
+                skills_title: "من هو <span class='gradient-text'>البراء؟</span>",
+                s1_t: "الهوية السينمائية", s1_d: "إتقان فن بناء الهوية البصرية السينمائية الراقية.",
+                s2_t: "دمج الذكاء الاصطناعي", s2_d: "الريادة في توظيف الذكاء الاصطناعي داخل بيئات الإنتاج الإبداعي.",
+                s3_t: "المناصرة الرقمية", s3_d: "توظيف السرد البصري لدعم قضايا العدالة الاجتماعية ورفع الوعي العالمي.",
+                c_t: "أرسل رسالة", f_name: "الاسم", f_email: "البريد الإلكتروني", f_msg: "الرسالة", f_btn: "إرسال الرسالة",
+                footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>",
+                dir: "rtl"
+            },
+            tr: {
+                tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
+                title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
+                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
+                quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—başkalarının beklediği yerde değil, tam olarak kendi beklediğim yerde.\"",
+                attribution: "— Albarae Bourkadi",
+                btn: "Konuşalım", btn2: "Albarae Kimdir?",
+                skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
+                s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlikler oluşturma sanatında ustalık.",
+                s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı üretim iş akışlarında gelişmiş yapay zeka kullanımına öncülük.",
+                s3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanma.",
+                c_t: "İletişime Geç", f_name: "İsim", f_email: "E-posta", f_msg: "Mesaj", f_btn: "Mesaj Gönder",
+                footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir",
+                dir: "ltr"
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('hero-tag').innerText = t.tag;
+            document.getElementById('hero-title').innerHTML = t.title;
+            document.getElementById('hero-desc').innerHTML = t.desc;
+            document.getElementById('quote-text').innerText = t.quote;
+            document.getElementById('quote-attribution').innerText = t.attribution;
+            document.getElementById('btn-main').innerText = t.btn;
+            document.getElementById('btn-sec').innerText = t.btn2;
+            document.getElementById('skills-main-title').innerHTML = t.skills_title;
+            document.getElementById('footer-text').innerHTML = t.footer;
+            document.getElementById('contact-title').innerText = t.c_t;
+            document.getElementById('srv1-title').innerText = t.s1_t;
+            document.getElementById('srv1-desc').innerText = t.s1_d;
+            document.getElementById('srv2-title').innerText = t.s2_t;
+            document.getElementById('srv2-desc').innerText = t.s2_d;
+            document.getElementById('srv3-title').innerText = t.s3_t;
+            document.getElementById('srv3-desc').innerText = t.s3_d;
+            document.getElementById('label-name').innerText = t.f_name;
+            document.getElementById('label-email').innerText = t.f_email;
+            document.getElementById('label-msg').innerText = t.f_msg;
+            document.getElementById('btn-submit').innerText = t.f_btn;
+
+            document.body.dir = t.dir;
+            const sGrid = document.querySelector('.ServicesGrid');
+            const fCont = document.getElementById('contact-form');
+            const mCont = document.querySelector('.ManifestoContent');
+            const mImg = document.querySelector('.ManifestoImage');
+
+            if(t.dir === 'rtl') {
+                document.body.classList.add('rtl');
+                sGrid.classList.add('text-right');
+                fCont.setAttribute('dir', 'rtl');
+                fCont.classList.add('text-right');
+                mCont.classList.add('text-right', 'md:text-right');
+                mImg.classList.add('md:justify-start');
+                mCont.classList.remove('text-center', 'md:text-left');
+            } else {
+                document.body.classList.remove('rtl');
+                sGrid.classList.remove('text-right');
+                fCont.setAttribute('dir', 'ltr');
+                fCont.classList.remove('text-right');
+                mCont.classList.remove('text-right', 'md:text-right');
+                mImg.classList.remove('md:justify-start');
+                mCont.classList.add('text-center', 'md:text-left');
+            }
+
+            ['en', 'ar', 'tr'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                btn.className = (l === lang) ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white";
+            });
+        }
+    </script>
+</body>
+</html>
