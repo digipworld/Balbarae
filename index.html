@@ -30,12 +30,13 @@
     <style>
         :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
         html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: var(--font-en); transition: all 0.3s ease; overflow-x: hidden; }
+        /* تم إصلاح التعنت بإزالة transition: all وتحديدها فقط لتغيير اللغة */
+        body { font-family: var(--font-en); transition: background-color 0.3s ease, color 0.3s ease; overflow-x: hidden; }
         body.rtl { font-family: var(--font-ar); direction: rtl; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
         .gradient-text { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-bg { background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.1), transparent), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent); }
-        .social-link { transition: all 0.3s ease; color: #9ca3af; }
+        .social-link { transition: transform 0.3s ease, color 0.3s ease; color: #9ca3af; }
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
         #backToTop { position: fixed; bottom: 30px; right: 30px; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 100; }
@@ -44,7 +45,7 @@
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; background: #000; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         
-        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
         .map-container:hover .map-golden, .map-container:focus-within .map-golden { filter: none !important; }
         @media (pointer: coarse) { .map-golden { filter: none !important; } }
 
@@ -53,10 +54,12 @@
         body.rtl .timeline-line { border-left: none; border-right: 2px solid rgba(255,255,255,0.1); padding-left: 0; padding-right: 1.5rem; margin-left: 0; margin-right: 0.75rem; }
         body.rtl .timeline-dot { left: auto; right: -31px; }
 
+        /* تسريع الظهور وتفعيل مسرع الرسوميات للقضاء على أي تعنت في التمرير */
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(40px);
             transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
         }
         .reveal.active {
             opacity: 1;
@@ -66,25 +69,23 @@
         .progress-fill {
             width: 0%;
             transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: width;
         }
 
         /* --- Custom SVG Auto-Animations (Choreographed) --- */
-        
-        /* دورة كاملة مدتها 4 ثواني للتزامن */
-        
         @keyframes clap-action {
             0% { transform: rotate(0deg); }
-            5% { transform: rotate(-45deg); } /* ترتفع ببطء */
-            15% { transform: rotate(-45deg); } /* تنتظر قليلاً درامياً */
-            20% { transform: rotate(0deg); } /* تضرب بنعومة أكثر */
-            23% { transform: rotate(-8deg); } /* ارتداد طبيعي خفيف */
+            5% { transform: rotate(-45deg); }
+            15% { transform: rotate(-45deg); }
+            20% { transform: rotate(0deg); }
+            23% { transform: rotate(-8deg); }
             26%, 100% { transform: rotate(0deg); }
         }
         .clapper-top { animation: clap-action 4s ease-in-out infinite; }
 
         @keyframes wink {
             0%, 42%, 48%, 100% { transform: scaleY(1); }
-            45% { transform: scaleY(0.1); } /* يغمز بعد ضربة الكلاكيط بثانية بالضبط */
+            45% { transform: scaleY(0.1); }
         }
         .robot-eye { animation: wink 4s ease-in-out infinite; }
 
@@ -92,7 +93,7 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100px); }
         }
-        .earth-map { animation: spin-earth 4s linear infinite; } /* تدور باستمرار */
+        .earth-map { animation: spin-earth 4s linear infinite; }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
@@ -164,7 +165,7 @@
                 
                 <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.1s;">
                     <div class="mb-6 flex justify-center items-center h-16">
-                        <svg viewBox="0 0 100 100" class="w-16 h-16 clapper-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 clapper-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="clapper-top" style="transform-origin: 10px 42px;">
                                 <path d="M10 25 h80 v16 h-80 z" fill="#1F2937"/>
                                 <path d="M15 25 L30 41 M35 25 L50 41 M55 25 L70 41 M75 25 L90 41" stroke="#FACC15" stroke-width="4" stroke-linecap="square"/>
