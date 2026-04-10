@@ -115,7 +115,7 @@
 
             <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons px-4 reveal" style="transition-delay: 0.4s;">
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
-                <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 1500);" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition cursor-pointer">Who is Albarae?</a>
+                <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 800);" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition cursor-pointer">Who is Albarae?</a>
             </div>
         </div>
     </section>
@@ -336,7 +336,7 @@
         <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-400 mb-10" dir="ltr">
-                <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Şişلي, Istanbul</p>
+                <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Şişli, Istanbul</p>
                 <p><a href="mailto:contact@balbarae.com" class="hover:text-yellow-500 transition break-all"><i class="fas fa-envelope text-yellow-500 mr-2"></i> contact@balbarae.com</a></p>
             </div>
             <form action="https://api.web3forms.com/submit" method="POST" class="text-left mb-12" dir="ltr">
@@ -513,7 +513,7 @@
                 exp3_t: "Pazarlama Müdürü (CMO)", exp3_d: "PHI DENTAL CLINIC | 2023 - 2024", exp3_c: "Sosyal medya varlığını yönetti, yaratıcı içerik üretti ve Instagram takipçi sayısını 4K'dan 10K'ya çıkardı.",
                 exp4_t: "Yönetmen Yardımcısı Stajyeri", exp4_d: "DUNE FILM (Netflix) | 2018", exp4_c: "Remi Weekes'in yönettiği İngiliz kurgu filmi 'His House'da görev aldı.",
                 edu1_t: "Sinema ve Televizyon Yüksek Lisansı", edu1_d: "İSTİNYE ÜNİVERSİTESİ | 2024 - Günümüz",
-                edu2_t: "Sinema ve Görsel-İشitsel Lisans", edu2_d: "IBN ZOHR ÜNİVERSİTESİ | 2020 - 2021",
+                edu2_t: "Sinema ve Görsel-İşitsel Lisans", edu2_d: "IBN ZOHR ÜNİVERSİTESİ | 2020 - 2021",
                 edu3_t: "Sinema ve Görsel-İşitsel Uzmanlık Diploması", edu3_d: "ISCA | 2017 - 2020",
                 iq_t: "Onaylı IQ Puanı", iq_d: "Üst yüzdelik bilişsel performans değerlendirmesi.", iq_l: "Sertifikayı Görüntüle",
                 btn_dl: "Tüm Özgeçmişi İndir",
@@ -539,33 +539,46 @@
             document.getElementById('srv2-desc').innerText = t.s2_d;
             document.getElementById('srv3-title').innerText = t.s3_t;
             document.getElementById('srv3-desc').innerText = t.s3_d;
+            
             document.getElementById('film1-t').innerText = t.f1_t; document.getElementById('film1-d').innerText = t.f1_d;
             document.getElementById('film2-t').innerText = t.f2_t; document.getElementById('film2-d').innerText = t.f2_d;
             document.getElementById('film3-t').innerText = t.f3_t; document.getElementById('film3-d').innerText = t.f3_d;
             document.getElementById('film4-t').innerText = t.f4_t; document.getElementById('film4-d').innerText = t.f4_d;
             document.getElementById('film5-t').innerText = t.f5_t; document.getElementById('film5-d').innerText = t.f5_d;
             document.getElementById('film6-t').innerText = t.f6_t; document.getElementById('film6-d').innerText = t.f6_d;
-            document.getElementById('cred1').innerHTML = t.c1; document.getElementById('cred2').innerHTML = t.c2;
-            document.getElementById('cred3').innerHTML = t.c3; document.getElementById('cred4').innerHTML = t.c4;
+            
+            document.getElementById('cred1').innerHTML = t.c1;
+            document.getElementById('cred2').innerHTML = t.c2;
+            document.getElementById('cred3').innerHTML = t.c3;
+            document.getElementById('cred4').innerHTML = t.c4;
+
+            // CV Translations
             document.getElementById('cv-main-title').innerHTML = t.cv_main;
             document.getElementById('cv-exp-title').innerHTML = `<i class="fas fa-briefcase"></i> ${t.cv_exp}`;
             document.getElementById('cv-edu-title').innerHTML = `<i class="fas fa-graduation-cap"></i> ${t.cv_edu}`;
             document.getElementById('cv-skills-title').innerHTML = `<i class="fas fa-tools text-gray-400"></i> ${t.cv_skills}`;
             document.getElementById('cv-lang-title').innerHTML = `<i class="fas fa-language text-gray-400"></i> ${t.cv_lang}`;
+            
             document.getElementById('lang1-n').innerText = t.lang1; document.getElementById('lang1-lvl').innerText = t.lang1_lvl;
             document.getElementById('lang2-n').innerText = t.lang2; document.getElementById('lang2-lvl').innerText = t.lang2_lvl;
             document.getElementById('lang3-n').innerText = t.lang3; document.getElementById('lang3-lvl').innerText = t.lang3_lvl;
             document.getElementById('lang4-n').innerText = t.lang4; document.getElementById('lang4-lvl').innerText = t.lang4_lvl;
+
             document.getElementById('exp1-t').innerText = t.exp1_t; document.getElementById('exp1-d').innerText = t.exp1_d; document.getElementById('exp1-c').innerText = t.exp1_c; document.getElementById('exp1-link').innerText = t.exp1_l;
             document.getElementById('exp2-t').innerText = t.exp2_t; document.getElementById('exp2-d').innerText = t.exp2_d; document.getElementById('exp2-c').innerText = t.exp2_c;
             document.getElementById('exp2-link1').innerText = t.exp2_l1; document.getElementById('exp2-link2').innerText = t.exp2_l2; document.getElementById('exp2-link3').innerText = t.exp2_l3;
             document.getElementById('exp3-t').innerText = t.exp3_t; document.getElementById('exp3-d').innerText = t.exp3_d; document.getElementById('exp3-c').innerText = t.exp3_c;
             document.getElementById('exp4-t').innerText = t.exp4_t; document.getElementById('exp4-d').innerText = t.exp4_d; document.getElementById('exp4-c').innerText = t.exp4_c;
+            
             document.getElementById('edu1-t').innerText = t.edu1_t; document.getElementById('edu1-d').innerText = t.edu1_d;
             document.getElementById('edu2-t').innerText = t.edu2_t; document.getElementById('edu2-d').innerText = t.edu2_d;
             document.getElementById('edu3-t').innerText = t.edu3_t; document.getElementById('edu3-d').innerText = t.edu3_d;
-            document.getElementById('iq-title').innerText = t.iq_t; document.getElementById('iq-desc').innerText = t.iq_d; document.getElementById('iq-link').innerText = t.iq_l;
+
+            document.getElementById('iq-title').innerText = t.iq_t;
+            document.getElementById('iq-desc').innerText = t.iq_d;
+            document.getElementById('iq-link').innerText = t.iq_l;
             document.getElementById('btn-download').innerText = t.btn_dl;
+
             document.getElementById('contact-title').innerText = t.c_t;
             document.body.dir = t.dir;
             document.body.classList.toggle('rtl', t.dir === 'rtl');
