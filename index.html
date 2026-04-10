@@ -67,6 +67,30 @@
             width: 0%;
             transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
+
+        /* --- Custom SVG Hover Animations --- */
+        @keyframes clap-action {
+            0% { transform: rotate(0deg); }
+            15% { transform: rotate(-30deg); }
+            30% { transform: rotate(-30deg); }
+            45% { transform: rotate(0deg); }
+            60% { transform: rotate(-10deg); }
+            75% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .group:hover .clapper-top { animation: clap-action 1.5s ease-in-out infinite; }
+
+        @keyframes wink {
+            0%, 30%, 100% { transform: scaleY(1); }
+            15% { transform: scaleY(0.1); }
+        }
+        .group:hover .robot-eye { animation: wink 1.5s ease-in-out infinite; }
+
+        @keyframes spin-earth {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+        .group:hover .earth-map { animation: spin-earth 3s linear infinite; }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
@@ -135,9 +159,69 @@
         <div class="max-w-7xl mx-auto">
             <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16 reveal">Who is <span class="gradient-text">Albarae?</span></h2>
             <div class="grid md:grid-cols-3 gap-8 mb-24">
-                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.1s;"><div class="text-2xl mb-6 group-hover:scale-125 transition duration-300">🎬</div><h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3><p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p></div>
-                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.2s;"><div class="text-2xl mb-6 group-hover:scale-125 transition duration-300">🤖</div><h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3><p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p></div>
-                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.3s;"><div class="text-2xl mb-6 group-hover:scale-125 transition duration-300">🌍</div><h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3><p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p></div>
+                
+                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.1s;">
+                    <div class="mb-6 flex justify-center items-center h-16">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 clapper-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g class="clapper-top" style="transform-origin: 10px 42px;">
+                                <path d="M10 25 h80 v16 h-80 z" fill="#1F2937"/>
+                                <path d="M15 25 L30 41 M35 25 L50 41 M55 25 L70 41 M75 25 L90 41" stroke="#FACC15" stroke-width="4" stroke-linecap="square"/>
+                            </g>
+                            <path d="M10 43 h80 v35 c0 3.3 -2.7 6 -6 6 h-68 c-3.3 0 -6 -2.7 -6 -6 z" fill="#374151"/>
+                            <path d="M10 43 h80 v16 h-80 z" fill="#1F2937"/>
+                            <path d="M25 43 L10 59 M45 43 L30 59 M65 43 L50 59 M85 43 L70 59" stroke="#FACC15" stroke-width="4" stroke-linecap="square"/>
+                        </svg>
+                    </div>
+                    <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
+                    <p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.2s;">
+                    <div class="mb-6 flex justify-center items-center h-16">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 robot-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="35" width="50" height="45" rx="8" fill="#374151"/>
+                            <path d="M50 35 L50 20" stroke="#9CA3AF" stroke-width="4"/>
+                            <circle cx="50" cy="15" r="5" fill="#FACC15"/>
+                            <rect x="15" y="50" width="10" height="15" rx="3" fill="#4B5563"/>
+                            <rect x="75" y="50" width="10" height="15" rx="3" fill="#4B5563"/>
+                            <circle cx="38" cy="55" r="5" fill="#60A5FA"/>
+                            <g class="robot-eye" style="transform-origin: 62px 55px;">
+                                <circle cx="62" cy="55" r="5" fill="#60A5FA"/>
+                            </g>
+                            <rect x="40" y="70" width="20" height="4" rx="2" fill="#111827"/>
+                        </svg>
+                    </div>
+                    <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3>
+                    <p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.3s;">
+                    <div class="mb-6 flex justify-center items-center h-16">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 earth-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <clipPath id="earth-clip">
+                                <circle cx="50" cy="50" r="40"/>
+                            </clipPath>
+                            <circle cx="50" cy="50" r="40" fill="#2563EB"/>
+                            <circle cx="50" cy="50" r="40" fill="url(#earth-shadow)"/>
+                            <defs>
+                                <radialGradient id="earth-shadow" cx="30%" cy="30%" r="70%">
+                                    <stop offset="60%" stop-color="transparent"/>
+                                    <stop offset="100%" stop-color="rgba(0,0,0,0.6)"/>
+                                </radialGradient>
+                            </defs>
+                            <g clip-path="url(#earth-clip)">
+                                <g class="earth-map" fill="#10B981">
+                                    <path d="M 5 25 C 20 10, 40 30, 50 40 C 60 50, 40 80, 20 70 C 0 60, -10 40, 5 25 Z"/>
+                                    <path d="M 70 15 C 90 5, 95 30, 85 50 C 75 70, 60 80, 55 60 C 50 40, 50 25, 70 15 Z"/>
+                                    <path d="M 105 25 C 120 10, 140 30, 150 40 C 160 50, 140 80, 120 70 C 100 60, 90 40, 105 25 Z"/>
+                                    <path d="M 170 15 C 190 5, 195 30, 185 50 C 175 70, 160 80, 155 60 C 150 40, 150 25, 170 15 Z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3>
+                    <p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p>
+                </div>
             </div>
 
             <div id="filmography" class="max-w-4xl mx-auto space-y-20">
