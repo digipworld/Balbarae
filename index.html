@@ -521,4 +521,86 @@
                 c4: "<strong class='text-white'>4/ Ses Tasarımcısı:</strong> Fas Kısa Filmi <span class='italic'>\"Oracle\"</span> (2019) yönetmen Ismail Benaghmouch <a href='https://www.imdb.com/title/tt35663320/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a>",
                 cv_main: "Dijital <span class='gradient-text'>Özgeçmiş.</span>",
                 cv_exp: "Deneyim", cv_edu: "Eğitim", cv_skills: "Ustalaştığım Programlar", cv_lang: "Konuştuğum Diller",
-                lang1: "Arapça", lang2: "İngilizce", lang
+                lang1: "Arapça", lang2: "İngilizce", lang3: "Fransızca", lang4: "Türkçe",
+                lang1_lvl: "Anadil", lang2_lvl: "Orta Üstü", lang3_lvl: "Akıcı", lang4_lvl: "B1 Seviyesi",
+                exp1_t: "Kurucu & CEO", exp1_d: "DIGIPWORLD LLC | Eki 2025 - Günümüz", exp1_c: "Wyoming merkezli, yasal olarak kayıtlı ABD şirketi. \"DIGIPWORLD\" (DİJİTAL ÜRÜNLER DÜNYASI), gelecekte dijital bir Etsy ve Amazon inşa etme yönündeki nihai vizyonumu yansıtıyor. Bugün ise işletmelerin ve bireylerin çalışma ortamlarını kolaylaştıran, profesyonel yaşamlarını iyileştiren ve proje üretkenliklerini artıran birinci sınıf dijital ürünler ve hizmetler sunmaya odaklanıyoruz. Tüm bunları üst düzey güvenli bir altyapı ile sağlıyoruz.",
+                exp1_l: "Hizmetlerimizi sunmak için web sitemiz yakında açılıyor",
+                exp2_t: "Kurucu & Pazarlama Direktörü", exp2_d: "TIQAH COMPANY | 2023 - Günümüz", exp2_c: "Fas'ın Rabat kentinde Eğitim, Hizmetler ve Görsel-İşitsel Üretim alanında uzmanlaşmış bir şirket kurdu.",
+                exp2_l1: "Web Sitesi", exp2_l2: "Instagram", exp2_l3: "YouTube",
+                exp3_t: "Pazarlama Müdürü (CMO)", exp3_d: "PHI DENTAL CLINIC | 2023 - 2024", exp3_c: "Sosyal medya varlığını yönetti, yaratıcı içerik üretti ve Instagram takipçi sayısını 4K'dan 10K'ya çıkardı.",
+                exp4_t: "Yönetmen Yardımcısı Stajyeri", exp4_d: "DUNE FILM (Netflix) | 2018", exp4_c: "Remi Weekes'in yönettiği İngiliz kurgu filmi 'His House'da görev aldı.",
+                edu1_t: "Sinema ve Televizyon Yüksek Lisansı", edu1_d: "İSTİNYE ÜNİVERSİTESİ | 2024 - Günümüz",
+                edu2_t: "Sinema ve Görsel-İşitsel Lisans", edu2_d: "IBN ZOHR ÜNİVERSİTESİ | 2020 - 2021",
+                edu3_t: "Sinema ve Görsel-İşitsel Uzmanlık Diploması", edu3_d: "ISCA | 2017 - 2020",
+                iq_t: "Onaylı IQ Puanı", iq_d: "Üst yüzdelik bilişsel performans değerlendirmesi.", iq_l: "Sertifikayı Görüntüle",
+                btn_dl: "Tüm Özgeçmişi İndir",
+                c_t: "İletişime Geç", footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir", dir: "ltr"
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('hero-tag').innerText = t.tag;
+            document.getElementById('hero-title').innerHTML = t.title;
+            document.getElementById('hero-desc').innerHTML = t.desc;
+            document.getElementById('film-title').innerHTML = t.film_t;
+            document.getElementById('ind-credits-title').innerText = t.ind_t;
+            document.getElementById('quote-text').innerText = t.quote;
+            document.getElementById('quote-attribution').innerText = t.attribution;
+            document.getElementById('btn-main').innerText = t.btn;
+            document.getElementById('btn-sec').innerText = t.btn2;
+            document.getElementById('skills-main-title').innerHTML = t.skills_title;
+            document.getElementById('srv1-title').innerText = t.s1_t;
+            document.getElementById('srv1-desc').innerText = t.s1_d;
+            document.getElementById('srv2-title').innerText = t.s2_t;
+            document.getElementById('srv2-desc').innerText = t.s2_d;
+            document.getElementById('srv3-title').innerText = t.s3_t;
+            document.getElementById('srv3-desc').innerText = t.s3_d;
+            
+            document.getElementById('film1-t').innerText = t.f1_t; document.getElementById('film1-d').innerText = t.f1_d;
+            document.getElementById('film2-t').innerText = t.f2_t; document.getElementById('film2-d').innerText = t.f2_d;
+            document.getElementById('film3-t').innerText = t.f3_t; document.getElementById('film3-d').innerText = t.f3_d;
+            document.getElementById('film4-t').innerText = t.f4_t; document.getElementById('film4-d').innerText = t.f4_d;
+            document.getElementById('film5-t').innerText = t.f5_t; document.getElementById('film5-d').innerText = t.f5_d;
+            document.getElementById('film6-t').innerText = t.f6_t; document.getElementById('film6-d').innerText = t.f6_d;
+            
+            document.getElementById('cred1').innerHTML = t.c1;
+            document.getElementById('cred2').innerHTML = t.c2;
+            document.getElementById('cred3').innerHTML = t.c3;
+            document.getElementById('cred4').innerHTML = t.c4;
+
+            // CV Translations
+            document.getElementById('cv-main-title').innerHTML = t.cv_main;
+            document.getElementById('cv-exp-title').innerHTML = `<i class="fas fa-briefcase"></i> ${t.cv_exp}`;
+            document.getElementById('cv-edu-title').innerHTML = `<i class="fas fa-graduation-cap"></i> ${t.cv_edu}`;
+            document.getElementById('cv-skills-title').innerHTML = `<i class="fas fa-tools text-gray-400"></i> ${t.cv_skills}`;
+            document.getElementById('cv-lang-title').innerHTML = `<i class="fas fa-language text-gray-400"></i> ${t.cv_lang}`;
+            
+            document.getElementById('lang1-n').innerText = t.lang1; document.getElementById('lang1-lvl').innerText = t.lang1_lvl;
+            document.getElementById('lang2-n').innerText = t.lang2; document.getElementById('lang2-lvl').innerText = t.lang2_lvl;
+            document.getElementById('lang3-n').innerText = t.lang3; document.getElementById('lang3-lvl').innerText = t.lang3_lvl;
+            document.getElementById('lang4-n').innerText = t.lang4; document.getElementById('lang4-lvl').innerText = t.lang4_lvl;
+
+            document.getElementById('exp1-t').innerText = t.exp1_t; document.getElementById('exp1-d').innerText = t.exp1_d; document.getElementById('exp1-c').innerText = t.exp1_c; document.getElementById('exp1-link').innerText = t.exp1_l;
+            document.getElementById('exp2-t').innerText = t.exp2_t; document.getElementById('exp2-d').innerText = t.exp2_d; document.getElementById('exp2-c').innerText = t.exp2_c;
+            document.getElementById('exp2-link1').innerText = t.exp2_l1; document.getElementById('exp2-link2').innerText = t.exp2_l2; document.getElementById('exp2-link3').innerText = t.exp2_l3;
+            document.getElementById('exp3-t').innerText = t.exp3_t; document.getElementById('exp3-d').innerText = t.exp3_d; document.getElementById('exp3-c').innerText = t.exp3_c;
+            document.getElementById('exp4-t').innerText = t.exp4_t; document.getElementById('exp4-d').innerText = t.exp4_d; document.getElementById('exp4-c').innerText = t.exp4_c;
+            
+            document.getElementById('edu1-t').innerText = t.edu1_t; document.getElementById('edu1-d').innerText = t.edu1_d;
+            document.getElementById('edu2-t').innerText = t.edu2_t; document.getElementById('edu2-d').innerText = t.edu2_d;
+            document.getElementById('edu3-t').innerText = t.edu3_t; document.getElementById('edu3-d').innerText = t.edu3_d;
+
+            document.getElementById('iq-title').innerText = t.iq_t;
+            document.getElementById('iq-desc').innerText = t.iq_d;
+            document.getElementById('iq-link').innerText = t.iq_l;
+            document.getElementById('btn-download').innerText = t.btn_dl;
+
+            document.getElementById('contact-title').innerText = t.c_t;
+            document.body.dir = t.dir;
+            document.body.classList.toggle('rtl', t.dir === 'rtl');
+            ['en', 'ar', 'tr'].forEach(l => document.getElementById(`btn-${l}`).className = (l === lang) ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white");
+        }
+    </script>
+</body>
+</html>
