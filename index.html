@@ -68,29 +68,30 @@
             transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* --- Custom SVG Hover Animations --- */
+        /* --- Custom SVG Auto-Animations --- */
         @keyframes clap-action {
-            0% { transform: rotate(0deg); }
-            15% { transform: rotate(-30deg); }
-            30% { transform: rotate(-30deg); }
-            45% { transform: rotate(0deg); }
-            60% { transform: rotate(-10deg); }
-            75% { transform: rotate(0deg); }
+            0%, 80% { transform: rotate(0deg); }
+            85% { transform: rotate(-35deg); }
+            92% { transform: rotate(0deg); }
+            96% { transform: rotate(-10deg); }
             100% { transform: rotate(0deg); }
         }
-        .group:hover .clapper-top { animation: clap-action 1.5s ease-in-out infinite; }
+        /* يعمل كل ثانيتين (2s) */
+        .clapper-top { animation: clap-action 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 
         @keyframes wink {
-            0%, 30%, 100% { transform: scaleY(1); }
-            15% { transform: scaleY(0.1); }
+            0%, 85%, 100% { transform: scaleY(1); }
+            90% { transform: scaleY(0.1); }
         }
-        .group:hover .robot-eye { animation: wink 1.5s ease-in-out infinite; }
+        /* يغمز كل ثانيتين (2s) */
+        .robot-eye { animation: wink 2s ease-in-out infinite; }
 
         @keyframes spin-earth {
             0% { transform: translateX(0); }
             100% { transform: translateX(-100px); }
         }
-        .group:hover .earth-map { animation: spin-earth 3s linear infinite; }
+        /* يدور بدون توقف */
+        .earth-map { animation: spin-earth 4s linear infinite; }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
