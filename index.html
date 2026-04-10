@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="bg-[#0a0a0a]">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,22 +18,27 @@
 
     <style>
         :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: var(--font-en); transition: background-color 0.3s ease, color 0.3s ease; overflow-x: hidden; background-color: #0a0a0a; color: white; }
+        html { scroll-behavior: smooth; overflow-x: hidden; background-color: #0a0a0a; }
+        body { font-family: var(--font-en); transition: background-color 0.3s ease, color 0.3s ease; overflow-x: hidden; background-color: #0a0a0a; color: white; margin: 0; }
         body.rtl { font-family: var(--font-ar); direction: rtl; }
+        
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
         .gradient-text { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-bg { background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.1), transparent), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent); }
+        
+        /* تحسين الخلفية لضمان بقائها سوداء */
+        .hero-bg { background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.08), transparent 40%), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent 40%); }
+        
         .social-link { transition: transform 0.3s ease, color 0.3s ease; color: #9ca3af; }
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
+        
         #backToTop { position: fixed; bottom: 30px; right: 30px; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 100; }
         #backToTop.show { opacity: 1; visibility: visible; }
         
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; background: #000; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         
         .timeline-line { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1.5rem; margin-left: 0.75rem; }
-        .timeline-dot { position: absolute; left: -31px; top: 6px; width: 14px; height: 14px; border-radius: 50%; }
+        .timeline-dot { position: absolute; left: -31px; top: 6px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #0a0a0a; }
         body.rtl .timeline-line { border-left: none; border-right: 2px solid rgba(255,255,255,0.1); padding-left: 0; padding-right: 1.5rem; margin-left: 0; margin-right: 0.75rem; }
         body.rtl .timeline-dot { left: auto; right: -31px; }
 
@@ -42,38 +47,23 @@
         
         .progress-fill { width: 0%; transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1); will-change: width; }
 
-        /* --- Coordinated SVG Animations --- */
-        @keyframes clap-action {
-            0% { transform: rotate(0deg); }
-            5% { transform: rotate(-45deg); }
-            15% { transform: rotate(-45deg); }
-            20% { transform: rotate(0deg); }
-            23% { transform: rotate(-8deg); }
-            26%, 100% { transform: rotate(0deg); }
-        }
+        /* --- Animations --- */
+        @keyframes clap-action { 0%, 42% { transform: rotate(0deg); } 45% { transform: rotate(-45deg); } 52% { transform: rotate(0deg); } 55% { transform: rotate(-8deg); } 58%, 100% { transform: rotate(0deg); } }
         .clapper-top { animation: clap-action 4s ease-in-out infinite; }
-
-        @keyframes wink {
-            0%, 42%, 48%, 100% { transform: scaleY(1); }
-            45% { transform: scaleY(0.1); }
-        }
+        @keyframes wink { 0%, 65%, 71%, 100% { transform: scaleY(1); } 68% { transform: scaleY(0.1); } }
         .robot-eye { animation: wink 4s ease-in-out infinite; }
-
-        @keyframes spin-earth {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100px); }
-        }
+        @keyframes spin-earth { 0% { transform: translateX(0); } 100% { transform: translateX(-100px); } }
         .earth-map { animation: spin-earth 4s linear infinite; }
     </style>
 </head>
-<body class="hero-bg min-h-screen">
+<body class="hero-bg">
 
-    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="glass w-12 h-12 rounded-full flex items-center justify-center text-yellow-500 hover:text-white hover:bg-yellow-500/20 transition-all duration-300">
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="glass w-12 h-12 rounded-full flex items-center justify-center text-yellow-500 hover:text-white transition-all duration-300">
         <i class="fas fa-chevron-up"></i>
     </button>
 
     <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3 reveal active">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
             <h1 class="text-2xl font-black tracking-tighter gradient-text">BALBARAE</h1>
             <div class="flex items-center gap-4">
                 <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl" dir="ltr">
@@ -85,24 +75,24 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-4 md:px-6 text-center">
+    <section class="pt-48 pb-20 px-4 text-center">
         <div class="max-w-5xl mx-auto">
-            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block reveal">Filmmaker, AI Consultant & Digital Visionary</span>
-            <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight reveal" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
-            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-4xl mx-auto mb-12 reveal" style="transition-delay: 0.2s;">
+            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block reveal active">Filmmaker, AI Consultant & Digital Visionary</span>
+            <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight reveal active" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
+            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-4xl mx-auto mb-12 reveal active" style="transition-delay: 0.2s;">
                 I am <span class="text-white font-bold">Albarae Bourkadi</span>, 27 Years old, Moroccan 🇲🇦, Founder of DIGIPWORLD LLC. I bridge high-end storytelling with digital growth strategies.
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4 reveal" style="transition-delay: 0.4s;">
-                <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 transition">Let's Talk</a>
-                <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 500);" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">Who is Albarae?</a>
+            <div class="flex flex-col md:flex-row justify-center gap-4 reveal active" style="transition-delay: 0.3s;">
+                <a href="#contact" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/10">Let's Talk</a>
+                <a href="#manifesto" onclick="event.preventDefault(); slowScrollTo('manifesto', 500);" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">Who is Albarae?</a>
             </div>
         </div>
     </section>
 
-    <section id="manifesto" class="py-24 px-4 md:px-6 relative bg-black/30 w-full overflow-hidden">
+    <section id="manifesto" class="py-24 px-4 md:px-6 relative bg-black/40 w-full">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="flex justify-center md:justify-end reveal"><img src="portrait.jpg" class="rounded-3xl shadow-2xl border-4 border-yellow-500 w-full max-w-sm aspect-[3/4] object-cover"></div>
-            <div class="space-y-6 text-center md:text-left rtl:md:text-right reveal" style="transition-delay: 0.25s;">
+            <div class="space-y-6 text-center md:text-left rtl:md:text-right reveal" style="transition-delay: 0.2s;">
                 <i class="fas fa-quote-right text-yellow-500 text-4xl md:text-6xl block"></i>
                 <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl font-light italic leading-relaxed text-gray-100">"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be."</h3>
                 <p id="quote-attribution" class="text-lg md:text-xl font-bold gradient-text">— Albarae Bourkadi</p>
@@ -110,32 +100,32 @@
         </div>
     </section>
 
-    <section id="skills" class="py-20 px-6 border-t border-white/5">
+    <section id="skills" class="py-24 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16 reveal">Who is <span class="gradient-text">Albarae?</span></h2>
             <div class="grid md:grid-cols-3 gap-8 mb-24">
-                <div class="glass p-8 rounded-3xl group reveal text-center flex flex-col items-center">
+                <div class="glass p-10 rounded-3xl group reveal text-center flex flex-col items-center">
                     <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16 overflow-visible"><g class="clapper-top" style="transform-origin: 10px 42px;"><path d="M10 25 h80 v16 h-80 z" fill="#1F2937"/><path d="M15 25 L30 41 M35 25 L50 41 M55 25 L70 41 M75 25 L90 41" stroke="#FACC15" stroke-width="4"/></g><path d="M10 43 h80 v35 c0 3.3 -2.7 6 -6 6 h-68 c-3.3 0 -6 -2.7 -6 -6 z" fill="#374151"/><path d="M10 43 h80 v16 h-80 z" fill="#1F2937"/><path d="M25 43 L10 59 M45 43 L30 59 M65 43 L50 59 M85 43 L70 59" stroke="#FACC15" stroke-width="4"/></svg></div>
                     <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
                     <p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.1s;">
+                <div class="glass p-10 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.1s;">
                     <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16"><rect x="25" y="35" width="50" height="45" rx="8" fill="#374151"/><circle cx="38" cy="55" r="5" fill="#60A5FA"/><g class="robot-eye" style="transform-origin: 62px 55px;"><circle cx="62" cy="55" r="5" fill="#60A5FA"/></g><rect x="40" y="70" width="20" height="4" rx="2" fill="#111827"/></svg></div>
                     <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3>
                     <p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.2s;">
+                <div class="glass p-10 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.2s;">
                     <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16"><circle cx="50" cy="50" r="40" fill="#2563EB"/><g clip-path="url(#earth-clip)"><g class="earth-map" fill="#10B981"><path d="M 5 25 C 20 10, 40 30, 50 40 C 60 50, 40 80, 20 70 C 0 60, -10 40, 5 25 Z M 105 25 C 120 10, 140 30, 150 40 C 160 50, 140 80, 120 70 C 100 60, 90 40, 105 25 Z"/></g></g><defs><clipPath id="earth-clip"><circle cx="50" cy="50" r="40"/></clipPath></defs></svg></div>
                     <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3>
                     <p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling for social justice and global awareness.</p>
                 </div>
             </div>
 
-            <div id="filmography" class="max-w-4xl mx-auto space-y-20 mb-24">
+            <div id="filmography" class="max-w-4xl mx-auto space-y-24 mb-24">
                 <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center italic reveal">Selected <span class="gradient-text">Works.</span></h2>
-                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div><div class="px-4"><h4 id="film1-t" class="text-2xl font-bold text-yellow-500">BETTER DAYS (2019)</h4><p id="film1-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
-                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yyoPEFQ_Pe8" allowfullscreen></iframe></div><div class="px-4"><h4 id="film3-t" class="text-2xl font-bold text-yellow-500">NOT ACHIEVED (2020)</h4><p id="film3-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
-                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://player.vimeo.com/video/369136311" allowfullscreen></iframe></div><div class="px-4"><h4 id="film5-t" class="text-2xl font-bold text-yellow-500">WC SHORT FILM (2019)</h4><p id="film5-d" class="text-gray-400 italic">Editor - VFX - Sound Designer</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 class="text-2xl font-bold text-yellow-500">BETTER DAYS (2019)</h4><p class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yyoPEFQ_Pe8" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 class="text-2xl font-bold text-yellow-500">NOT ACHIEVED (2020)</h4><p class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://player.vimeo.com/video/369136311" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 class="text-2xl font-bold text-yellow-500">WC SHORT FILM (2019)</h4><p class="text-gray-400 italic">Editor - VFX - Sound Designer</p></div></div>
             </div>
 
             <div class="glass p-8 md:p-12 rounded-3xl border-2 border-yellow-500/50 shadow-xl reveal">
@@ -150,48 +140,37 @@
         </div>
     </section>
 
-    <section id="resume" class="py-24 px-4 md:px-6 border-t border-white/5 bg-black/20">
+    <section id="resume" class="py-24 px-4 border-t border-white/5 bg-black/20">
         <div class="max-w-6xl mx-auto">
             <h2 id="cv-main-title" class="text-4xl md:text-5xl font-black text-center mb-20 italic reveal">Digital <span class="gradient-text">Resume.</span></h2>
             <div class="grid md:grid-cols-2 gap-16 md:gap-24">
                 <div class="reveal">
                     <h3 id="cv-exp-title" class="text-2xl font-bold mb-10 text-yellow-500"><i class="fas fa-briefcase mr-2"></i> Experience</h3>
                     <div class="space-y-10 timeline-line">
-                        <div class="relative"><div class="timeline-dot bg-yellow-500"></div><h4 class="text-xl font-bold">Founder & CEO</h4><p class="text-yellow-500 text-sm font-bold">DIGIPWORLD LLC | 2025 - Present</p></div>
-                        <div class="relative"><div class="timeline-dot bg-white/20"></div><h4 class="text-xl font-bold">Founder & Marketing Director</h4><p class="text-yellow-500 text-sm font-bold">TIQAH COMPANY | 2023 - Present</p></div>
+                        <div class="relative"><div class="timeline-dot bg-yellow-500 shadow-[0_0_10px_#facc15]"></div><h4 class="text-xl font-bold text-white">Founder & CEO</h4><p class="text-yellow-500 text-sm font-bold">DIGIPWORLD LLC | 2025 - Present</p><p class="text-gray-400 mt-2">Specializing in premium digital products and secure infrastructure solutions.</p></div>
+                        <div class="relative"><div class="timeline-dot bg-white/20"></div><h4 class="text-xl font-bold text-white">Founder & Marketing Director</h4><p class="text-yellow-500 text-sm font-bold">TIQAH COMPANY | 2023 - Present</p></div>
                     </div>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <h3 id="cv-edu-title" class="text-2xl font-bold mb-10 text-orange-500"><i class="fas fa-graduation-cap mr-2"></i> Education</h3>
                     <div class="space-y-10 timeline-line">
-                        <div class="relative"><div class="timeline-dot bg-orange-500"></div><h4 class="text-xl font-bold">Master in Cinema and Television</h4><p class="text-orange-500 text-sm font-bold">ISTINYE UNIVERSITY | 2024 - Present</p></div>
-                        <div class="relative"><div class="timeline-dot bg-white/20"></div><h4 class="text-xl font-bold">Bachelor in Cinema</h4><p class="text-orange-500 text-sm font-bold">IBN ZOHR UNIVERSITY | 2020 - 2021</p></div>
+                        <div class="relative"><div class="timeline-dot bg-orange-500 shadow-[0_0_10px_#f97316]"></div><h4 class="text-xl font-bold text-white">Master in Cinema and Television</h4><p class="text-orange-500 text-sm font-bold">ISTINYE UNIVERSITY | 2024 - Present</p></div>
+                        <div class="relative"><div class="timeline-dot bg-white/20"></div><h4 class="text-xl font-bold text-white">Bachelor in Cinema</h4><p class="text-orange-500 text-sm font-bold">IBN ZOHR UNIVERSITY | 2020 - 2021</p></div>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-20 glass p-8 rounded-3xl border border-blue-500/30 reveal flex items-center gap-8 max-w-2xl mx-auto">
-                <div class="text-5xl font-black text-blue-500">125</div>
-                <div><h4 id="iq-title" class="text-2xl font-bold">Certified IQ Score</h4><p id="iq-desc" class="text-gray-400">Top percentile cognitive performance assessment.</p></div>
-            </div>
-
-            <div class="mt-20 border-t border-white/5 pt-16 reveal">
-                <h3 id="cv-lang-title" class="text-2xl font-bold mb-10 text-center">Languages I Speak</h3>
+            <div class="mt-20 border-t border-white/5 pt-16 reveal text-center">
+                <h3 id="cv-lang-title" class="text-2xl font-bold mb-10">Languages I Speak</h3>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" dir="ltr">
-                    <div class="glass p-5 rounded-2xl">
-                        <div class="flex justify-between mb-2"><span>Arabic</span><span class="text-green-400 font-bold">Native - 100%</span></div>
-                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-green-500 h-2.5 rounded-full progress-fill" data-width="100%"></div></div>
-                    </div>
-                    <div class="glass p-5 rounded-2xl">
-                        <div class="flex justify-between mb-2"><span>French</span><span class="text-yellow-400 font-bold">Fluently - 90%</span></div>
-                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-yellow-500 h-2.5 rounded-full progress-fill" data-width="90%"></div></div>
-                    </div>
+                    <div class="glass p-5 rounded-2xl"><div class="flex justify-between mb-2"><span>Arabic</span><span class="text-green-400 font-bold">Native - 100%</span></div><div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-green-500 h-2.5 rounded-full progress-fill" data-width="100%"></div></div></div>
+                    <div class="glass p-5 rounded-2xl"><div class="flex justify-between mb-2"><span>French</span><span class="text-yellow-400 font-bold">Fluently - 90%</span></div><div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-yellow-500 h-2.5 rounded-full progress-fill" data-width="90%"></div></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="py-24 px-4 border-t border-white/5 bg-black/10">
+    <section id="blog" class="py-24 px-4 border-t border-white/5 bg-black/40">
         <div class="max-w-7xl mx-auto">
             <h2 id="blog-main-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic reveal">Digital <span class="gradient-text">Insights.</span></h2>
             <div class="grid md:grid-cols-3 gap-8">
@@ -226,16 +205,12 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5 reveal">
+    <section id="contact" class="py-24 px-4 border-t border-white/5 bg-[#0a0a0a]">
         <div class="max-w-4xl mx-auto glass p-10 rounded-3xl text-center">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-10 text-gray-400" dir="ltr">
-                <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Istanbul, Turkey</p>
-                <p><i class="fas fa-envelope text-yellow-500 mr-2"></i> contact@balbarae.com</p>
-            </div>
             <form action="https://api.web3forms.com/submit" method="POST" class="text-left" dir="ltr">
                 <input type="hidden" name="access_key" value="419e0596-7284-49bf-bf8a-ba65156494f6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <input type="text" name="name" placeholder="Name" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-yellow-500 outline-none w-full">
                     <input type="email" name="email" placeholder="Email" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-yellow-500 outline-none w-full">
                 </div>
@@ -245,7 +220,7 @@
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500 font-medium">© 2026 All rights reserved to <span class="text-white">Balbarae</span></footer>
+    <footer class="py-12 border-t border-white/5 text-center text-gray-500 font-medium bg-[#0a0a0a]">© 2026 All rights reserved to <span class="text-white">Balbarae</span></footer>
 
     <script>
         function slowScrollTo(targetId, duration) {
@@ -295,7 +270,7 @@
         };
 
         function setLanguage(lang) {
-            const t = translations[lang];
+            const t = translations[lang] || translations['en'];
             document.getElementById('hero-tag').innerText = t.tag;
             document.getElementById('hero-desc').innerHTML = t.desc;
             document.getElementById('skills-main-title').innerHTML = t.skills_title;
