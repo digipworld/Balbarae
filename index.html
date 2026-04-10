@@ -29,8 +29,8 @@
 
     <style>
         :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-en); transition: all 0.3s ease; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: var(--font-en); transition: all 0.3s ease; overflow-x: hidden; }
         body.rtl { font-family: var(--font-ar); direction: rtl; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
         .gradient-text { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -48,11 +48,28 @@
         .map-container:hover .map-golden, .map-container:focus-within .map-golden { filter: none !important; }
         @media (pointer: coarse) { .map-golden { filter: none !important; } }
 
-        /* Timeline CSS Styles for LTR and RTL support */
+        /* Timeline CSS Styles */
         .timeline-line { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1.5rem; margin-left: 0.75rem; }
         .timeline-dot { position: absolute; left: -31px; top: 6px; width: 14px; height: 14px; border-radius: 50%; }
         body.rtl .timeline-line { border-left: none; border-right: 2px solid rgba(255,255,255,0.1); padding-left: 0; padding-right: 1.5rem; margin-left: 0; margin-right: 0.75rem; }
         body.rtl .timeline-dot { left: auto; right: -31px; }
+
+        /* --- Scroll Reveal Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- Progress Bar Animation --- */
+        .progress-fill {
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
@@ -62,7 +79,7 @@
     </button>
 
     <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3 reveal active">
             <h1 class="text-2xl font-black tracking-tighter gradient-text">BALBARAE</h1>
             <div class="flex items-center gap-4">
                 <div class="hidden md:flex gap-4 border-r border-white/10 pr-4 mr-2" dir="ltr">
@@ -84,11 +101,11 @@
 
     <section class="pt-48 pb-20 px-4 md:px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto">
-            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block">Filmmaker, AI Consultant & Digital Visionary</span>
-            <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
-            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed px-2">I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.</p>
+            <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block reveal">Filmmaker, AI Consultant & Digital Visionary</span>
+            <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight reveal" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
+            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed px-2 reveal" style="transition-delay: 0.2s;">I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.</p>
             
-            <div class="flex flex-wrap justify-center gap-5 mb-12 text-2xl" dir="ltr">
+            <div class="flex flex-wrap justify-center gap-5 mb-12 text-2xl reveal" style="transition-delay: 0.3s;" dir="ltr">
                 <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/balbarae" target="_blank" class="social-link hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
                 <a href="https://vimeo.com/balbarae" target="_blank" class="social-link hover:text-sky-400"><i class="fab fa-vimeo-v"></i></a>
@@ -97,7 +114,7 @@
                 <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons px-4">
+            <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons px-4 reveal" style="transition-delay: 0.4s;">
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
                 <a href="#manifesto" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">Who is Albarae?</a>
             </div>
@@ -106,8 +123,8 @@
 
     <section id="manifesto" class="py-24 px-4 md:px-6 relative bg-black/30 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="flex justify-center md:justify-end order-2 md:order-1 px-4"><img src="portrait.jpg" class="rounded-3xl shadow-2xl border-4 border-yellow-500 w-full max-w-sm aspect-[3/4] object-cover"></div>
-            <div class="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left rtl:md:text-right px-2">
+            <div class="flex justify-center md:justify-end order-2 md:order-1 px-4 reveal"><img src="portrait.jpg" class="rounded-3xl shadow-2xl border-4 border-yellow-500 w-full max-w-sm aspect-[3/4] object-cover hover:scale-105 transition duration-500"></div>
+            <div class="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left rtl:md:text-right px-2 reveal" style="transition-delay: 0.2s;">
                 <i class="fas fa-quote-right text-yellow-500 text-4xl md:text-6xl block"></i>
                 <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl font-light italic leading-relaxed quote-glow text-gray-100">"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be."</h3>
                 <p id="quote-attribution" class="text-lg md:text-xl font-bold gradient-text">— Albarae Bourkadi</p>
@@ -117,47 +134,47 @@
 
     <section id="skills" class="py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16">Who is <span class="gradient-text">Albarae?</span></h2>
+            <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16 reveal">Who is <span class="gradient-text">Albarae?</span></h2>
             <div class="grid md:grid-cols-3 gap-8 mb-24">
-                <div class="glass p-8 rounded-3xl group"><div class="text-2xl mb-6">🎬</div><h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3><p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p></div>
-                <div class="glass p-8 rounded-3xl group"><div class="text-2xl mb-6">🤖</div><h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3><p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p></div>
-                <div class="glass p-8 rounded-3xl group"><div class="text-2xl mb-6">🌍</div><h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3><p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p></div>
+                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.1s;"><div class="text-2xl mb-6 group-hover:scale-125 transition duration-300">🎬</div><h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3><p id="srv1-desc" class="text-gray-400">Mastering the creation of high-end cinematic visual identities.</p></div>
+                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.2s;"><div class="text-2xl mb-6 group-hover:scale-125 transition duration-300">🤖</div><h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3><p id="srv2-desc" class="text-gray-400">Pioneering the use of advanced AI in creative production workflows.</p></div>
+                <div class="glass p-8 rounded-3xl group reveal" style="transition-delay: 0.3s;"><div class="text-2xl mb-6 group-hover:scale-125 transition duration-300">🌍</div><h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3><p id="srv3-desc" class="text-gray-400">Leveraging visual storytelling to drive social justice and global awareness.</p></div>
             </div>
 
             <div id="filmography" class="max-w-4xl mx-auto space-y-20">
-                <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic">Selected <span class="gradient-text">Works.</span></h2>
+                <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic reveal">Selected <span class="gradient-text">Works.</span></h2>
                 
-                <div class="space-y-6">
+                <div class="space-y-6 reveal">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div>
                     <div class="px-4"><h4 id="film1-t" class="text-2xl font-bold text-yellow-500">BETTER DAYS SHORT FILM (2019)</h4><p id="film1-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
                 </div>
 
-                <div class="space-y-6">
+                <div class="space-y-6 reveal">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/UD4UYnAtwp4" allowfullscreen></iframe></div>
                     <div class="px-4"><h4 id="film2-t" class="text-2xl font-bold text-yellow-500">Behind scenes of Better Days (2019)</h4><p id="film2-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
                 </div>
 
-                <div class="space-y-6">
+                <div class="space-y-6 reveal">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yyoPEFQ_Pe8" allowfullscreen></iframe></div>
                     <div class="px-4"><h4 id="film3-t" class="text-2xl font-bold text-yellow-500">NOT ACHIEVED SHORT FILM (2020)</h4><p id="film3-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
                 </div>
 
-                <div class="space-y-6">
+                <div class="space-y-6 reveal">
                     <div class="video-wrapper"><iframe src="https://player.vimeo.com/video/357218069" allowfullscreen></iframe></div>
                     <div class="px-4"><h4 id="film4-t" class="text-2xl font-bold text-yellow-500">100 YEARS ELECTROLUX VIDEO PROMOTION (2019)</h4><p id="film4-d" class="text-gray-400 italic">1st Director Assistant and Editor</p></div>
                 </div>
 
-                <div class="space-y-6">
+                <div class="space-y-6 reveal">
                     <div class="video-wrapper"><iframe src="https://player.vimeo.com/video/369136311" allowfullscreen></iframe></div>
                     <div class="px-4"><h4 id="film5-t" class="text-2xl font-bold text-yellow-500">WC SHORT FILM (2019)</h4><p id="film5-d" class="text-gray-400 italic">Editor - VFX Supervisor - Sound Operator & Designer</p></div>
                 </div>
 
-                <div class="space-y-6">
+                <div class="space-y-6 reveal">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/33FBhr-dD7w" allowfullscreen></iframe></div>
                     <div class="px-4"><h4 id="film6-t" class="text-2xl font-bold text-yellow-500">THE OTHER SIDE SHORT FILM (2018)</h4><p id="film6-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
                 </div>
 
-                <div class="glass p-8 md:p-12 rounded-3xl border-2 border-yellow-500/50 hover:border-yellow-500 transition-colors duration-300 mt-24 shadow-xl">
+                <div class="glass p-8 md:p-12 rounded-3xl border-2 border-yellow-500/50 hover:border-yellow-500 transition-colors duration-300 mt-24 shadow-xl reveal">
                     <h3 id="ind-credits-title" class="text-3xl font-black mb-8 gradient-text">International Films Credits :</h3>
                     <ul class="space-y-6 text-lg md:text-xl text-gray-300">
                         <li id="cred1">
@@ -184,10 +201,10 @@
 
     <section id="resume" class="py-24 px-4 md:px-6 border-t border-white/5 bg-black/20">
         <div class="max-w-6xl mx-auto">
-            <h2 id="cv-main-title" class="text-4xl md:text-5xl font-black text-center mb-20 italic">Digital <span class="gradient-text">Resume.</span></h2>
+            <h2 id="cv-main-title" class="text-4xl md:text-5xl font-black text-center mb-20 italic reveal">Digital <span class="gradient-text">Resume.</span></h2>
 
             <div class="grid md:grid-cols-2 gap-16 md:gap-24">
-                <div>
+                <div class="reveal" style="transition-delay: 0.1s;">
                     <h3 id="cv-exp-title" class="text-2xl font-bold mb-10 text-yellow-500 flex items-center gap-3"><i class="fas fa-briefcase"></i> Experience</h3>
                     <div class="space-y-10 timeline-line">
                         
@@ -235,7 +252,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal" style="transition-delay: 0.3s;">
                     <h3 id="cv-edu-title" class="text-2xl font-bold mb-10 text-orange-500 flex items-center gap-3"><i class="fas fa-graduation-cap"></i> Education</h3>
                     <div class="space-y-10 timeline-line mb-16">
                         
@@ -273,66 +290,66 @@
                 </div>
             </div>
 
-            <div class="mt-20 border-t border-white/5 pt-16">
+            <div class="mt-20 border-t border-white/5 pt-16 reveal">
                 <h3 id="cv-lang-title" class="text-2xl font-bold mb-10 text-center flex justify-center items-center gap-3"><i class="fas fa-language text-gray-400"></i> Languages I Speak</h3>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" dir="ltr">
                     
-                    <div class="glass p-5 rounded-2xl">
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.1s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang1-n" class="font-bold text-white">Arabic</span>
                             <span class="text-green-400 font-bold"><span id="lang1-lvl">Native Language</span> - 100%</span>
                         </div>
                         <div class="w-full bg-white/10 rounded-full h-2.5">
-                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+                            <div class="bg-green-500 h-2.5 rounded-full progress-fill" data-width="100%"></div>
                         </div>
                     </div>
                     
-                    <div class="glass p-5 rounded-2xl">
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.2s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang3-n" class="font-bold text-white">French</span>
                             <span class="text-yellow-400 font-bold"><span id="lang3-lvl">Fluently</span> - 90%</span>
                         </div>
                         <div class="w-full bg-white/10 rounded-full h-2.5">
-                            <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            <div class="bg-yellow-500 h-2.5 rounded-full progress-fill" data-width="90%"></div>
                         </div>
                     </div>
 
-                    <div class="glass p-5 rounded-2xl">
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.3s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang2-n" class="font-bold text-white">English</span>
                             <span class="text-blue-400 font-bold"><span id="lang2-lvl">Upper Intermediate</span> - 70%</span>
                         </div>
                         <div class="w-full bg-white/10 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 70%"></div>
+                            <div class="bg-blue-500 h-2.5 rounded-full progress-fill" data-width="70%"></div>
                         </div>
                     </div>
                     
-                    <div class="glass p-5 rounded-2xl">
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.4s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang4-n" class="font-bold text-white">Turkish</span>
                             <span class="text-red-500 font-bold"><span id="lang4-lvl">B1 Level</span> - 60%</span>
                         </div>
                         <div class="w-full bg-white/10 rounded-full h-2.5">
-                            <div class="bg-red-600 h-2.5 rounded-full" style="width: 60%"></div>
+                            <div class="bg-red-600 h-2.5 rounded-full progress-fill" data-width="60%"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-20 border-t border-white/5 pt-16">
+            <div class="mt-20 border-t border-white/5 pt-16 reveal">
                 <h3 id="cv-skills-title" class="text-2xl font-bold mb-10 text-center flex justify-center items-center gap-3"><i class="fas fa-tools text-gray-400"></i> Software & Tools I Master</h3>
                 <div class="flex flex-wrap justify-center gap-4" dir="ltr">
-                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#9999ff] hover:border-[#9999ff]/50 transition cursor-default">Premiere Pro</span>
-                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#9999ff] hover:border-[#9999ff]/50 transition cursor-default">After Effects</span>
-                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#31a8ff] hover:border-[#31a8ff]/50 transition cursor-default">Photoshop</span>
-                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#ff9a00] hover:border-[#ff9a00]/50 transition cursor-default">Illustrator</span>
-                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#31a8ff] hover:border-[#31a8ff]/50 transition cursor-default">Lightroom</span>
-                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-red-500 hover:border-red-500/50 transition cursor-default">DaVinci Resolve</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#9999ff] hover:border-[#9999ff]/50 transition cursor-default reveal" style="transition-delay: 0.1s;">Premiere Pro</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#9999ff] hover:border-[#9999ff]/50 transition cursor-default reveal" style="transition-delay: 0.2s;">After Effects</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#31a8ff] hover:border-[#31a8ff]/50 transition cursor-default reveal" style="transition-delay: 0.3s;">Photoshop</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#ff9a00] hover:border-[#ff9a00]/50 transition cursor-default reveal" style="transition-delay: 0.4s;">Illustrator</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#31a8ff] hover:border-[#31a8ff]/50 transition cursor-default reveal" style="transition-delay: 0.5s;">Lightroom</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-red-500 hover:border-red-500/50 transition cursor-default reveal" style="transition-delay: 0.6s;">DaVinci Resolve</span>
                 </div>
             </div>
 
-            <div class="mt-16 text-center">
-                <a href="CV%20ALBARAE%20BOURKADI%20V%202025.pdf" target="_blank" class="inline-flex items-center justify-center gap-3 glass px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:text-yellow-500 transition border border-white/20">
+            <div class="mt-16 text-center reveal">
+                <a href="CV%20ALBARAE%20BOURKADI%20V%202025.pdf" target="_blank" class="inline-flex items-center justify-center gap-3 glass px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:text-yellow-500 transition border border-white/20 hover:scale-105 duration-300">
                     <i class="fas fa-file-download"></i> <span id="btn-download">Download Full CV</span>
                 </a>
             </div>
@@ -340,7 +357,7 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5">
+    <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5 reveal">
         <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-400 mb-10" dir="ltr">
@@ -350,11 +367,11 @@
             <form action="https://api.web3forms.com/submit" method="POST" class="text-left mb-12" dir="ltr">
                 <input type="hidden" name="access_key" value="419e0596-7284-49bf-bf8a-ba65156494f6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" name="name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white">
+                    <input type="text" name="name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
+                    <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
                 </div>
-                <textarea name="message" rows="4" placeholder="Message" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white mb-6"></textarea>
-                <button type="submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition">Send Message</button>
+                <textarea name="message" rows="4" placeholder="Message" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white mb-6 focus:outline-none focus:border-yellow-500 transition"></textarea>
+                <button type="submit" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 transition hover:scale-[1.02] duration-300">Send Message</button>
             </form>
             <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 bg-black map-container" ontouchstart="document.getElementById('gmap').style.filter='none'" onclick="document.getElementById('gmap').style.filter='none'">
                 <iframe id="gmap" src="https://maps.google.com/maps?q=Şişli,%20Istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
@@ -362,9 +379,41 @@
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500 font-medium">© 2026 All rights reserved to <span class="text-white">Balbarae</span></footer>
+    <footer class="py-12 border-t border-white/5 text-center text-gray-500 font-medium reveal">© 2026 All rights reserved to <span class="text-white">Balbarae</span></footer>
 
     <script>
+        // Scroll Reveal & Progress Bar Animation Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // يبدأ الحركة عندما يظهر 15% من العنصر في الشاشة
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // إضافة الكلاس active للعنصر ليظهر للفتوق
+                        entry.target.classList.add('active');
+                        
+                        // إذا كان العنصر يحتوي على شريط لغات، نجعله يمتلئ
+                        const progressBars = entry.target.querySelectorAll('.progress-fill');
+                        progressBars.forEach(bar => {
+                            bar.style.width = bar.getAttribute('data-width');
+                        });
+
+                        // إيقاف المراقبة بعد ظهور العنصر لكي لا يعيد الحركة كل مرة
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // مراقبة كل العناصر التي تحمل كلاس reveal
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
         window.onscroll = function() {
             const btn = document.getElementById("backToTop");
             if (document.documentElement.scrollTop > 500) btn.classList.add("show");
