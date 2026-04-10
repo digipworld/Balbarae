@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | Balbarae</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg?v=3">
+
+    <style>
+        :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: var(--font-en); background-color: #0a0a0a; color: white; overflow-x: hidden; transition: color 0.3s ease; }
+        body.rtl { font-family: var(--font-ar); direction: rtl; }
+        
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
+        .gradient-text { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Menu Overlay Transition */
+        #mobile-menu { transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s; }
+        
+        /* Article Typography styling */
+        .article-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #d1d5db; }
+        .article-content h2 { font-size: 1.875rem; font-weight: bold; margin-top: 2.5rem; margin-bottom: 1rem; color: white; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col relative">
+
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+            <a href="index.html" class="text-2xl font-black tracking-tighter gradient-text hover:scale-105 transition">BALBARAE <span class="text-white text-sm font-light tracking-normal ml-1">ARTICLE</span></a>
+            
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl" dir="ltr">
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black">EN</button>
+                    <button onclick="setLanguage('ar')" id="btn-ar" class="px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white">AR</button>
+                </div>
+                
+                <button id="menu-btn" class="w-10 h-10 flex items-center justify-center text-xl text-white hover:text-yellow-500 transition focus:outline-none bg-white/5 rounded-xl border border-white/10 ml-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0a0a0a]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center opacity-0 invisible">
+        <div class="flex flex-col items-center gap-8">
+            <a href="index.html" class="text-4xl md:text-6xl font-black text-white hover:text-yellow-500 transition duration-300 menu-link" id="menu-home">Home</a>
+            <a href="index.html#skills" class="text-4xl md:text-6xl font-black text-white hover:text-yellow-500 transition duration-300 menu-link" id="menu-portfolio">Portfolio</a>
+            <a href="index.html#contact" class="text-4xl md:text-6xl font-black text-white hover:text-yellow-500 transition duration-300 menu-link" id="menu-contact">Contact</a>
+        </div>
+    </div>
+
+    <header class="pt-40 pb-16 px-4 md:px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <span id="art-cat" class="text-yellow-500 border border-yellow-500/30 bg-yellow-500/5 px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">AI & Cinema</span>
+            <h1 id="art-title" class="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">The Future of AI in Cinematic Production</h1>
+            <div class="flex items-center justify-center gap-4 text-gray-500 text-sm font-bold" dir="ltr">
+                <span><i class="far fa-calendar-alt text-yellow-500 mr-2"></i> April 10, 2026</span>
+                <span>•</span>
+                <span><i class="fas fa-clock text-yellow-500 mr-2"></i> 5 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto w-full px-4 md:px-6 mb-16">
+        <div class="w-full h-64 md:h-96 bg-[#111] rounded-3xl border border-white/10 flex items-center justify-center text-7xl shadow-2xl">
+            🤖 🎬 ✨
+        </div>
+    </div>
+
+    <main class="flex-grow px-4 md:px-6 pb-24">
+        <div class="max-w-3xl mx-auto article-content text-lg">
+            <p id="p1">Artificial intelligence is no longer just a sci-fi concept on the silver screen; it has become the driving force behind the camera. From automated script analysis that predicts box office success, to intelligent framing tools that assist cinematographers, the landscape is shifting rapidly.</p>
+            
+            <h2 id="h2">The Post-Production Revolution</h2>
+            <p id="p2">VFX artists are seeing their workflows completely transformed. Tasks like rotoscoping and color grading, which previously took hundreds of hours, are now being accomplished in minutes using machine learning algorithms. This doesn't replace the artist; it empowers them to focus on the creative vision rather than the tedious manual labor.</p>
+            
+            <div class="glass p-8 rounded-2xl my-10 border-l-4 border-l-yellow-500 border-t-0 border-r-0 border-b-0">
+                <i class="fas fa-quote-left text-3xl text-yellow-500 mb-4 block"></i>
+                <p id="quote" class="text-xl font-bold italic text-white mb-0">"AI is not here to replace storytellers. It is here to give them an infinite canvas."</p>
+            </div>
+            
+            <p id="p3">As we move forward, the filmmakers who thrive will be those who embrace these digital tools. Integrating AI isn't a compromise of art; it's the evolution of it.</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto mt-16 pt-10 border-t border-white/10">
+            <a href="index.html" class="inline-flex items-center gap-3 text-white font-bold hover:text-yellow-500 transition group">
+                <i class="fas fa-arrow-left rtl:rotate-180 group-hover:-translate-x-1 transition"></i> <span id="back-btn">Back to Homepage</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="py-8 border-t border-white/5 text-center text-gray-500 font-medium">© 2026 All rights reserved to <span class="text-white">Balbarae</span></footer>
+
+    <script>
+        // --- Menu Logic ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'invisible');
+                mobileMenu.classList.add('opacity-100', 'visible');
+                menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'visible');
+                mobileMenu.classList.add('opacity-0', 'invisible');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = ''; 
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => link.addEventListener('click', () => {
+            if(isMenuOpen) toggleMenu();
+        }));
+
+        // --- Translations for Article Page ---
+        const translations = {
+            en: {
+                m_home: "Home", m_port: "Portfolio", m_contact: "Contact",
+                cat: "AI & Cinema", title: "The Future of AI in Cinematic Production",
+                p1: "Artificial intelligence is no longer just a sci-fi concept on the silver screen; it has become the driving force behind the camera. From automated script analysis that predicts box office success, to intelligent framing tools that assist cinematographers, the landscape is shifting rapidly.",
+                h2: "The Post-Production Revolution",
+                p2: "VFX artists are seeing their workflows completely transformed. Tasks like rotoscoping and color grading, which previously took hundreds of hours, are now being accomplished in minutes using machine learning algorithms. This doesn't replace the artist; it empowers them to focus on the creative vision rather than the tedious manual labor.",
+                quote: "\"AI is not here to replace storytellers. It is here to give them an infinite canvas.\"",
+                p3: "As we move forward, the filmmakers who thrive will be those who embrace these digital tools. Integrating AI isn't a compromise of art; it's the evolution of it.",
+                back: "Back to Homepage", dir: "ltr"
+            },
+            ar: {
+                m_home: "الرئيسية", m_port: "أعمالي", m_contact: "تواصل معي",
+                cat: "الذكاء الاصطناعي والسينما", title: "مستقبل الذكاء الاصطناعي في الإنتاج السينمائي",
+                p1: "لم يعد الذكاء الاصطناعي مجرد خيال علمي على الشاشة الفضية؛ بل أصبح القوة الدافعة خلف الكاميرا. من التحليل الآلي للنصوص الذي يتنبأ بنجاح شباك التذاكر، إلى أدوات التأطير الذكية التي تساعد مديري التصوير، المشهد يتغير بسرعة.",
+                h2: "ثورة ما بعد الإنتاج",
+                p2: "يرى فنانو المؤثرات البصرية (VFX) أن مسارات عملهم قد تحولت بالكامل. المهام التي كانت تستغرق مئات الساعات، يتم إنجازها الآن في دقائق باستخدام خوارزميات التعلم الآلي. هذا لا يستبدل الفنان؛ بل يمكنه من التركيز على الرؤية الإبداعية بدلاً من العمل اليدوي الممل.",
+                quote: "\"الذكاء الاصطناعي ليس هنا لاستبدال رواة القصص. إنه هنا ليمنحهم لوحة لا نهائية.\"",
+                p3: "مع تقدمنا للأمام، صانعو الأفلام الذين سيزدهرون هم أولئك الذين يتبنون هذه الأدوات الرقمية. دمج الذكاء الاصطناعي ليس تنازلاً عن الفن؛ بل هو تطور له.",
+                back: "العودة للرئيسية", dir: "rtl"
+            }
+        };
+
+        function setLanguage(lang) {
+            if(!translations[lang]) return;
+            const t = translations[lang];
+            
+            document.getElementById('menu-home').innerText = t.m_home;
+            document.getElementById('menu-portfolio').innerText = t.m_port;
+            document.getElementById('menu-contact').innerText = t.m_contact;
+            
+            document.getElementById('art-cat').innerText = t.cat;
+            document.getElementById('art-title').innerText = t.title;
+            document.getElementById('p1').innerText = t.p1;
+            document.getElementById('h2').innerText = t.h2;
+            document.getElementById('p2').innerText = t.p2;
+            document.getElementById('quote').innerText = t.quote;
+            document.getElementById('p3').innerText = t.p3;
+            document.getElementById('back-btn').innerText = t.back;
+
+            document.body.dir = t.dir;
+            document.body.classList.toggle('rtl', t.dir === 'rtl');
+            
+            const btnEn = document.getElementById('btn-en');
+            const btnAr = document.getElementById('btn-ar');
+            
+            if(btnEn) btnEn.className = (lang === 'en') ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white";
+            if(btnAr) btnAr.className = (lang === 'ar') ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white";
+        }
+    </script>
+</body>
+</html>
