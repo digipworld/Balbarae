@@ -417,6 +417,74 @@
         </div>
     </section>
 
+    <section id="blog" class="py-24 px-4 md:px-6 border-t border-white/5 bg-black/10">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="blog-main-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic reveal">Digital <span class="gradient-text">Insights.</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="blog.html" class="glass rounded-3xl overflow-hidden group reveal block hover:-translate-y-2 transition duration-500" style="transition-delay: 0.1s;">
+                    <div class="h-56 overflow-hidden relative border-b border-white/10">
+                        <div class="absolute inset-0 bg-yellow-500/10 group-hover:bg-transparent transition duration-500 z-10"></div>
+                        <div class="w-full h-full bg-[#111] flex items-center justify-center text-5xl group-hover:scale-110 transition duration-700">🤖🎬</div>
+                    </div>
+                    <div class="p-6 md:p-8 relative">
+                        <div class="flex justify-between items-center mb-4 text-xs font-bold">
+                            <span id="b1-cat" class="text-yellow-500 border border-yellow-500/30 bg-yellow-500/5 px-3 py-1 rounded-full">AI & Cinema</span>
+                            <span class="text-gray-500" dir="ltr">April 2026</span>
+                        </div>
+                        <h3 id="b1-t" class="text-xl font-bold mb-4 text-white group-hover:text-yellow-500 transition leading-snug">The Future of AI in Cinematic Production</h3>
+                        <p id="b1-d" class="text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">Exploring how artificial intelligence is reshaping the landscape of filmmaking, from script analysis to post-production VFX.</p>
+                        <span class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-yellow-500 transition">
+                            <span class="read-more">Read Article</span> <i class="fas fa-arrow-right rtl:rotate-180 text-yellow-500"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="blog.html" class="glass rounded-3xl overflow-hidden group reveal block hover:-translate-y-2 transition duration-500" style="transition-delay: 0.2s;">
+                    <div class="h-56 overflow-hidden relative border-b border-white/10">
+                        <div class="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition duration-500 z-10"></div>
+                        <div class="w-full h-full bg-[#111] flex items-center justify-center text-5xl group-hover:scale-110 transition duration-700">📈📱</div>
+                    </div>
+                    <div class="p-6 md:p-8 relative">
+                        <div class="flex justify-between items-center mb-4 text-xs font-bold">
+                            <span id="b2-cat" class="text-blue-400 border border-blue-500/30 bg-blue-500/5 px-3 py-1 rounded-full">Digital Marketing</span>
+                            <span class="text-gray-500" dir="ltr">March 2026</span>
+                        </div>
+                        <h3 id="b2-t" class="text-xl font-bold mb-4 text-white group-hover:text-blue-400 transition leading-snug">How Digital Storytelling Drives Brand Growth</h3>
+                        <p id="b2-d" class="text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">Why a strong narrative is the most powerful tool for converting audiences into loyal customers in the digital age.</p>
+                        <span class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-blue-400 transition">
+                            <span class="read-more">Read Article</span> <i class="fas fa-arrow-right rtl:rotate-180 text-blue-400"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="blog.html" class="glass rounded-3xl overflow-hidden group reveal block hover:-translate-y-2 transition duration-500" style="transition-delay: 0.3s;">
+                    <div class="h-56 overflow-hidden relative border-b border-white/10">
+                        <div class="absolute inset-0 bg-red-500/10 group-hover:bg-transparent transition duration-500 z-10"></div>
+                        <div class="w-full h-full bg-[#111] flex items-center justify-center text-5xl group-hover:scale-110 transition duration-700">🎥✨</div>
+                    </div>
+                    <div class="p-6 md:p-8 relative">
+                        <div class="flex justify-between items-center mb-4 text-xs font-bold">
+                            <span id="b3-cat" class="text-red-500 border border-red-500/30 bg-red-500/5 px-3 py-1 rounded-full">Filmmaking</span>
+                            <span class="text-gray-500" dir="ltr">February 2026</span>
+                        </div>
+                        <h3 id="b3-t" class="text-xl font-bold mb-4 text-white group-hover:text-red-500 transition leading-snug">Behind the Scenes: The Making of "Better Days"</h3>
+                        <p id="b3-d" class="text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">A deep dive into the directing, shooting, and editing process of my award-winning 2019 short film.</p>
+                        <span class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-red-500 transition">
+                            <span class="read-more">Read Article</span> <i class="fas fa-arrow-right rtl:rotate-180 text-red-500"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mt-16 text-center reveal">
+                <a href="blog.html" id="btn-more-blog" class="inline-flex items-center justify-center glass px-10 py-4 rounded-2xl font-bold hover:bg-white/10 transition border border-white/20 hover:scale-105 duration-300">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="py-20 px-4 md:px-6 border-t border-white/5 reveal">
         <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
@@ -468,7 +536,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.2 };
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -528,6 +596,11 @@
                 edu3_t: "DTS in Cinema & Audiovisual", edu3_d: "ISCA | 2017 - 2020",
                 iq_t: "Certified IQ Score", iq_d: "Top percentile cognitive performance assessment.", iq_l: "View Certificate",
                 btn_dl: "Download Full CV",
+                blog_main: "Digital <span class='gradient-text'>Insights.</span>",
+                b1_cat: "AI & Cinema", b1_t: "The Future of AI in Cinematic Production", b1_d: "Exploring how artificial intelligence is reshaping the landscape of filmmaking, from script analysis to post-production VFX.",
+                b2_cat: "Digital Marketing", b2_t: "How Digital Storytelling Drives Brand Growth", b2_d: "Why a strong narrative is the most powerful tool for converting audiences into loyal customers in the digital age.",
+                b3_cat: "Filmmaking", b3_t: "Behind the Scenes: The Making of 'Better Days'", b3_d: "A deep dive into the directing, shooting, and editing process of my award-winning 2019 short film.",
+                b_read: "Read Article", btn_blog: "View All Articles",
                 c_t: "Get In Touch", footer: "© 2026 All rights reserved to <span class='text-white'>Balbarae</span>", dir: "ltr"
             },
             ar: {
@@ -565,6 +638,11 @@
                 edu3_t: "دبلوم تقني متخصص في السينما", edu3_d: "معهد ISCA | 2017 - 2020",
                 iq_t: "معدل الذكاء المعتمد (IQ)", iq_d: "تقييم أداء معرفي ضمن الشريحة المئوية العليا.", iq_l: "عرض الشهادة",
                 btn_dl: "تحميل السيرة الذاتية الكاملة",
+                blog_main: "رؤى <span class='gradient-text'>رقمية.</span>",
+                b1_cat: "الذكاء الاصطناعي والسينما", b1_t: "مستقبل الذكاء الاصطناعي في الإنتاج السينمائي", b1_d: "استكشاف كيف يعيد الذكاء الاصطناعي تشكيل مشهد صناعة الأفلام، من تحليل النصوص إلى المؤثرات البصرية.",
+                b2_cat: "التسويق الرقمي", b2_t: "كيف يدفع السرد الرقمي نمو العلامات التجارية", b2_d: "لماذا يعتبر السرد القصصي القوي الأداة الأكثر فعالية لتحويل الجماهير إلى عملاء أوفياء في العصر الرقمي.",
+                b3_cat: "صناعة الأفلام", b3_t: "خلف الكواليس: صناعة فيلم Better Days", b3_d: "نظرة عميقة على عملية الإخراج والتصوير والمونتاج لفيلمي القصير الحائز على جوائز عام 2019.",
+                b_read: "اقرأ المقال", btn_blog: "تصفح جميع المقالات",
                 c_t: "تواصل معي", footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>", dir: "rtl"
             },
             tr: {
@@ -602,6 +680,11 @@
                 edu3_t: "Sinema ve Görsel-İşitsel Uzmanlık Diploması", edu3_d: "ISCA | 2017 - 2020",
                 iq_t: "Onaylı IQ Puanı", iq_d: "Üst yüzdelik bilişsel performans değerlendirmesi.", iq_l: "Sertifikayı Görüntüle",
                 btn_dl: "Tüm Özgeçmişi İndir",
+                blog_main: "Dijital <span class='gradient-text'>İçgörüler.</span>",
+                b1_cat: "YZ & Sinema", b1_t: "Sinematik Üretimde Yapay Zekanın Geleceği", b1_d: "Senaryo analizinden yapım sonrası görsel efektlere kadar yapay zekanın film yapımcılığını nasıl yeniden şekillendirdiğini keşfediyoruz.",
+                b2_cat: "Dijital Pazarlama", b2_t: "Dijital Hikaye Anlatımı Marka Büyümesini Nasıl Sağlar?", b2_d: "Güçlü bir anlatının, dijital çağda izleyicileri sadık müşterilere dönüştürmek için neden en güçlü araç olduğu.",
+                b3_cat: "Film Yapımı", b3_t: "Kamera Arkası: 'Better Days' Yapım Aşaması", b3_d: "2019 yapımı ödüllü kısa filmimin yönetmenlik, çekim ve kurgu sürecine derinlemesine bir bakış.",
+                b_read: "Makaleyi Oku", btn_blog: "Tüm Makaleleri Görüntüle",
                 c_t: "İletişime Geç", footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir", dir: "ltr"
             }
         };
@@ -663,6 +746,14 @@
             document.getElementById('iq-desc').innerText = t.iq_d;
             document.getElementById('iq-link').innerText = t.iq_l;
             document.getElementById('btn-download').innerText = t.btn_dl;
+
+            // Blog Translations
+            document.getElementById('blog-main-title').innerHTML = t.blog_main;
+            document.getElementById('b1-cat').innerText = t.b1_cat; document.getElementById('b1-t').innerText = t.b1_t; document.getElementById('b1-d').innerText = t.b1_d;
+            document.getElementById('b2-cat').innerText = t.b2_cat; document.getElementById('b2-t').innerText = t.b2_t; document.getElementById('b2-d').innerText = t.b2_d;
+            document.getElementById('b3-cat').innerText = t.b3_cat; document.getElementById('b3-t').innerText = t.b3_t; document.getElementById('b3-d').innerText = t.b3_d;
+            document.querySelectorAll('.read-more').forEach(el => el.innerText = t.b_read);
+            document.getElementById('btn-more-blog').innerText = t.btn_blog;
 
             document.getElementById('contact-title').innerText = t.c_t;
             document.body.dir = t.dir;
