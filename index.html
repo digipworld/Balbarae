@@ -48,13 +48,11 @@
         .map-container:hover .map-golden, .map-container:focus-within .map-golden { filter: none !important; }
         @media (pointer: coarse) { .map-golden { filter: none !important; } }
 
-        /* Timeline CSS Styles for LTR and RTL support */
         .timeline-line { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1.5rem; margin-left: 0.75rem; }
         .timeline-dot { position: absolute; left: -31px; top: 6px; width: 14px; height: 14px; border-radius: 50%; }
         body.rtl .timeline-line { border-left: none; border-right: 2px solid rgba(255,255,255,0.1); padding-left: 0; padding-right: 1.5rem; margin-left: 0; margin-right: 0.75rem; }
         body.rtl .timeline-dot { left: auto; right: -31px; }
 
-        /* --- Scroll Reveal Animations (UPDATED FOR SMOOTHNESS) --- */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -65,10 +63,9 @@
             transform: translateY(0);
         }
         
-        /* --- Progress Bar Animation (UPDATED) --- */
         .progress-fill {
             width: 0%;
-            transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1); /* نعومة أكثر في حركة الامتلاء */
+            transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
     </style>
 </head>
@@ -103,7 +100,9 @@
         <div class="max-w-5xl mx-auto">
             <span id="hero-tag" class="px-4 py-2 rounded-full glass text-xs md:text-sm font-bold text-yellow-500 mb-6 inline-block reveal">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-8 leading-tight reveal" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
-            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed px-2 reveal" style="transition-delay: 0.2s;">I am <span class="text-white font-bold">Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.</p>
+            <p id="hero-desc" class="text-gray-400 text-lg md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed px-2 reveal" style="transition-delay: 0.2s;">
+                I am <span class="text-white font-bold">Albarae Bourkadi</span>, 27 Years old, proudly Moroccan 🇲🇦, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.
+            </p>
             
             <div class="flex flex-wrap justify-center gap-5 mb-12 text-2xl reveal" style="transition-delay: 0.3s;" dir="ltr">
                 <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
@@ -116,7 +115,7 @@
 
             <div class="flex flex-col md:flex-row justify-center gap-4 HeroButtons px-4 reveal" style="transition-delay: 0.4s;">
                 <a href="#contact" id="btn-main" class="bg-yellow-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition">Let's Talk</a>
-                <a href="#manifesto" id="btn-sec" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition">Who is Albarae?</a>
+                <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 1500);" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/5 transition cursor-pointer">Who is Albarae?</a>
             </div>
         </div>
     </section>
@@ -207,7 +206,6 @@
                 <div class="reveal" style="transition-delay: 0.1s;">
                     <h3 id="cv-exp-title" class="text-2xl font-bold mb-10 text-yellow-500 flex items-center gap-3"><i class="fas fa-briefcase"></i> Experience</h3>
                     <div class="space-y-10 timeline-line">
-                        
                         <div class="relative">
                             <div class="timeline-dot bg-yellow-500 shadow-[0_0_10px_rgba(250,204,21,0.5)]"></div>
                             <h4 id="exp1-t" class="text-xl font-bold text-white">Founder & CEO</h4>
@@ -217,7 +215,6 @@
                                 <i class="fas fa-store"></i> <span id="exp1-link">Website opening soon to offer our services</span>
                             </a>
                         </div>
-
                         <div class="relative">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="exp2-t" class="text-xl font-bold text-white">Founder & Marketing Director</h4>
@@ -235,14 +232,12 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="relative">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="exp3-t" class="text-xl font-bold text-white">Chief Marketing Officer (CMO)</h4>
                             <p id="exp3-d" class="text-yellow-500 text-sm font-bold mb-2">PHI DENTAL CLINIC | 2023 - 2024</p>
                             <p id="exp3-c" class="text-gray-400">Managed social media presence, produced creative content, and grew Instagram following from 4K to 10K converting followers to clients.</p>
                         </div>
-
                         <div class="relative">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="exp4-t" class="text-xl font-bold text-white">Trainee Assistant Director</h4>
@@ -251,34 +246,27 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="reveal" style="transition-delay: 0.3s;">
                     <h3 id="cv-edu-title" class="text-2xl font-bold mb-10 text-orange-500 flex items-center gap-3"><i class="fas fa-graduation-cap"></i> Education</h3>
                     <div class="space-y-10 timeline-line mb-16">
-                        
                         <div class="relative">
                             <div class="timeline-dot bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]"></div>
                             <h4 id="edu1-t" class="text-xl font-bold text-white">Master in Cinema and Television</h4>
                             <p id="edu1-d" class="text-orange-500 text-sm font-bold mb-2">ISTINYE UNIVERSITY | 2024 - Present</p>
                         </div>
-
                         <div class="relative">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="edu2-t" class="text-xl font-bold text-white">Bachelor in Cinema & Audiovisual</h4>
                             <p id="edu2-d" class="text-orange-500 text-sm font-bold mb-2">IBN ZOHR UNIVERSITY | 2020 - 2021</p>
                         </div>
-
                         <div class="relative">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="edu3-t" class="text-xl font-bold text-white">DTS in Cinema & Audiovisual</h4>
                             <p id="edu3-d" class="text-orange-500 text-sm font-bold mb-2">ISCA | 2017 - 2020</p>
                         </div>
                     </div>
-
                     <div class="glass p-6 rounded-3xl border border-blue-500/30 hover:border-blue-500 transition-colors group flex items-center gap-6">
-                        <div class="w-20 h-20 bg-blue-500/10 text-blue-500 border border-blue-500/50 rounded-full flex items-center justify-center text-3xl font-black shrink-0 group-hover:scale-110 transition shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-                            125
-                        </div>
+                        <div class="w-20 h-20 bg-blue-500/10 text-blue-500 border border-blue-500/50 rounded-full flex items-center justify-center text-3xl font-black shrink-0 group-hover:scale-110 transition shadow-[0_0_20px_rgba(59,130,246,0.2)]">125</div>
                         <div>
                             <h4 id="iq-title" class="text-xl font-bold text-white mb-1">Certified IQ Score</h4>
                             <p id="iq-desc" class="text-gray-400 text-sm mb-3">Top percentile cognitive performance assessment.</p>
@@ -293,45 +281,33 @@
             <div class="mt-20 border-t border-white/5 pt-16 reveal">
                 <h3 id="cv-lang-title" class="text-2xl font-bold mb-10 text-center flex justify-center items-center gap-3"><i class="fas fa-language text-gray-400"></i> Languages I Speak</h3>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" dir="ltr">
-                    
                     <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.1s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang1-n" class="font-bold text-white">Arabic</span>
                             <span class="text-green-400 font-bold"><span id="lang1-lvl">Native Language</span> - 100%</span>
                         </div>
-                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden">
-                            <div class="bg-green-500 h-2.5 rounded-full progress-fill" data-width="100%"></div>
-                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-green-500 h-2.5 rounded-full progress-fill" data-width="100%"></div></div>
                     </div>
-                    
                     <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.2s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang3-n" class="font-bold text-white">French</span>
                             <span class="text-yellow-400 font-bold"><span id="lang3-lvl">Fluently</span> - 90%</span>
                         </div>
-                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden">
-                            <div class="bg-yellow-500 h-2.5 rounded-full progress-fill" data-width="90%"></div>
-                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-yellow-500 h-2.5 rounded-full progress-fill" data-width="90%"></div></div>
                     </div>
-
                     <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.3s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang2-n" class="font-bold text-white">English</span>
                             <span class="text-blue-400 font-bold"><span id="lang2-lvl">Upper Intermediate</span> - 70%</span>
                         </div>
-                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden">
-                            <div class="bg-blue-500 h-2.5 rounded-full progress-fill" data-width="70%"></div>
-                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-blue-500 h-2.5 rounded-full progress-fill" data-width="70%"></div></div>
                     </div>
-                    
                     <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.4s;">
                         <div class="flex justify-between mb-2">
                             <span id="lang4-n" class="font-bold text-white">Turkish</span>
                             <span class="text-red-500 font-bold"><span id="lang4-lvl">B1 Level</span> - 60%</span>
                         </div>
-                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden">
-                            <div class="bg-red-600 h-2.5 rounded-full progress-fill" data-width="60%"></div>
-                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-red-600 h-2.5 rounded-full progress-fill" data-width="60%"></div></div>
                     </div>
                 </div>
             </div>
@@ -353,7 +329,6 @@
                     <i class="fas fa-file-download"></i> <span id="btn-download">Download Full CV</span>
                 </a>
             </div>
-
         </div>
     </section>
 
@@ -361,7 +336,7 @@
         <div class="max-w-4xl mx-auto glass p-6 md:p-10 rounded-3xl text-center">
             <h3 id="contact-title" class="text-3xl font-bold mb-6">Get In Touch</h3>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-400 mb-10" dir="ltr">
-                <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Şişli, Istanbul</p>
+                <p><i class="fas fa-location-dot text-yellow-500 mr-2"></i> Şişلي, Istanbul</p>
                 <p><a href="mailto:contact@balbarae.com" class="hover:text-yellow-500 transition break-all"><i class="fas fa-envelope text-yellow-500 mr-2"></i> contact@balbarae.com</a></p>
             </div>
             <form action="https://api.web3forms.com/submit" method="POST" class="text-left mb-12" dir="ltr">
@@ -382,40 +357,48 @@
     <footer class="py-12 border-t border-white/5 text-center text-gray-500 font-medium reveal">© 2026 All rights reserved to <span class="text-white">Balbarae</span></footer>
 
     <script>
-        // Scroll Reveal & Progress Bar Animation Logic
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2 // يبدأ الحركة عندما يظهر 20% من العنصر لضمان رؤية المشاهد للحركة
-            };
+        function slowScrollTo(targetId, duration) {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+            const startPosition = window.scrollY;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
 
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const nextPosition = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, nextPosition);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+            requestAnimationFrame(animation);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.2 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // إضافة الكلاس active للعنصر ليظهر للفتوق بانسيابية
                         entry.target.classList.add('active');
-                        
-                        // إذا كان القسم يحتوي على شريط لغات، نؤخر الحركة قليلاً لتبدأ بعد ظهور القسم
                         const progressBars = entry.target.querySelectorAll('.progress-fill');
                         if (progressBars.length > 0) {
                             setTimeout(() => {
-                                progressBars.forEach(bar => {
-                                    bar.style.width = bar.getAttribute('data-width');
-                                });
-                            }, 600); // تأخير 600 جزء من الثانية
+                                progressBars.forEach(bar => bar.style.width = bar.getAttribute('data-width'));
+                            }, 600);
                         }
-
-                        // إيقاف المراقبة بعد ظهور العنصر
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
-
-            // مراقبة كل العناصر التي تحمل كلاس reveal
-            document.querySelectorAll('.reveal').forEach(el => {
-                observer.observe(el);
-            });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
 
         window.onscroll = function() {
@@ -428,7 +411,7 @@
             en: {
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
-                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
+                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly Moroccan 🇲🇦, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.",
                 film_t: "Selected <span class='gradient-text'>Works.</span>", ind_t: "International Films Credits :",
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be.\"", attribution: "— Albarae Bourkadi",
                 btn: "Let's Talk", btn2: "Who is Albarae?", skills_title: "Who is <span class='gradient-text'>Albarae?</span>",
@@ -465,7 +448,7 @@
             ar: {
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية مستقبلية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
-                desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
+                desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦، مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.",
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>", ind_t: "أعمال سينمائية عالمية :",
                 quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يُتوقع مني، بل تماماً حيث أتوقع أنا أن أكون.\"", attribution: "— البراء البرقادي",
                 btn: "تحدث معي", btn2: "من هو البراء؟", skills_title: "من هو <span class='gradient-text'>البراء؟</span>",
@@ -502,7 +485,7 @@
             tr: {
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
-                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejilerini birleştiriyorum.",
+                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir Faslıyım 🇲🇦, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejileri arasındaki köprüyü kuruyorum.",
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", ind_t: "Uluslararası Film Kredileri :",
                 quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—beklenilen yerde değil, tam olarak kendi beklediğim yerde.\"", attribution: "— Albarae Bourkadi",
                 btn: "Konuşalım", btn2: "Albarae Kimdir?", skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
@@ -530,7 +513,7 @@
                 exp3_t: "Pazarlama Müdürü (CMO)", exp3_d: "PHI DENTAL CLINIC | 2023 - 2024", exp3_c: "Sosyal medya varlığını yönetti, yaratıcı içerik üretti ve Instagram takipçi sayısını 4K'dan 10K'ya çıkardı.",
                 exp4_t: "Yönetmen Yardımcısı Stajyeri", exp4_d: "DUNE FILM (Netflix) | 2018", exp4_c: "Remi Weekes'in yönettiği İngiliz kurgu filmi 'His House'da görev aldı.",
                 edu1_t: "Sinema ve Televizyon Yüksek Lisansı", edu1_d: "İSTİNYE ÜNİVERSİTESİ | 2024 - Günümüz",
-                edu2_t: "Sinema ve Görsel-İşitsel Lisans", edu2_d: "IBN ZOHR ÜNİVERSİTESİ | 2020 - 2021",
+                edu2_t: "Sinema ve Görsel-İشitsel Lisans", edu2_d: "IBN ZOHR ÜNİVERSİTESİ | 2020 - 2021",
                 edu3_t: "Sinema ve Görsel-İşitsel Uzmanlık Diploması", edu3_d: "ISCA | 2017 - 2020",
                 iq_t: "Onaylı IQ Puanı", iq_d: "Üst yüzdelik bilişsel performans değerlendirmesi.", iq_l: "Sertifikayı Görüntüle",
                 btn_dl: "Tüm Özgeçmişi İndir",
@@ -556,46 +539,33 @@
             document.getElementById('srv2-desc').innerText = t.s2_d;
             document.getElementById('srv3-title').innerText = t.s3_t;
             document.getElementById('srv3-desc').innerText = t.s3_d;
-            
             document.getElementById('film1-t').innerText = t.f1_t; document.getElementById('film1-d').innerText = t.f1_d;
             document.getElementById('film2-t').innerText = t.f2_t; document.getElementById('film2-d').innerText = t.f2_d;
             document.getElementById('film3-t').innerText = t.f3_t; document.getElementById('film3-d').innerText = t.f3_d;
             document.getElementById('film4-t').innerText = t.f4_t; document.getElementById('film4-d').innerText = t.f4_d;
             document.getElementById('film5-t').innerText = t.f5_t; document.getElementById('film5-d').innerText = t.f5_d;
             document.getElementById('film6-t').innerText = t.f6_t; document.getElementById('film6-d').innerText = t.f6_d;
-            
-            document.getElementById('cred1').innerHTML = t.c1;
-            document.getElementById('cred2').innerHTML = t.c2;
-            document.getElementById('cred3').innerHTML = t.c3;
-            document.getElementById('cred4').innerHTML = t.c4;
-
-            // CV Translations
+            document.getElementById('cred1').innerHTML = t.c1; document.getElementById('cred2').innerHTML = t.c2;
+            document.getElementById('cred3').innerHTML = t.c3; document.getElementById('cred4').innerHTML = t.c4;
             document.getElementById('cv-main-title').innerHTML = t.cv_main;
             document.getElementById('cv-exp-title').innerHTML = `<i class="fas fa-briefcase"></i> ${t.cv_exp}`;
             document.getElementById('cv-edu-title').innerHTML = `<i class="fas fa-graduation-cap"></i> ${t.cv_edu}`;
             document.getElementById('cv-skills-title').innerHTML = `<i class="fas fa-tools text-gray-400"></i> ${t.cv_skills}`;
             document.getElementById('cv-lang-title').innerHTML = `<i class="fas fa-language text-gray-400"></i> ${t.cv_lang}`;
-            
             document.getElementById('lang1-n').innerText = t.lang1; document.getElementById('lang1-lvl').innerText = t.lang1_lvl;
             document.getElementById('lang2-n').innerText = t.lang2; document.getElementById('lang2-lvl').innerText = t.lang2_lvl;
             document.getElementById('lang3-n').innerText = t.lang3; document.getElementById('lang3-lvl').innerText = t.lang3_lvl;
             document.getElementById('lang4-n').innerText = t.lang4; document.getElementById('lang4-lvl').innerText = t.lang4_lvl;
-
             document.getElementById('exp1-t').innerText = t.exp1_t; document.getElementById('exp1-d').innerText = t.exp1_d; document.getElementById('exp1-c').innerText = t.exp1_c; document.getElementById('exp1-link').innerText = t.exp1_l;
             document.getElementById('exp2-t').innerText = t.exp2_t; document.getElementById('exp2-d').innerText = t.exp2_d; document.getElementById('exp2-c').innerText = t.exp2_c;
             document.getElementById('exp2-link1').innerText = t.exp2_l1; document.getElementById('exp2-link2').innerText = t.exp2_l2; document.getElementById('exp2-link3').innerText = t.exp2_l3;
             document.getElementById('exp3-t').innerText = t.exp3_t; document.getElementById('exp3-d').innerText = t.exp3_d; document.getElementById('exp3-c').innerText = t.exp3_c;
             document.getElementById('exp4-t').innerText = t.exp4_t; document.getElementById('exp4-d').innerText = t.exp4_d; document.getElementById('exp4-c').innerText = t.exp4_c;
-            
             document.getElementById('edu1-t').innerText = t.edu1_t; document.getElementById('edu1-d').innerText = t.edu1_d;
             document.getElementById('edu2-t').innerText = t.edu2_t; document.getElementById('edu2-d').innerText = t.edu2_d;
             document.getElementById('edu3-t').innerText = t.edu3_t; document.getElementById('edu3-d').innerText = t.edu3_d;
-
-            document.getElementById('iq-title').innerText = t.iq_t;
-            document.getElementById('iq-desc').innerText = t.iq_d;
-            document.getElementById('iq-link').innerText = t.iq_l;
+            document.getElementById('iq-title').innerText = t.iq_t; document.getElementById('iq-desc').innerText = t.iq_d; document.getElementById('iq-link').innerText = t.iq_l;
             document.getElementById('btn-download').innerText = t.btn_dl;
-
             document.getElementById('contact-title').innerText = t.c_t;
             document.body.dir = t.dir;
             document.body.classList.toggle('rtl', t.dir === 'rtl');
