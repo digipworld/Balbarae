@@ -34,27 +34,71 @@
         body.rtl { font-family: var(--font-ar); direction: rtl; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
         .gradient-text { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-bg { background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.1), transparent), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent); background-color: #0a0a0a !important; }
+        
+        /* Fix the background issue */
+        .hero-bg { 
+            background-color: #0a0a0a !important;
+            background-image: radial-gradient(circle at top right, rgba(250, 204, 21, 0.1), transparent), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05), transparent); 
+        }
+
         .social-link { transition: transform 0.3s ease, color 0.3s ease; color: #9ca3af; }
         .social-link:hover { color: #facc15; transform: translateY(-3px); }
         .quote-glow { text-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
         #backToTop { position: fixed; bottom: 30px; right: 30px; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 100; }
         #backToTop.show { opacity: 1; visibility: visible; }
+        
+        /* Mobile Menu */
         #mobile-menu { transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s; }
+
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; background: #000; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        .map-golden { filter: brightness(60%) sepia(40%) contrast(110%) hue-rotate(350deg); transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .map-container:hover .map-golden, .map-container:focus-within .map-golden { filter: none !important; }
+        @media (pointer: coarse) { .map-golden { filter: none !important; } }
+
         .timeline-line { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1.5rem; margin-left: 0.75rem; }
         .timeline-dot { position: absolute; left: -31px; top: 6px; width: 14px; height: 14px; border-radius: 50%; }
         body.rtl .timeline-line { border-left: none; border-right: 2px solid rgba(255,255,255,0.1); padding-left: 0; padding-right: 1.5rem; margin-left: 0; margin-right: 0.75rem; }
         body.rtl .timeline-dot { left: auto; right: -31px; }
-        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .progress-fill { width: 0%; transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1); will-change: width; }
-        @keyframes clap-action { 0% { transform: rotate(0deg); } 5% { transform: rotate(-45deg); } 15% { transform: rotate(-45deg); } 20% { transform: rotate(0deg); } 23% { transform: rotate(-8deg); } 26%, 100% { transform: rotate(0deg); } }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .progress-fill {
+            width: 0%;
+            transition: width 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: width;
+        }
+
+        @keyframes clap-action {
+            0% { transform: rotate(0deg); }
+            5% { transform: rotate(-45deg); }
+            15% { transform: rotate(-45deg); }
+            20% { transform: rotate(0deg); }
+            23% { transform: rotate(-8deg); }
+            26%, 100% { transform: rotate(0deg); }
+        }
         .clapper-top { animation: clap-action 4s ease-in-out infinite; }
-        @keyframes wink { 0%, 42%, 48%, 100% { transform: scaleY(1); } 45% { transform: scaleY(0.1); } }
+
+        @keyframes wink {
+            0%, 42%, 48%, 100% { transform: scaleY(1); }
+            45% { transform: scaleY(0.1); }
+        }
         .robot-eye { animation: wink 4s ease-in-out infinite; }
-        @keyframes spin-earth { 0% { transform: translateX(0); } 100% { transform: translateX(-100px); } }
+
+        @keyframes spin-earth {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
         .earth-map { animation: spin-earth 4s linear infinite; }
     </style>
 </head>
@@ -67,11 +111,13 @@
     <nav class="fixed w-full z-50 px-4 md:px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-5 py-2.5 reveal active">
             <h1 class="text-xl md:text-2xl font-black tracking-tighter gradient-text cursor-pointer" onclick="window.scrollTo(0,0)">BALBARAE</h1>
+            
             <div class="hidden lg:flex items-center gap-8 font-bold text-sm text-gray-300">
                 <a href="#" onclick="window.scrollTo(0,0); return false;" class="hover:text-yellow-500 transition" id="nav-home">Home</a>
                 <a href="#filmography" class="hover:text-yellow-500 transition" id="nav-port">Portfolio</a>
                 <a href="#contact" class="hover:text-yellow-500 transition" id="nav-contact">Contact</a>
             </div>
+
             <div class="flex items-center gap-2">
                 <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl" dir="ltr">
                     <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1 rounded-lg text-[10px] md:text-xs font-bold transition bg-yellow-500 text-black">EN</button>
@@ -96,10 +142,13 @@
     <section class="pt-32 md:pt-48 pb-[108px] md:pb-20 px-4 md:px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto w-full">
             <span id="hero-tag" class="px-4 py-1.5 md:py-2 rounded-full glass text-[10px] md:text-sm font-bold text-yellow-500 mb-4 md:mb-6 inline-block reveal active">Filmmaker, AI Consultant & Digital Visionary</span>
+            
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-4 md:mb-8 leading-tight reveal active" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
+            
             <p id="hero-desc" class="text-gray-400 text-[15px] md:text-2xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-1 reveal active" style="transition-delay: 0.2s;">
                 I am <span class="text-white font-bold">Albarae Bourkadi</span>, 27 Years old, proudly Moroccan 🇲🇦, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.
             </p>
+            
             <div class="flex flex-wrap justify-center gap-4 md:gap-5 mb-8 md:mb-12 text-xl md:text-2xl reveal active" style="transition-delay: 0.3s;" dir="ltr">
                 <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/balbarae" target="_blank" class="social-link hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
@@ -108,6 +157,7 @@
                 <a href="https://www.facebook.com/balbarae" target="_blank" class="social-link hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
                 <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
             </div>
+
             <div class="flex flex-col md:flex-row justify-center w-full gap-3 md:gap-4 HeroButtons px-2 md:px-4 reveal active" style="transition-delay: 0.4s;">
                 <a href="#contact" id="btn-main" class="w-full md:w-auto bg-yellow-500 text-black px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition flex items-center justify-center">Let's Talk</a>
                 <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 250);" class="w-full md:w-auto glass px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-white/5 transition cursor-pointer flex items-center justify-center">Who is Albarae?</a>
@@ -117,7 +167,7 @@
 
     <section id="manifesto" class="py-24 px-4 md:px-6 relative bg-black/30 w-full overflow-hidden scroll-mt-10">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="flex justify-center md:justify-end order-2 md:order-1 px-4 reveal"><img src="portrait.jpg" class="rounded-3xl shadow-2xl border-4 border-yellow-500 w-full max-w-sm aspect-[3/4] object-cover hover:scale-105 transition duration-500"></div>
+            <div class="flex justify-center md:justify-end order-2 md:order-1 px-4 reveal" style="transition-delay: 0.1s;"><img src="portrait.jpg" class="rounded-3xl shadow-2xl border-4 border-yellow-500 w-full max-w-sm aspect-[3/4] object-cover hover:scale-105 transition duration-500"></div>
             <div class="space-y-6 md:space-y-8 order-1 md:order-2 text-center md:text-left rtl:md:text-right px-2 reveal" style="transition-delay: 0.25s;">
                 <i class="fas fa-quote-right text-yellow-500 text-4xl md:text-6xl block"></i>
                 <h3 id="quote-text" class="text-xl sm:text-2xl md:text-3xl font-light italic leading-relaxed quote-glow text-gray-100">"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be."</h3>
@@ -127,37 +177,123 @@
     </section>
 
     <section id="skills" class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black mb-16 reveal">Who is <span class="gradient-text">Albarae?</span></h2>
+        <div class="max-w-7xl mx-auto">
+            <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16 reveal">Who is <span class="gradient-text">Albarae?</span></h2>
             <div class="grid md:grid-cols-3 gap-8 mb-24">
-                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center justify-center">
-                    <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16 overflow-visible"><g class="clapper-top" style="transform-origin: 10px 42px;"><path d="M10 25 h80 v16 h-80 z" fill="#1F2937"/><path d="M15 25 L30 41 M35 25 L50 41 M55 25 L70 41 M75 25 L90 41" stroke="#FACC15" stroke-width="4"/></g><path d="M10 43 h80 v35 c0 3.3 -2.7 6 -6 6 h-68 c-3.3 0 -6 -2.7 -6 -6 z" fill="#374151"/><path d="M10 43 h80 v16 h-80 z" fill="#1F2937"/><path d="M25 43 L10 59 M45 43 L30 59 M65 43 L50 59 M85 43 L70 59" stroke="#FACC15" stroke-width="4"/></svg></div>
-                    <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
-                    <p id="srv1-desc" class="text-gray-400 text-sm">Mastering the creation of high-end cinematic visual identities.</p>
+                <div class="glass p-8 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.1s;">
+                    <div class="mb-6 flex justify-center items-center h-16 w-full">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 clapper-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g class="clapper-top" style="transform-origin: 10px 42px;">
+                                <path d="M10 25 h80 v16 h-80 z" fill="#1F2937"/>
+                                <path d="M15 25 L30 41 M35 25 L50 41 M55 25 L70 41 M75 25 L90 41" stroke="#FACC15" stroke-width="4" stroke-linecap="square"/>
+                            </g>
+                            <path d="M10 43 h80 v35 c0 3.3 -2.7 6 -6 6 h-68 c-3.3 0 -6 -2.7 -6 -6 z" fill="#374151"/>
+                            <path d="M10 43 h80 v16 h-80 z" fill="#1F2937"/>
+                            <path d="M25 43 L10 59 M45 43 L30 59 M65 43 L50 59 M85 43 L70 59" stroke="#FACC15" stroke-width="4" stroke-linecap="square"/>
+                        </svg>
+                    </div>
+                    <h3 id="srv1-title" class="text-2xl font-bold mb-4 w-full">Cinematic Branding</h3>
+                    <p id="srv1-desc" class="text-gray-400 w-full">Mastering the creation of high-end cinematic visual identities.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center justify-center" style="transition-delay: 0.1s;">
-                    <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16"><rect x="25" y="35" width="50" height="45" rx="8" fill="#374151"/><circle cx="38" cy="55" r="5" fill="#60A5FA"/><g class="robot-eye" style="transform-origin: 62px 55px;"><circle cx="62" cy="55" r="5" fill="#60A5FA"/></g><rect x="40" y="70" width="20" height="4" rx="2" fill="#111827"/></svg></div>
-                    <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3>
-                    <p id="srv2-desc" class="text-gray-400 text-sm">Pioneering the use of advanced AI in creative production workflows.</p>
+                <div class="glass p-8 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.2s;">
+                    <div class="mb-6 flex justify-center items-center h-16 w-full">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 robot-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="35" width="50" height="45" rx="8" fill="#374151"/>
+                            <path d="M50 35 L50 20" stroke="#9CA3AF" stroke-width="4"/>
+                            <circle cx="50" cy="15" r="5" fill="#FACC15"/>
+                            <rect x="15" y="50" width="10" height="15" rx="3" fill="#4B5563"/>
+                            <rect x="75" y="50" width="10" height="15" rx="3" fill="#4B5563"/>
+                            <circle cx="38" cy="55" r="5" fill="#60A5FA"/>
+                            <g class="robot-eye" style="transform-origin: 62px 55px;">
+                                <circle cx="62" cy="55" r="5" fill="#60A5FA"/>
+                            </g>
+                            <rect x="40" y="70" width="20" height="4" rx="2" fill="#111827"/>
+                        </svg>
+                    </div>
+                    <h3 id="srv2-title" class="text-2xl font-bold mb-4 w-full">AI Integration</h3>
+                    <p id="srv2-desc" class="text-gray-400 w-full">Pioneering the use of advanced AI in creative production workflows.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center justify-center" style="transition-delay: 0.2s;">
-                    <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16"><circle cx="50" cy="50" r="40" fill="#2563EB"/><g clip-path="url(#earth-clip)"><g class="earth-map" fill="#10B981"><path d="M 5 25 C 20 10, 40 30, 50 40 C 60 50, 40 80, 20 70 C 0 60, -10 40, 5 25 Z M 105 25 C 120 10, 140 30, 150 40 C 160 50, 140 80, 120 70 C 100 60, 90 40, 105 25 Z"/></g></g><defs><clipPath id="earth-clip"><circle cx="50" cy="50" r="40"/></clipPath></defs></svg></div>
-                    <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3>
-                    <p id="srv3-desc" class="text-gray-400 text-sm">Leveraging visual storytelling for social justice awareness.</p>
+                <div class="glass p-8 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.3s;">
+                    <div class="mb-6 flex justify-center items-center h-16 w-full">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 earth-svg drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <clipPath id="earth-clip">
+                                <circle cx="50" cy="50" r="40"/>
+                            </clipPath>
+                            <circle cx="50" cy="50" r="40" fill="#2563EB"/>
+                            <circle cx="50" cy="50" r="40" fill="url(#earth-shadow)"/>
+                            <defs>
+                                <radialGradient id="earth-shadow" cx="30%" cy="30%" r="70%">
+                                    <stop offset="60%" stop-color="transparent"/>
+                                    <stop offset="100%" stop-color="rgba(0,0,0,0.6)"/>
+                                </radialGradient>
+                            </defs>
+                            <g clip-path="url(#earth-clip)">
+                                <g class="earth-map" fill="#10B981">
+                                    <path d="M 5 25 C 20 10, 40 30, 50 40 C 60 50, 40 80, 20 70 C 0 60, -10 40, 5 25 Z"/>
+                                    <path d="M 70 15 C 90 5, 95 30, 85 50 C 75 70, 60 80, 55 60 C 50 40, 50 25, 70 15 Z"/>
+                                    <path d="M 105 25 C 120 10, 140 30, 150 40 C 160 50, 140 80, 120 70 C 100 60, 90 40, 105 25 Z"/>
+                                    <path d="M 170 15 C 190 5, 195 30, 185 50 C 175 70, 160 80, 155 60 C 150 40, 150 25, 170 15 Z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3 id="srv3-title" class="text-2xl font-bold mb-4 w-full">Digital Advocacy</h3>
+                    <p id="srv3-desc" class="text-gray-400 w-full">Leveraging visual storytelling to drive social justice and global awareness.</p>
                 </div>
             </div>
 
             <div id="filmography" class="max-w-4xl mx-auto space-y-20 scroll-mt-24">
                 <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic reveal">Selected <span class="gradient-text">Works.</span></h2>
-                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film1-t" class="text-2xl font-bold text-yellow-500 uppercase">Better Days (2019)</h4><p id="film1-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
-                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://player.vimeo.com/video/369136311" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film5-t" class="text-2xl font-bold text-yellow-500 uppercase">WC Short Film (2019)</h4><p id="film5-d" class="text-gray-400 italic">Editor - VFX Supervisor - Sound Design</p></div></div>
                 
-                <div class="glass p-8 md:p-12 rounded-3xl border-2 border-yellow-500/50 shadow-xl reveal text-left rtl:text-right">
-                    <h3 id="ind-credits-title" class="text-2xl md:text-3xl font-black mb-8 gradient-text">International Films Credits :</h3>
-                    <ul class="space-y-6 text-base md:text-lg text-gray-300">
-                        <li id="cred1"><strong class="text-white">1/ Assistant Director Trainee:</strong> Netflix feature "His House" (2020). <a href='https://www.imdb.com/fr/title/tt8508734/' target='_blank' class='text-yellow-500 underline'>IMDB</a></li>
-                        <li id="cred2"><strong class="text-white">2/ 2nd Assistant Director:</strong> Short Film "Exodus" (2019).</li>
-                        <li id="cred3"><strong class="text-white">3/ Sound Operator:</strong> Moroccan Film "Naima's" (2019). <a href='https://www.imdb.com/title/tt17633796/' target='_blank' class='text-yellow-500 underline'>IMDB</a></li>
+                <div class="space-y-6 reveal">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 id="film1-t" class="text-2xl font-bold text-yellow-500">BETTER DAYS SHORT FILM (2019)</h4><p id="film1-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
+                </div>
+
+                <div class="space-y-6 reveal">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/UD4UYnAtwp4" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 id="film2-t" class="text-2xl font-bold text-yellow-500">Behind scenes of Better Days (2019)</h4><p id="film2-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
+                </div>
+
+                <div class="space-y-6 reveal">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yyoPEFQ_Pe8" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 id="film3-t" class="text-2xl font-bold text-yellow-500">NOT ACHIEVED SHORT FILM (2020)</h4><p id="film3-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
+                </div>
+
+                <div class="space-y-6 reveal">
+                    <div class="video-wrapper"><iframe src="https://player.vimeo.com/video/357218069" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 id="film4-t" class="text-2xl font-bold text-yellow-500">100 YEARS ELECTROLUX VIDEO PROMOTION (2019)</h4><p id="film4-d" class="text-gray-400 italic">1st Director Assistant and Editor</p></div>
+                </div>
+
+                <div class="space-y-6 reveal">
+                    <div class="video-wrapper"><iframe src="https://player.vimeo.com/video/369136311" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 id="film5-t" class="text-2xl font-bold text-yellow-500">WC SHORT FILM (2019)</h4><p id="film5-d" class="text-gray-400 italic">Editor - VFX Supervisor - Sound Operator & Designer</p></div>
+                </div>
+
+                <div class="space-y-6 reveal">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/33FBhr-dD7w" allowfullscreen></iframe></div>
+                    <div class="px-4"><h4 id="film6-t" class="text-2xl font-bold text-yellow-500">THE OTHER SIDE SHORT FILM (2018)</h4><p id="film6-d" class="text-gray-400 italic">Filmmaker of all movie</p></div>
+                </div>
+
+                <div class="glass p-8 md:p-12 rounded-3xl border-2 border-yellow-500/50 hover:border-yellow-500 transition-colors duration-300 mt-24 shadow-xl reveal">
+                    <h3 id="ind-credits-title" class="text-3xl font-black mb-8 gradient-text">International Films Credits :</h3>
+                    <ul class="space-y-6 text-lg md:text-xl text-gray-300">
+                        <li id="cred1">
+                            <strong class="text-white">1/ Assistant Director Trainee:</strong> On the Netflix/Dune Films feature <span class="italic">"His House"</span> (2020), directed by Remi Weekes. 
+                            <a href="https://www.imdb.com/fr/title/tt8508734/" target="_blank" class="text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1" dir="ltr">IMDB</a> 6,4
+                        </li>
+                        <li id="cred2">
+                            <strong class="text-white">2/ 2nd Assistant Director:</strong> On Moroccan/Italian post-apocalyptic Short Film <span class="italic">"Exodus"</span> (2019) directed by Yassine Idrissi - 
+                            <a href="https://aiff.jo/exodus/" target="_blank" class="text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1" dir="ltr">Aman International Film Festival</a>
+                        </li>
+                        <li id="cred3">
+                            <strong class="text-white">3/ Sound Operator:</strong> On Moroccan Short Film <span class="italic">"Naima's"</span> (2019) directed by Sami Saif Sirelkhatim 
+                            <a href="https://www.imdb.com/title/tt17633796/" target="_blank" class="text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1" dir="ltr">IMDB</a>
+                        </li>
+                        <li id="cred4">
+                            <strong class="text-white">4/ Sound Designer:</strong> On Moroccan Short Film <span class="italic">"Oracle"</span> (2019) directed by Ismail Benaghmouch 
+                            <a href="https://www.imdb.com/title/tt35663320/" target="_blank" class="text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1" dir="ltr">IMDB</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -167,59 +303,141 @@
     <section id="resume" class="py-24 px-4 md:px-6 border-t border-white/5 bg-black/20">
         <div class="max-w-6xl mx-auto">
             <h2 id="cv-main-title" class="text-4xl md:text-5xl font-black text-center mb-20 italic reveal">Digital <span class="gradient-text">Resume.</span></h2>
+
             <div class="grid md:grid-cols-2 gap-16 md:gap-24">
-                <div class="reveal">
+                <div class="reveal" style="transition-delay: 0.1s;">
                     <h3 id="cv-exp-title" class="text-2xl font-bold mb-10 text-yellow-500 flex items-center gap-3"><i class="fas fa-briefcase"></i> Experience</h3>
                     <div class="space-y-10 timeline-line">
-                        <div class="relative reveal">
-                            <div class="timeline-dot bg-yellow-500 shadow-[0_0_10px_#facc15]"></div>
-                            <h4 id="exp1-t" class="text-xl font-bold">Founder & CEO</h4>
+                        <div class="relative reveal" style="transition-delay: 0.2s;">
+                            <div class="timeline-dot bg-yellow-500 shadow-[0_0_10px_rgba(250,204,21,0.5)]"></div>
+                            <h4 id="exp1-t" class="text-xl font-bold text-white">Founder & CEO</h4>
                             <p id="exp1-d" class="text-yellow-500 text-sm font-bold mb-2">DIGIPWORLD LLC | Oct 2025 - Present</p>
-                            <p id="exp1-c" class="text-gray-400 text-sm">Specializing in premium digital products and secure infrastructure solutions.</p>
+                            <p id="exp1-c" class="text-gray-400 mb-3">A legally registered U.S. company based in Wyoming. "DIGIPWORLD" stands for "DIGITAL PRODUCTS WORLD"—a name that reflects my ultimate vision of building the future digital equivalent of Etsy and Amazon. Today, we specialize in premium digital products and services designed to empower businesses and individuals. We provide high-quality solutions that streamline work environments, elevate professional lives, and boost project productivity, all backed by a top-tier secure infrastructure.</p>
                             <a href="https://digipworld.com/password" target="_blank" class="inline-flex items-center gap-2 text-xs md:text-sm font-bold text-yellow-500 hover:text-white transition bg-yellow-500/10 px-3 py-1.5 rounded-lg border border-yellow-500/20 hover:bg-yellow-500/20 w-fit" dir="ltr">
-                                <i class="fas fa-store"></i> <span id="exp1-link">Website opening soon</span>
+                                <i class="fas fa-store"></i> <span id="exp1-link">Website opening soon to offer our services</span>
                             </a>
                         </div>
-                        <div class="relative reveal">
+                        <div class="relative reveal" style="transition-delay: 0.3s;">
                             <div class="timeline-dot bg-white/20"></div>
-                            <h4 id="exp2-t" class="text-xl font-bold">Founder & Marketing Director</h4>
+                            <h4 id="exp2-t" class="text-xl font-bold text-white">Founder & Marketing Director</h4>
                             <p id="exp2-d" class="text-yellow-500 text-sm font-bold mb-2">TIQAH COMPANY | 2023 - Present</p>
-                            <p id="exp2-c" class="text-gray-400 text-sm">Headquartered in Agdal, Rabat, Morocco. TIQAH currently operates in Turkey and will soon expand to China.</p>
+                            <p id="exp2-c" class="text-gray-400 mb-3">Headquartered in Agdal, Rabat, Morocco. TIQAH currently operates in Turkey and will soon expand to China.</p>
                             <div class="flex flex-wrap gap-3" dir="ltr">
-                                <a href="https://tiqah4education.com/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20 hover:bg-blue-500/20 w-fit"><i class="fas fa-globe"></i> Website</a>
+                                <a href="https://tiqah4education.com/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20 hover:bg-blue-500/20 w-fit">
+                                    <i class="fas fa-globe"></i> <span id="exp2-link1">Website</span>
+                                </a>
+                                <a href="https://www.instagram.com/tiqah4education/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-pink-500 hover:text-white transition bg-pink-500/10 px-3 py-1.5 rounded-lg border border-pink-500/20 hover:bg-pink-500/20 w-fit">
+                                    <i class="fab fa-instagram"></i> <span id="exp2-link2">Instagram</span>
+                                </a>
+                                <a href="https://www.youtube.com/@Tiqah4production" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-red-500 hover:text-white transition bg-red-500/10 px-3 py-1.5 rounded-lg border border-red-500/20 hover:bg-red-500/20 w-fit">
+                                    <i class="fab fa-youtube"></i> <span id="exp2-link3">YouTube</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="relative reveal">
+                        <div class="relative reveal" style="transition-delay: 0.4s;">
                             <div class="timeline-dot bg-white/20"></div>
-                            <h4 id="exp3-t" class="text-xl font-bold">Chief Marketing Officer (CMO)</h4>
+                            <h4 id="exp3-t" class="text-xl font-bold text-white">Chief Marketing Officer (CMO)</h4>
                             <p id="exp3-d" class="text-yellow-500 text-sm font-bold mb-2">PHI DENTAL CLINIC | 2023 - 2024</p>
-                            <p id="exp3-c" class="text-gray-400 text-sm">Based in Istanbul, Turkey. Managed social media presence, produced creative content, and grew following from 4K to 10K.</p>
-                            <div class="flex flex-wrap gap-3 mt-2" dir="ltr">
-                                <a href="https://phidentaltr.com/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20 w-fit"><i class="fas fa-globe"></i> Website</a>
-                                <a href="https://www.instagram.com/phidentaltr/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-pink-500 hover:text-white transition bg-pink-500/10 px-3 py-1.5 rounded-lg border border-pink-500/20 w-fit"><i class="fab fa-instagram"></i> Instagram</a>
+                            <p id="exp3-c" class="text-gray-400">Based in Istanbul, Turkey. Managed social media presence, produced creative content, and grew following from 4K to 10K.</p>
+                            <div class="flex flex-wrap gap-3 mt-3" dir="ltr">
+                                <a href="https://phidentaltr.com/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20 hover:bg-blue-500/20 w-fit">
+                                    <i class="fas fa-globe"></i> <span id="exp3-link1">Website</span>
+                                </a>
+                                <a href="https://www.instagram.com/phidentaltr/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-pink-500 hover:text-white transition bg-pink-500/10 px-3 py-1.5 rounded-lg border border-pink-500/20 hover:bg-pink-500/20 w-fit">
+                                    <i class="fab fa-instagram"></i> <span id="exp3-link2">Instagram</span>
+                                </a>
                             </div>
+                        </div>
+                        <div class="relative reveal" style="transition-delay: 0.5s;">
+                            <div class="timeline-dot bg-white/20"></div>
+                            <h4 id="exp4-t" class="text-xl font-bold text-white">Trainee Assistant Director</h4>
+                            <p id="exp4-d" class="text-yellow-500 text-sm font-bold mb-2">DUNE FILM (Netflix) | 2018</p>
+                            <p id="exp4-c" class="text-gray-400">Worked on the British fiction movie "His House" directed by Remi Weekes.</p>
                         </div>
                     </div>
                 </div>
-                <div class="reveal" style="transition-delay: 0.2s;">
+                <div class="reveal" style="transition-delay: 0.3s;">
                     <h3 id="cv-edu-title" class="text-2xl font-bold mb-10 text-orange-500 flex items-center gap-3"><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="space-y-10 timeline-line">
-                        <div class="relative reveal"><div class="timeline-dot bg-orange-500 shadow-[0_0_10px_#f97316]"></div><h4 id="edu1-t" class="text-xl font-bold">Master in Cinema</h4><p id="edu1-d" class="text-orange-500 text-sm font-bold">ISTINYE UNIVERSITY | 2024 - Present</p></div>
-                        <div class="relative reveal"><div class="timeline-dot bg-white/20"></div><h4 id="edu2-t" class="text-xl font-bold">Bachelor in Cinema</h4><p id="edu2-d" class="text-orange-500 text-sm font-bold">IBN ZOHR UNIVERSITY | 2020 - 2021</p></div>
+                    <div class="space-y-10 timeline-line mb-16">
+                        <div class="relative reveal" style="transition-delay: 0.4s;">
+                            <div class="timeline-dot bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]"></div>
+                            <h4 id="edu1-t" class="text-xl font-bold text-white">Master in Cinema and Television</h4>
+                            <p id="edu1-d" class="text-orange-500 text-sm font-bold mb-2">ISTINYE UNIVERSITY | 2024 - Present</p>
+                        </div>
+                        <div class="relative reveal" style="transition-delay: 0.5s;">
+                            <div class="timeline-dot bg-white/20"></div>
+                            <h4 id="edu2-t" class="text-xl font-bold text-white">Bachelor in Cinema & Audiovisual</h4>
+                            <p id="edu2-d" class="text-orange-500 text-sm font-bold mb-2">IBN ZOHR UNIVERSITY | 2020 - 2021</p>
+                        </div>
+                        <div class="relative reveal" style="transition-delay: 0.6s;">
+                            <div class="timeline-dot bg-white/20"></div>
+                            <h4 id="edu3-t" class="text-xl font-bold text-white">DTS in Cinema & Audiovisual</h4>
+                            <p id="edu3-d" class="text-orange-500 text-sm font-bold mb-2">ISCA | 2017 - 2020</p>
+                        </div>
                     </div>
-                    <div class="mt-12 glass p-6 rounded-3xl border border-blue-500/30 hover:border-blue-500 transition-colors group flex items-center gap-6 reveal">
-                        <div class="w-20 h-20 bg-blue-500/10 text-blue-500 border border-blue-500/50 rounded-full flex items-center justify-center text-3xl font-black shrink-0 shadow-[0_0_20px_rgba(59,130,246,0.2)]">125</div>
-                        <div><h4 id="iq-title" class="text-xl font-bold">Certified IQ Score</h4><p id="iq-desc" class="text-gray-400 text-sm mb-2">Top percentile cognitive performance assessment.</p><a href="https://myiq.com/certificate?i=eyJlbWFpbCI6ImJvdXJrYWRpLmFsYmFyYWVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJBTEJBUkFFIEJPVVJLQURJIiwiaXFfc2NvcmUiOiIxMjUiLCJmdW5uZWwiOiJteWlxIn0%253D" target="_blank" class="text-blue-400 hover:text-white font-bold text-sm" id="iq-link">View Certificate</a></div>
+                    <div class="glass p-6 rounded-3xl border border-blue-500/30 hover:border-blue-500 transition-colors group flex items-center gap-6 reveal" style="transition-delay: 0.7s;">
+                        <div class="w-20 h-20 bg-blue-500/10 text-blue-500 border border-blue-500/50 rounded-full flex items-center justify-center text-3xl font-black shrink-0 group-hover:scale-110 transition shadow-[0_0_20px_rgba(59,130,246,0.2)]">125</div>
+                        <div>
+                            <h4 id="iq-title" class="text-xl font-bold text-white mb-1">Certified IQ Score</h4>
+                            <p id="iq-desc" class="text-gray-400 text-sm mb-3">Top percentile cognitive performance assessment.</p>
+                            <a href="https://myiq.com/certificate?i=eyJlbWFpbCI6ImJvdXJrYWRpLmFsYmFyYWVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJBTEJBUkFFIEJPVVJLQURJIiwiaXFfc2NvcmUiOiIxMjUiLCJmdW5uZWwiOiJteWlxIn0%253D" target="_blank" class="text-blue-400 hover:text-white font-bold text-sm flex items-center gap-2 transition">
+                                <span id="iq-link">View Certificate</span> <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="mt-20 border-t border-white/5 pt-16 reveal text-center">
-                <h3 id="cv-lang-title" class="text-2xl font-bold mb-10">Languages I Speak</h3>
+
+            <div class="mt-20 border-t border-white/5 pt-16 reveal">
+                <h3 id="cv-lang-title" class="text-2xl font-bold mb-10 text-center flex justify-center items-center gap-3"><i class="fas fa-language text-gray-400"></i> Languages I Speak</h3>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" dir="ltr">
-                    <div class="glass p-5 rounded-2xl"><div class="flex justify-between mb-2"><span>Arabic</span><span class="text-green-400 font-bold">Native - 100%</span></div><div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-green-500 h-2.5 rounded-full progress-fill" data-width="100%"></div></div></div>
-                    <div class="glass p-5 rounded-2xl"><div class="flex justify-between mb-2"><span>English</span><span class="text-blue-400 font-bold">Upper Int - 70%</span></div><div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-blue-500 h-2.5 rounded-full progress-fill" data-width="70%"></div></div></div>
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.1s;">
+                        <div class="flex justify-between mb-2">
+                            <span id="lang1-n" class="font-bold text-white">Arabic</span>
+                            <span class="text-green-400 font-bold"><span id="lang1-lvl">Native Language</span> - 100%</span>
+                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-green-500 h-2.5 rounded-full progress-fill" data-width="100%"></div></div>
+                    </div>
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.2s;">
+                        <div class="flex justify-between mb-2">
+                            <span id="lang3-n" class="font-bold text-white">French</span>
+                            <span class="text-yellow-400 font-bold"><span id="lang3-lvl">Fluently</span> - 90%</span>
+                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-yellow-500 h-2.5 rounded-full progress-fill" data-width="90%"></div></div>
+                    </div>
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.3s;">
+                        <div class="flex justify-between mb-2">
+                            <span id="lang2-n" class="font-bold text-white">English</span>
+                            <span class="text-blue-400 font-bold"><span id="lang2-lvl">Upper Intermediate</span> - 70%</span>
+                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-blue-500 h-2.5 rounded-full progress-fill" data-width="70%"></div></div>
+                    </div>
+                    <div class="glass p-5 rounded-2xl reveal" style="transition-delay: 0.4s;">
+                        <div class="flex justify-between mb-2">
+                            <span id="lang4-n" class="font-bold text-white">Turkish</span>
+                            <span class="text-red-500 font-bold"><span id="lang4-lvl">B1 Level</span> - 60%</span>
+                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-2.5 overflow-hidden"><div class="bg-red-600 h-2.5 rounded-full progress-fill" data-width="60%"></div></div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="mt-20 border-t border-white/5 pt-16 reveal">
+                <h3 id="cv-skills-title" class="text-2xl font-bold mb-10 text-center flex justify-center items-center gap-3"><i class="fas fa-tools text-gray-400"></i> Software & Tools I Master</h3>
+                <div class="flex flex-wrap justify-center gap-4" dir="ltr">
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#9999ff] hover:border-[#9999ff]/50 transition cursor-default reveal" style="transition-delay: 0.1s;">Premiere Pro</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#9999ff] hover:border-[#9999ff]/50 transition cursor-default reveal" style="transition-delay: 0.2s;">After Effects</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#31a8ff] hover:border-[#31a8ff]/50 transition cursor-default reveal" style="transition-delay: 0.3s;">Photoshop</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#ff9a00] hover:border-[#ff9a00]/50 transition cursor-default reveal" style="transition-delay: 0.4s;">Illustrator</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-[#31a8ff] hover:border-[#31a8ff]/50 transition cursor-default reveal" style="transition-delay: 0.5s;">Lightroom</span>
+                    <span class="glass px-6 py-3 rounded-xl font-bold hover:text-red-500 hover:border-red-500/50 transition cursor-default reveal" style="transition-delay: 0.6s;">DaVinci Resolve</span>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center reveal">
+                <a href="CV%20ALBARAE%20BOURKADI%20V%202025.pdf" target="_blank" class="inline-flex items-center justify-center gap-3 glass px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:text-yellow-500 transition border border-white/20 hover:scale-105 duration-300">
+                    <i class="fas fa-file-download"></i> <span id="btn-download">Download Full CV</span>
+                </a>
             </div>
         </div>
     </section>
@@ -276,8 +494,21 @@
             const startPosition = window.scrollY;
             const distance = targetPosition - startPosition;
             let startTime = null;
-            function easeInOutQuad(t, b, c, d) { t /= d / 2; if (t < 1) return c / 2 * t * t + b; t--; return -c / 2 * (t * (t - 2) - 1) + b; }
-            function animation(currentTime) { if (startTime === null) startTime = currentTime; const timeElapsed = currentTime - startTime; const nextPosition = easeInOutQuad(timeElapsed, startPosition, distance, duration); window.scrollTo(0, nextPosition); if (timeElapsed < duration) requestAnimationFrame(animation); }
+
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const nextPosition = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, nextPosition);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
             requestAnimationFrame(animation);
         }
 
@@ -288,7 +519,11 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
                         const progressBars = entry.target.querySelectorAll('.progress-fill');
-                        if (progressBars.length > 0) setTimeout(() => progressBars.forEach(bar => bar.style.width = bar.getAttribute('data-width')), 600);
+                        if (progressBars.length > 0) {
+                            setTimeout(() => {
+                                progressBars.forEach(bar => bar.style.width = bar.getAttribute('data-width'));
+                            }, 600);
+                        }
                         observer.unobserve(entry.target);
                     }
                 });
@@ -311,16 +546,36 @@
                 film_t: "Selected <span class='gradient-text'>Works.</span>", ind_t: "International Films Credits :",
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be.\"", attribution: "— Albarae Bourkadi",
                 btn: "Let's Talk", btn2: "Who is Albarae?", skills_title: "Who is <span class='gradient-text'>Albarae?</span>",
-                srv1_t: "Cinematic Branding", srv1_d: "Mastering the creation of high-end cinematic visual identities.",
-                srv2_t: "AI Integration", s2_d: "Pioneering the use of advanced AI in creative production workflows.",
-                srv3_t: "Digital Advocacy", s3_d: "Leveraging visual storytelling for social justice awareness.",
-                film1_t: "Better Days (2019)", film5_t: "WC Short Film (2019)",
-                cv_main: "Digital <span class='gradient-text'>Resume.</span>", cv_exp: "Experience", cv_edu: "Education", cv_lang: "Languages I Speak",
-                exp1_t: "Founder & CEO", exp1_d: "DIGIPWORLD LLC | Oct 2025 - Present", exp1_c: "Specializing in premium digital products and secure infrastructure solutions.", exp1_l: "Website opening soon",
+                s1_t: "Cinematic Branding", s1_d: "Mastering the creation of high-end cinematic visual identities.",
+                s2_t: "AI Integration", s2_d: "Pioneering the use of advanced AI in creative production workflows.",
+                s3_t: "Digital Advocacy", s3_d: "Leveraging visual storytelling to drive social justice and global awareness.",
+                f1_t: "BETTER DAYS SHORT FILM (2019)", f1_d: "Filmmaker of all movie",
+                f2_t: "Behind scenes of Better Days (2019)", f2_d: "Filmmaker of all movie",
+                f3_t: "NOT ACHIEVED SHORT FILM (2020)", f3_d: "Filmmaker of all movie",
+                f4_t: "100 YEARS ELECTROLUX VIDEO PROMOTION (2019)", f4_d: "1st Director Assistant and Editor",
+                f5_t: "WC SHORT FILM (2019)", f5_d: "Editor - VFX Supervisor - Sound Operator & Designer",
+                f6_t: "THE OTHER SIDE SHORT FILM (2018)", f6_d: "Filmmaker of all movie",
+                c1: "<strong class='text-white'>1/ Assistant Director Trainee:</strong> On the Netflix/Dune Films feature <span class='italic'>\"His House\"</span> (2020), directed by Remi Weekes. <a href='https://www.imdb.com/fr/title/tt8508734/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a> 6,4",
+                c2: "<strong class='text-white'>2/ 2nd Assistant Director:</strong> On Moroccan/Italian post-apocalyptic Short Film <span class='italic'>\"Exodus\"</span> (2019) directed by Yassine Idrissi - <a href='https://aiff.jo/exodus/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>Aman International Film Festival</a>",
+                c3: "<strong class='text-white'>3/ Sound Operator:</strong> On Moroccan Short Film <span class='italic'>\"Naima's\"</span> (2019) directed by Sami Saif Sirelkhatim <a href='https://www.imdb.com/title/tt17633796/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a>",
+                c4: "<strong class='text-white'>4/ Sound Designer:</strong> On Moroccan Short Film <span class='italic'>\"Oracle\"</span> (2019) directed by Ismail Benaghmouch <a href='https://www.imdb.com/title/tt35663320/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a>",
+                cv_main: "Digital <span class='gradient-text'>Resume.</span>",
+                cv_exp: "Experience", cv_edu: "Education", cv_skills: "Software & Tools I Master", cv_lang: "Languages I Speak",
+                lang1: "Arabic", lang2: "English", lang3: "French", lang4: "Turkish",
+                lang1_lvl: "Native Language", lang2_lvl: "Upper Intermediate", lang3_lvl: "Fluently", lang4_lvl: "B1 Level",
+                exp1_t: "Founder & CEO", exp1_d: "DIGIPWORLD LLC | Oct 2025 - Present", exp1_c: "A legally registered U.S. company based in Wyoming. \"DIGIPWORLD\" stands for \"DIGITAL PRODUCTS WORLD\"—a name that reflects my ultimate vision of building the future digital equivalent of Etsy and Amazon. Today, we specialize in premium digital products and services designed to empower businesses and individuals. We provide high-quality solutions that streamline work environments, elevate professional lives, and boost project productivity, all backed by a top-tier secure infrastructure.",
+                exp1_l: "Website opening soon to offer our services",
                 exp2_t: "Founder & Marketing Director", exp2_d: "TIQAH COMPANY | 2023 - Present", exp2_c: "Headquartered in Agdal, Rabat, Morocco. TIQAH currently operates in Turkey and will soon expand to China.",
+                exp2_l1: "Website", exp2_l2: "Instagram", exp2_l3: "YouTube",
                 exp3_t: "Chief Marketing Officer (CMO)", exp3_d: "PHI DENTAL CLINIC | 2023 - 2024", exp3_c: "Based in Istanbul, Turkey. Managed social media presence, produced creative content, and grew following from 4K to 10K.",
+                exp3_l1: "Website", exp3_l2: "Instagram",
+                exp4_t: "Trainee Assistant Director", exp4_d: "DUNE FILM (Netflix) | 2018", exp4_c: "Worked on the British fiction movie \"His House\" directed by Remi Weekes.",
+                edu1_t: "Master in Cinema and Television", edu1_d: "ISTINYE UNIVERSITY | 2024 - Present",
+                edu2_t: "Bachelor in Cinema & Audiovisual", edu2_d: "IBN ZOHR UNIVERSITY | 2020 - 2021",
+                edu3_t: "DTS in Cinema & Audiovisual", edu3_d: "ISCA | 2017 - 2020",
                 iq_t: "Certified IQ Score", iq_d: "Top percentile cognitive performance assessment.", iq_l: "View Certificate",
-                contact_t: "Get In Touch", dir: "ltr"
+                btn_dl: "Download Full CV",
+                c_t: "Get In Touch", footer: "© 2026 All rights reserved to <span class='text-white'>Balbarae</span>", dir: "ltr"
             },
             ar: {
                 nav_home: "الرئيسية", nav_port: "أعمالي", nav_contact: "تواصل معي",
@@ -330,44 +585,89 @@
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>", ind_t: "أعمال سينمائية عالمية :",
                 quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يُتوقع مني، بل تماماً حيث أتوقع أنا أن أكون.\"", attribution: "— البراء البرقادي",
                 btn: "تحدث معي", btn2: "من هو البراء؟", skills_title: "من هو <span class='gradient-text'>البراء؟</span>",
-                srv1_t: "الهوية السينمائية", srv1_d: "إتقان فن بناء الهوية البصرية السينمائية الراقية.",
-                srv2_t: "دمج الذكاء الاصطناعي", srv2_d: "الريادة في توظيف الذكاء الاصطناعي داخل بيئات الإنتاج الإبداعي.",
-                srv3_t: "المناصرة الرقمية", srv3_d: "توظيف السرد البصري لدعم قضايا العدالة الاجتماعية ورفع الوعي العالمي.",
-                film1_t: "أيام أفضل (2019)", film5_t: "فيلم WC القصير (2019)",
-                cv_main: "السيرة <span class='gradient-text'>الرقمية.</span>", cv_exp: "الخبرات المهنية", cv_edu: "التعليم الأكاديمي", cv_lang: "اللغات التي أتحدث بها",
-                exp1_t: "مؤسس ومدير تنفيذي (CEO)", exp1_d: "شركة DIGIPWORLD LLC | أكتوبر 2025 - الحاضر", exp1_c: "متخصصون في المنتجات الرقمية الفاخرة وحلول البنية التحتية الآمنة.", exp1_l: "الموقع سيفتح قريباً",
+                s1_t: "الهوية السينمائية", s1_d: "إتقان فن بناء الهوية البصرية السينمائية الراقية.",
+                s2_t: "دمج الذكاء الاصطناعي", s2_d: "الريادة في توظيف الذكاء الاصطناعي داخل بيئات الإنتاج الإبداعي.",
+                s3_t: "المناصرة الرقمية", s3_d: "توظيف السرد البصري لدعم قضايا العدالة الاجتماعية ورفع الوعي العالمي.",
+                f1_t: "فيلم قصير BETTER DAYS (2019)", f1_d: "صانع الفيلم بالكامل",
+                f2_t: "كواليس فيلم Better Days (2019)", f2_d: "صانع الفيلم بالكامل",
+                f3_t: "فيلم قصير NOT ACHIEVED (2020)", f3_d: "صانع الفيلم بالكامل",
+                f4_t: "فيديو ترويجي لـ 100 عام من إلكترولوكس (2019)", f4_d: "مساعد مخرج أول ومونتير",
+                f5_t: "فيلم قصير WC (2019)", f5_d: "مونتير - مشرف خدع بصرية - مهندس ومصمم صوت",
+                f6_t: "فيلم قصير THE OTHER SIDE (2018)", f6_d: "صانع الفيلم بالكامل",
+                c1: "<strong class='text-white'>1/ متدرب مساعد مخرج:</strong> في فيلم Netflix/Dune Films الروائي <span class='italic'>\"His House\"</span> (2020)، إخراج ريمي ويكس. <a href='https://www.imdb.com/fr/title/tt8508734/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a> 6,4",
+                c2: "<strong class='text-white'>2/ مساعد مخرج ثاني:</strong> في الفيلم القصير المغربي/الإيطالي <span class='italic'>\"Exodus\"</span> (2019) إخراج ياسين الإدريسي - <a href='https://aiff.jo/exodus/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>مهرجان عمان السينمائي الدولي</a>",
+                c3: "<strong class='text-white'>3/ مهندس صوت:</strong> في الفيلم القصير المغربي <span class='italic'>\"Naima's\"</span> (2019) إخراج سامي سيف سرالختم <a href='https://www.imdb.com/title/tt17633796/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a>",
+                c4: "<strong class='text-white'>4/ مصمم صوت:</strong> في الفيلم القصير المغربي <span class='italic'>\"Oracle\"</span> (2019) إخراج إسماعيل بنغموش <a href='https://www.imdb.com/title/tt35663320/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a>",
+                cv_main: "السيرة <span class='gradient-text'>الرقمية.</span>",
+                cv_exp: "الخبرات المهنية", cv_edu: "التعليم الأكاديمي", cv_skills: "البرامج التي أتقنها", cv_lang: "اللغات التي أتحدث بها",
+                lang1: "العربية", lang2: "الإنجليزية", lang3: "الفرنسية", lang4: "التركية",
+                lang1_lvl: "اللغة الأم", lang2_lvl: "فوق المتوسط", lang3_lvl: "بطلاقة", lang4_lvl: "مستوى B1",
+                exp1_t: "مؤسس ومدير تنفيذي (CEO)", exp1_d: "شركة DIGIPWORLD LLC | أكتوبر 2025 - الحاضر", exp1_c: "شركة أمريكية مسجلة قانونياً في وايومنغ. يعكس اسم \"DIGIPWORLD\" (عالم المنتوجات الرقمية) طموحي المستقبلي لبناء منصة رقمية تضاهي Etsy و Amazon. أما اليوم، فنحن نتخصص في تقديم منتجات رقمية فاخرة وخدمات مخصصة تمكّن الشركات والأفراد من تسهيل بيئة عملهم، الارتقاء بحياتهم المهنية، ومضاعفة إنتاجية مشاريعهم، مدعومين ببنية تحتية آمنة وعالية الجودة.",
+                exp1_l: "سيتم افتتاح الموقع قريباً لبيع خدماتنا",
                 exp2_t: "مؤسس ومدير عام التسويق", exp2_d: "شركة TIQAH | 2023 - الحاضر", exp2_c: "مقرها في أكدال، الرباط، المغرب. تعمل مؤسسة ثقة حالياً في تركيا، وستبدأ عملياتها قريباً في الصين.",
+                exp2_l1: "الموقع الإلكتروني", exp2_l2: "إنستغرام", exp2_l3: "يوتيوب",
                 exp3_t: "المدير التنفيذي للتسويق (CMO)", exp3_d: "عيادة PHI DENTAL | 2023 - 2024", exp3_c: "مقر العمل في إسطنبول، تركيا. إدارة الحضور الرقمي، إنتاج المحتوى، وزيادة المتابعين من 4 آلاف إلى 10 آلاف.",
+                exp3_l1: "الموقع الإلكتروني", exp3_l2: "إنستغرام",
+                exp4_t: "متدرب مساعد مخرج", exp4_d: "DUNE FILM (Netflix) | 2018", exp4_c: "العمل في الفيلم الروائي البريطاني 'His House' للمخرج ريمي ويكس.",
+                edu1_t: "ماجستير في السينما والتلفزيون", edu1_d: "جامعة إستينيا | 2024 - الحاضر",
+                edu2_t: "بكالوريوس في السينما والسمعي البصري", edu2_d: "جامعة ابن زهر | 2020 - 2021",
+                edu3_t: "دبلوم تقني متخصص في السينما", edu3_d: "معهد ISCA | 2017 - 2020",
                 iq_t: "معدل الذكاء المعتمد (IQ)", iq_d: "تقييم أداء معرفي ضمن الشريحة المئوية العليا.", iq_l: "عرض الشهادة",
-                contact_t: "تواصل معي", dir: "rtl"
+                btn_dl: "تحميل السيرة الذاتية الكاملة",
+                c_t: "تواصل معي", footer: "© 2026 جميع الحقوق محفوظة لـ <span class='text-white'>البراء البرقادي</span>", dir: "rtl"
             },
             tr: {
                 nav_home: "Ana Sayfa", nav_port: "Portfolyo", nav_contact: "İletişim",
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir Faslıyım 🇲🇦, DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye anlatımı ile dijital büyüme stratejileri arasındaki köprüyü kuruyorum.",
-                skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
-                srv1_t: "Sinematik Markalaşma", srv1_d: "Üst düzey sinematik görsel kimlikler oluşturma sanatında ustalık.",
-                srv2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı üretim iş akışlarında gelişmiş yapay zeka kullanımına öncülük.",
-                srv3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanma.",
-                film1_t: "Better Days (2019)", film5_t: "WC Kısa Filmi (2019)",
-                cv_main: "Dijital <span class='gradient-text'>Özgeçmiş.</span>", cv_exp: "Deneyim", cv_edu: "Eğitim", cv_lang: "Konuştuğum Diller",
-                exp1_t: "Kurucu & CEO", exp1_d: "DIGIPWORLD LLC | 2025 - Günümüz", exp1_c: "Birinci sınıf dijital ürünler ve güvenli altyapı çözümlerinde uzmanlaşmıştır.", exp1_l: "Web sitesi yakında açılıyor",
+                film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", ind_t: "Uluslararası Film Kredileri :",
+                quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—beklenilen yerde değil, tam olarak kendi beklediğim yerde.\"", attribution: "— Albarae Bourkadi",
+                btn: "Konuşalım", btn2: "Albarae Kimdir?", skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
+                s1_t: "Sinematik Markalaşma", s1_d: "Üst düzey sinematik görsel kimlikler oluşturma sanatında ustalık.",
+                s2_t: "YZ Entegrasyonu", s2_d: "Yaratıcı üretim iş akışlarında gelişmiş yapay zeka kullanımına öncülük.",
+                s3_t: "Dijital Savunuculuk", s3_d: "Sosyal adalet ve küresel farkındalık için görsel hikaye anlatımını kullanma.",
+                f1_t: "BETTER DAYS KISA FİLM (2019)", f1_d: "Tüm filmin yapımcısı",
+                f2_t: "Better Days Kamera Arkası (2019)", f2_d: "Tüm filmin yapımcısı",
+                f3_t: "NOT ACHIEVED KISA FİLM (2020)", f3_d: "Tüm filmin yapımcısı",
+                f4_t: "100 YILLIK ELECTROLUX TANITIM VİDEOSU (2019)", f4_d: "1. Yönetmen Yardımcısı ve Kurgucu",
+                f5_t: "WC KISA FİLM (2019)", f5_d: "Kurgu - VFX Sorumlusu - Ses Operatörü ve Tasarımcısı",
+                f6_t: "THE OTHER SIDE KISA FİLM (2018)", f6_d: "Tüm filmin yapımcısı",
+                c1: "<strong class='text-white'>1/ Yönetmen Yardımcısı Stajyeri:</strong> Netflix/Dune Films yapımı <span class='italic'>\"His House\"</span> (2020), yönetmen Remi Weekes. <a href='https://www.imdb.com/fr/title/tt8508734/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a> 6,4",
+                c2: "<strong class='text-white'>2/ 2. Yönetmen Yardımcısı:</strong> Fas/İtalyan kıyamet sonrası kısa filmi <span class='italic'>\"Exodus\"</span> (2019) yönetmen Yassine Idrissi - <a href='https://aiff.jo/exodus/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>Aman Uluslararası Film Festivali</a>",
+                c3: "<strong class='text-white'>3/ Ses Operatörü:</strong> Fas Kısa Filmi <span class='italic'>\"Naima's\"</span> (2019) yönetmen Sami Saif Sirelkhatim <a href='https://www.imdb.com/title/tt17633796/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a>",
+                c4: "<strong class='text-white'>4/ Ses Tasarımcısı:</strong> Fas Kısa Filmi <span class='italic'>\"Oracle\"</span> (2019) yönetmen Ismail Benaghmouch <a href='https://www.imdb.com/title/tt35663320/' target='_blank' class='text-yellow-500 hover:text-white underline font-bold transition ml-1 mx-1' dir='ltr'>IMDB</a>",
+                cv_main: "Dijital <span class='gradient-text'>Özgeçmiş.</span>",
+                cv_exp: "Deneyim", cv_edu: "Eğitim", cv_skills: "Ustalaştığım Programlar", cv_lang: "Konuştuğum Diller",
+                lang1: "Arapça", lang2: "İngilizce", lang3: "Fransızca", lang4: "Türkçe",
+                lang1_lvl: "Anadil", lang2_lvl: "Orta Üstü", lang3_lvl: "Akıcı", lang4_lvl: "B1 Seviyesi",
+                exp1_t: "Kurucu & CEO", exp1_d: "DIGIPWORLD LLC | Eki 2025 - Günümüz", exp1_c: "Wyoming merkezli, yasal olarak kayıtlı ABD şirketi. \"DIGIPWORLD\" (DİJİTAL ÜRÜNLER DÜNYASI), gelecekte dijital bir Etsy ve Amazon inşa etme yönündeki nihai vizyonumu yansıtıyor. Bugün ise işletmelerin ve bireylerin çalışma ortamlarını kolaylaştıran, profesyonel yaşamlarını iyileştiren ve proje üretkenliklerini artıran birinci sınıf dijital ürünler ve hizmetler sunmaya odaklanıyoruz. Tüm bunları üst düzey güvenli bir altyapı ile sağlıyoruz.",
+                exp1_l: "Hizmetlerimizi sunmak için web sitemiz yakında açılıyor",
                 exp2_t: "Kurucu & Pazarlama Direktörü", exp2_d: "TIQAH COMPANY | 2023 - Günümüz", exp2_c: "Merkezi Agdal, Rabat, Fas. TIQAH şu anda Türkiye'de faaliyet gösteriyor ve yakında Çin'e açılacak.",
+                exp2_l1: "Web Sitesi", exp2_l2: "Instagram", exp2_l3: "YouTube",
                 exp3_t: "Pazarlama Müdürü (CMO)", exp3_d: "PHI DENTAL CLINIC | 2023 - 2024", exp3_c: "İstanbul, Türkiye merkezli. Sosyal medya varlığını yönetti ve takipçi sayısını 4 binden 10 bine çıkardı.",
+                exp3_l1: "Web Sitesi", exp3_l2: "Instagram",
+                exp4_t: "Yönetmen Yardımcısı Stajyeri", exp4_d: "DUNE FILM (Netflix) | 2018", exp4_c: "Remi Weekes'in yönettiği İngiliz kurgu filmi 'His House'da görev aldı.",
+                edu1_t: "Sinema ve Televizyon Yüksek Lisansı", edu1_d: "İSTİNYE ÜNİVERSİTESİ | 2024 - Günümüz",
+                edu2_t: "Sinema ve Görsel-İşitsel Lisans", edu2_d: "IBN ZOHR ÜNİVERSİTESİ | 2020 - 2021",
+                edu3_t: "Sinema ve Görsel-İşitsel Uzmanlık Diploması", edu3_d: "ISCA | 2017 - 2020",
                 iq_t: "Onaylı IQ Puanı", iq_d: "Üst yüzdelik bilişsel performans değerlendirmesi.", iq_l: "Sertifikayı Görüntüle",
-                contact_t: "İletişime Geç", dir: "ltr"
+                btn_dl: "Tüm Özgeçmişi İndir",
+                c_t: "İletişime Geç", footer: "© 2026 Tüm hakları <span class='text-white'>Balbarae</span>'ye aittir", dir: "ltr"
             }
         };
 
         function setLanguage(lang) {
-            const t = translations[lang] || translations['en'];
+            const t = translations[lang];
+            
             document.getElementById('nav-home').innerText = t.nav_home;
             document.getElementById('nav-port').innerText = t.nav_port;
             document.getElementById('nav-contact').innerText = t.nav_contact;
+            
             document.getElementById('m-home').innerText = t.nav_home;
             document.getElementById('m-port').innerText = t.nav_port;
             document.getElementById('m-contact').innerText = t.nav_contact;
+
             document.getElementById('hero-tag').innerText = t.tag;
             document.getElementById('hero-title').innerHTML = t.title;
             document.getElementById('hero-desc').innerHTML = t.desc;
@@ -378,25 +678,53 @@
             document.getElementById('btn-main').innerText = t.btn;
             document.getElementById('btn-sec').innerText = t.btn2;
             document.getElementById('skills-main-title').innerHTML = t.skills_title;
-            document.getElementById('srv1-title').innerText = t.srv1_t;
-            document.getElementById('srv1-desc').innerText = t.srv1_d;
-            document.getElementById('srv2-title').innerText = t.srv2_t;
-            document.getElementById('srv2-desc').innerText = t.srv2_d;
-            document.getElementById('srv3-title').innerText = t.srv3_t;
-            document.getElementById('srv3-desc').innerText = t.srv3_d;
-            document.getElementById('film1-t').innerText = t.film1_t;
-            document.getElementById('film5-t').innerText = t.film5_t;
+            document.getElementById('srv1-title').innerText = t.s1_t;
+            document.getElementById('srv1-desc').innerText = t.s1_d;
+            document.getElementById('srv2-title').innerText = t.s2_t;
+            document.getElementById('srv2-desc').innerText = t.s2_d;
+            document.getElementById('srv3-title').innerText = t.s3_t;
+            document.getElementById('srv3-desc').innerText = t.s3_d;
+            
+            document.getElementById('film1-t').innerText = t.f1_t; document.getElementById('film1-d').innerText = t.f1_d;
+            document.getElementById('film2-t').innerText = t.f2_t; document.getElementById('film2-d').innerText = t.f2_d;
+            document.getElementById('film3-t').innerText = t.f3_t; document.getElementById('film3-d').innerText = t.f3_d;
+            document.getElementById('film4-t').innerText = t.f4_t; document.getElementById('film4-d').innerText = t.f4_d;
+            document.getElementById('film5-t').innerText = t.f5_t; document.getElementById('film5-d').innerText = t.f5_d;
+            document.getElementById('film6-t').innerText = t.f6_t; document.getElementById('film6-d').innerText = t.f6_d;
+            
+            document.getElementById('cred1').innerHTML = t.c1;
+            document.getElementById('cred2').innerHTML = t.c2;
+            document.getElementById('cred3').innerHTML = t.c3;
+            document.getElementById('cred4').innerHTML = t.c4;
+
             document.getElementById('cv-main-title').innerHTML = t.cv_main;
-            document.getElementById('cv-exp-title').innerHTML = `<i class="fas fa-briefcase mr-2"></i> ${t.cv_exp}`;
-            document.getElementById('cv-edu-title').innerHTML = `<i class="fas fa-graduation-cap mr-2"></i> ${t.cv_edu}`;
-            document.getElementById('cv-lang-title').innerText = t.cv_lang;
+            document.getElementById('cv-exp-title').innerHTML = `<i class="fas fa-briefcase"></i> ${t.cv_exp}`;
+            document.getElementById('cv-edu-title').innerHTML = `<i class="fas fa-graduation-cap"></i> ${t.cv_edu}`;
+            document.getElementById('cv-skills-title').innerHTML = `<i class="fas fa-tools text-gray-400"></i> ${t.cv_skills}`;
+            document.getElementById('cv-lang-title').innerHTML = `<i class="fas fa-language text-gray-400"></i> ${t.cv_lang}`;
+            
+            document.getElementById('lang1-n').innerText = t.lang1; document.getElementById('lang1-lvl').innerText = t.lang1_lvl;
+            document.getElementById('lang2-n').innerText = t.lang2; document.getElementById('lang2-lvl').innerText = t.lang2_lvl;
+            document.getElementById('lang3-n').innerText = t.lang3; document.getElementById('lang3-lvl').innerText = t.lang3_lvl;
+            document.getElementById('lang4-n').innerText = t.lang4; document.getElementById('lang4-lvl').innerText = t.lang4_lvl;
+
             document.getElementById('exp1-t').innerText = t.exp1_t; document.getElementById('exp1-d').innerText = t.exp1_d; document.getElementById('exp1-c').innerText = t.exp1_c; document.getElementById('exp1-link').innerText = t.exp1_l;
             document.getElementById('exp2-t').innerText = t.exp2_t; document.getElementById('exp2-d').innerText = t.exp2_d; document.getElementById('exp2-c').innerText = t.exp2_c;
+            document.getElementById('exp2-link1').innerText = t.exp2_l1; document.getElementById('exp2-link2').innerText = t.exp2_l2; document.getElementById('exp2-link3').innerText = t.exp2_l3;
             document.getElementById('exp3-t').innerText = t.exp3_t; document.getElementById('exp3-d').innerText = t.exp3_d; document.getElementById('exp3-c').innerText = t.exp3_c;
+            document.getElementById('exp3-link1').innerText = t.exp3_l1; document.getElementById('exp3-link2').innerText = t.exp3_l2;
+            document.getElementById('exp4-t').innerText = t.exp4_t; document.getElementById('exp4-d').innerText = t.exp4_d; document.getElementById('exp4-c').innerText = t.exp4_c;
+            
             document.getElementById('edu1-t').innerText = t.edu1_t; document.getElementById('edu1-d').innerText = t.edu1_d;
             document.getElementById('edu2-t').innerText = t.edu2_t; document.getElementById('edu2-d').innerText = t.edu2_d;
-            document.getElementById('iq-title').innerText = t.iq_t; document.getElementById('iq-desc').innerText = t.iq_d; document.getElementById('iq-link').innerText = t.iq_l;
-            document.getElementById('contact-title').innerText = t.contact_t;
+            document.getElementById('edu3-t').innerText = t.edu3_t; document.getElementById('edu3-d').innerText = t.edu3_d;
+
+            document.getElementById('iq-title').innerText = t.iq_t;
+            document.getElementById('iq-desc').innerText = t.iq_d;
+            document.getElementById('iq-link').innerText = t.iq_l;
+            document.getElementById('btn-download').innerText = t.btn_dl;
+
+            document.getElementById('contact-title').innerText = t.c_t;
             document.body.dir = t.dir;
             document.body.classList.toggle('rtl', t.dir === 'rtl');
             ['en', 'ar', 'tr'].forEach(l => document.getElementById(`btn-${l}`).className = (l === lang) ? "px-3 py-1 rounded-lg text-xs font-bold transition bg-yellow-500 text-black" : "px-3 py-1 rounded-lg text-xs font-bold transition hover:bg-white/10 text-white");
