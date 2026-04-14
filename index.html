@@ -329,8 +329,8 @@
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 
-                // هندسة الهرم الإنجليزي (حاسوب 2 سطر، هاتف 5 أسطر متناقصة)
-                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br class='block md:hidden'> Moroccan 🇲🇦, Founder of <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span><br class='hidden md:block'><br class='block md:hidden'> I bridge the gap between high-end<br class='block md:hidden'> storytelling and digital growth<br class='block md:hidden'> strategies.",
+                // هندسة الهرم الإنجليزي للحاسوب والهاتف حرفياً كما طلبت
+                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br class='block md:hidden'> <span class='whitespace-nowrap'>Moroccan 🇲🇦</span>, Founder of<br class='hidden md:block'> <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span><br class='block md:hidden'> I bridge the gap between high-end<br class='block md:hidden'> storytelling<br class='hidden md:block'> and digital growth<br class='block md:hidden'> strategies.",
                 
                 film_t: "Selected <span class='gradient-text'>Works.</span>", film1_t: "Better Days (2019)", film5_t: "WC Short Film (2019)", ind_t: "International Films Credits :",
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be.\"", attribution: "— Albarae Bourkadi",
@@ -352,7 +352,7 @@
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 
-                // النص العربي بدون أي مساس (كما طلبته)
+                // النسخة العربية التي كانت مثالية لك لم يتم مسها
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر <span class='whitespace-nowrap'>🇲🇦</span>،<br class='block md:hidden'> مؤسس <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span> <br class='hidden md:block'>أربط بين السرد القصصي<br class='block md:hidden'> الاحترافي واستراتيجيات النمو<br class='block md:hidden'> الرقمي.",
                 
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>", film1_t: "أيام أفضل (2019)", film5_t: "فيلم WC القصير (2019)", ind_t: "أعمال سينمائية عالمية :",
@@ -375,8 +375,8 @@
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 
-                // هندسة الهرم التركي (حاسوب 2 سطر، هاتف 5 أسطر متناقصة مع الحفاظ على bir)
-                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir<br class='block md:hidden'> <span class='whitespace-nowrap'>Faslıyım 🇲🇦</span>, <span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span> kurucusuyum.<br class='hidden md:block'><br class='block md:hidden'> Üst düzey hikaye anlatımı ile dijital<br class='block md:hidden'> büyüme stratejileri arasındaki<br class='block md:hidden'> köprüyü kuruyorum.",
+                // هندسة الهرم التركي للحاسوب والهاتف حرفياً كما طلبت
+                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br class='block md:hidden'> bir <span class='whitespace-nowrap'>Faslıyım 🇲🇦</span>,<br class='hidden md:block'> <span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span><br class='block md:hidden'> kurucusuyum. Üst düzey hikaye<br class='hidden md:block'><br class='block md:hidden'> anlatımı ile dijital büyüme<br class='block md:hidden'> stratejileri arasındaki<br class='hidden md:block'><br class='block md:hidden'> köprüyü kuruyorum.",
                 
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", film1_t: "Better Days (2019)", film5_t: "WC Kısa Filmi (2019)", ind_t: "Uluslararası Film Kredileri :",
                 quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—beklenilen yerde değil, tam olarak kendi beklediğim yerde.\"", attribution: "— Albarae Bourkadi",
@@ -418,10 +418,8 @@
             document.getElementById('cv-exp-title').innerHTML = `<i class="fas fa-briefcase mr-2"></i> ${t.cv_exp}`;
             document.getElementById('cv-edu-title').innerHTML = `<i class="fas fa-graduation-cap mr-2"></i> ${t.cv_edu}`;
             
-            // إضافة أيقونة اللغات مع العنوان
             if(document.getElementById('cv-lang-title')) document.getElementById('cv-lang-title').innerHTML = `<i class="fas fa-language text-gray-400"></i> ${t.lang_t}`;
             
-            // Languages Mapping مع الحفاظ على الأعلام
             if(document.getElementById('lang1-n')) {
                 document.getElementById('lang1-n').innerHTML = `${t.lang1} 🇲🇦`;
                 document.getElementById('lang1-lvl').innerText = t.lang1_lvl;
@@ -433,7 +431,6 @@
                 document.getElementById('lang4-lvl').innerText = t.lang4_lvl;
             }
             
-            // Experience mapping
             if(document.getElementById('exp1-t')) {
                 document.getElementById('exp1-t').innerText = t.exp1_t; document.getElementById('exp1-d').innerText = t.exp1_d; document.getElementById('exp1-c').innerText = t.exp1_c; document.getElementById('exp1-link').innerText = t.exp1_l;
                 document.getElementById('exp2-t').innerText = t.exp2_t; document.getElementById('exp2-d').innerText = t.exp2_d; document.getElementById('exp2-c').innerText = t.exp2_c;
@@ -449,18 +446,6 @@
             document.getElementById('btn-download').innerText = t.btn_dl;
             document.getElementById('contact-title').innerText = t.contact_t;
             
-            // تعديل اتجاه ترتيب الأزرار بناءً على اللغة ليكون الأصفر دائمًا على اليمين في الحاسوب
-            const heroBtns = document.getElementById('hero-buttons');
-            if(heroBtns) {
-                if(t.dir === 'rtl') {
-                    heroBtns.classList.remove('md:flex-row-reverse');
-                    heroBtns.classList.add('md:flex-row');
-                } else {
-                    heroBtns.classList.remove('md:flex-row');
-                    heroBtns.classList.add('md:flex-row-reverse');
-                }
-            }
-
             document.body.dir = t.dir;
             document.body.classList.toggle('rtl', t.dir === 'rtl');
             ['en', 'ar', 'tr'].forEach(l => {
