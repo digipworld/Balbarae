@@ -100,22 +100,20 @@
         .earth-map { animation: spin-earth 4s linear infinite; }
     </style>
 </head>
-<body class="bg-[#0a0a0a] text-white hero-bg min-h-screen">
+<body class="bg-[#0a0a0a] text-white hero-bg min-h-screen text-center lg:text-left">
 
     <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="glass w-12 h-12 rounded-full flex items-center justify-center text-yellow-500 hover:text-white hover:bg-yellow-500/20 transition-all duration-300">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <nav class="fixed w-full z-50 px-4 md:px-6 py-4">
+    <nav class="fixed w-full z-50 px-4 md:px-6 py-4 text-left">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-5 py-2.5 reveal active">
             <h1 class="text-xl md:text-2xl font-black tracking-tighter gradient-text cursor-pointer" onclick="window.scrollTo(0,0)">BALBARAE</h1>
-            
             <div class="hidden lg:flex items-center gap-8 font-bold text-sm text-gray-300">
                 <a href="#" onclick="window.scrollTo(0,0); return false;" class="hover:text-yellow-500 transition" id="nav-home">Home</a>
                 <a href="#filmography" class="hover:text-yellow-500 transition" id="nav-port">Portfolio</a>
                 <a href="#contact" class="hover:text-yellow-500 transition" id="nav-contact">Contact</a>
             </div>
-
             <div class="flex items-center gap-2">
                 <div class="flex items-center gap-2 bg-white/5 p-1 rounded-xl" dir="ltr">
                     <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1 rounded-lg text-[10px] md:text-xs font-bold transition bg-yellow-500 text-black">EN</button>
@@ -140,14 +138,10 @@
     <section class="pt-32 md:pt-48 pb-[108px] md:pb-20 px-4 md:px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto w-full">
             <span id="hero-tag" class="px-4 py-1.5 md:py-2 rounded-full glass text-[10px] md:text-sm font-bold text-yellow-500 mb-4 md:mb-6 inline-block reveal active">Filmmaker, AI Consultant & Digital Visionary</span>
-            
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-4 md:mb-8 leading-tight reveal active" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
-            
             <p id="hero-desc" class="text-gray-400 text-[15px] md:text-2xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-1 reveal active" style="transition-delay: 0.2s;">
-                I am <span class="text-white font-bold">Albarae Bourkadi</span>, 27 Years old, proudly Moroccan 🇲🇦, Founder of DIGIPWORLD LLC. I bridge the gap between high-end storytelling and digital growth strategies.
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-4 md:gap-5 mb-8 md:mb-12 text-xl md:text-2xl reveal active" style="transition-delay: 0.3s;" dir="ltr">
+                </p>
+            <div class="flex flex-wrap justify-center gap-5 mb-12 text-2xl reveal active" style="transition-delay: 0.3s;" dir="ltr">
                 <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/balbarae" target="_blank" class="social-link hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
                 <a href="https://vimeo.com/balbarae" target="_blank" class="social-link hover:text-sky-400"><i class="fab fa-vimeo-v"></i></a>
@@ -155,7 +149,6 @@
                 <a href="https://www.facebook.com/balbarae" target="_blank" class="social-link hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
                 <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
             </div>
-
             <div class="flex flex-col md:flex-row justify-center w-full gap-3 md:gap-4 HeroButtons px-2 md:px-4 reveal active" style="transition-delay: 0.4s;">
                 <a href="#contact" id="btn-main" class="w-full md:w-auto bg-yellow-500 text-black px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition flex items-center justify-center">Let's Talk</a>
                 <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 250);" class="w-full md:w-auto glass px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-white/5 transition cursor-pointer flex items-center justify-center">Who is Albarae?</a>
@@ -175,23 +168,23 @@
     </section>
 
     <section id="skills" class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black text-center mb-16 reveal">Who is <span class="gradient-text">Albarae?</span></h2>
-            <div class="grid md:grid-cols-3 gap-8 mb-24 text-center">
-                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center">
-                    <div class="mb-6 flex justify-center items-center h-16 w-full"><svg viewBox="0 0 100 100" class="w-16 h-16 clapper-svg overflow-visible" fill="none"><g class="clapper-top" style="transform-origin: 10px 42px;"><path d="M10 25 h80 v16 h-80 z" fill="#1F2937"/><path d="M15 25 L30 41 M35 25 L50 41 M55 25 L70 41 M75 25 L90 41" stroke="#FACC15" stroke-width="4"/></g><path d="M10 43 h80 v35 c0 3.3 -2.7 6 -6 6 h-68 c-3.3 0 -6 -2.7 -6 -6 z" fill="#374151"/><path d="M10 43 h80 v16 h-80 z" fill="#1F2937"/><path d="M25 43 L10 59 M45 43 L30 59 M65 43 L50 59 M85 43 L70 59" stroke="#FACC15" stroke-width="4"/></svg></div>
-                    <h3 id="srv1-title" class="text-2xl font-bold mb-4 w-full">Cinematic Branding</h3>
-                    <p id="srv1-desc" class="text-gray-400 w-full text-sm">Mastering the creation of high-end cinematic visual identities.</p>
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 id="skills-main-title" class="text-4xl md:text-5xl font-black mb-16 reveal">Who is <span class="gradient-text">Albarae?</span></h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-24">
+                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center justify-center">
+                    <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16 overflow-visible"><g class="clapper-top" style="transform-origin: 10px 42px;"><path d="M10 25 h80 v16 h-80 z" fill="#1F2937"/><path d="M15 25 L30 41 M35 25 L50 41 M55 25 L70 41 M75 25 L90 41" stroke="#FACC15" stroke-width="4"/></g><path d="M10 43 h80 v35 c0 3.3 -2.7 6 -6 6 h-68 c-3.3 0 -6 -2.7 -6 -6 z" fill="#374151"/><path d="M10 43 h80 v16 h-80 z" fill="#1F2937"/><path d="M25 43 L10 59 M45 43 L30 59 M65 43 L50 59 M85 43 L70 59" stroke="#FACC15" stroke-width="4"/></svg></div>
+                    <h3 id="srv1-title" class="text-2xl font-bold mb-4">Cinematic Branding</h3>
+                    <p id="srv1-desc" class="text-gray-400 text-sm">Mastering the creation of high-end cinematic visual identities.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center" style="transition-delay: 0.1s;">
-                    <div class="mb-6 flex justify-center items-center h-16 w-full"><svg viewBox="0 0 100 100" class="w-16 h-16 robot-svg" fill="none"><rect x="25" y="35" width="50" height="45" rx="8" fill="#374151"/><path d="M50 35 L50 20" stroke="#9CA3AF" stroke-width="4"/><circle cx="50" cy="15" r="5" fill="#FACC15"/><circle cx="38" cy="55" r="5" fill="#60A5FA"/><g class="robot-eye" style="transform-origin: 62px 55px;"><circle cx="62" cy="55" r="5" fill="#60A5FA"/></g><rect x="40" y="70" width="20" height="4" rx="2" fill="#111827"/></svg></div>
-                    <h3 id="srv2-title" class="text-2xl font-bold mb-4 w-full">AI Integration</h3>
-                    <p id="srv2-desc" class="text-gray-400 w-full text-sm">Pioneering the use of advanced AI in creative production workflows.</p>
+                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center justify-center" style="transition-delay: 0.1s;">
+                    <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16"><rect x="25" y="35" width="50" height="45" rx="8" fill="#374151"/><path d="M50 35 L50 20" stroke="#9CA3AF" stroke-width="4"/><circle cx="38" cy="55" r="5" fill="#60A5FA"/><g class="robot-eye" style="transform-origin: 62px 55px;"><circle cx="62" cy="55" r="5" fill="#60A5FA"/></g><rect x="40" y="70" width="20" height="4" rx="2" fill="#111827"/></svg></div>
+                    <h3 id="srv2-title" class="text-2xl font-bold mb-4">AI Integration</h3>
+                    <p id="srv2-desc" class="text-gray-400 text-sm">Pioneering the use of advanced AI in creative production workflows.</p>
                 </div>
-                <div class="glass p-8 rounded-3xl group reveal text-center flex flex-col items-center" style="transition-delay: 0.2s;">
-                    <div class="mb-6 flex justify-center items-center h-16 w-full"><svg viewBox="0 0 100 100" class="w-16 h-16 earth-svg" fill="none"><circle cx="50" cy="50" r="40" fill="#2563EB"/><g clip-path="url(#earth-clip)"><g class="earth-map" fill="#10B981"><path d="M 5 25 C 20 10, 40 30, 50 40 C 60 50, 40 80, 20 70 C 0 60, -10 40, 5 25 Z M 105 25 C 120 10, 140 30, 150 40 C 160 50, 140 80, 120 70 C 100 60, 90 40, 105 25 Z"/></g></g><defs><clipPath id="earth-clip"><circle cx="50" cy="50" r="40"/></clipPath></defs></svg></div>
-                    <h3 id="srv3-title" class="text-2xl font-bold mb-4 w-full">Digital Advocacy</h3>
-                    <p id="srv3-desc" class="text-gray-400 w-full text-sm">Leveraging visual storytelling to drive social justice awareness.</p>
+                <div class="glass p-8 rounded-3xl group reveal flex flex-col items-center justify-center" style="transition-delay: 0.2s;">
+                    <div class="mb-6 h-16"><svg viewBox="0 0 100 100" class="w-16 h-16"><circle cx="50" cy="50" r="40" fill="#2563EB"/><g clip-path="url(#earth-clip)"><g class="earth-map" fill="#10B981"><path d="M 5 25 C 20 10, 40 30, 50 40 C 60 50, 40 80, 20 70 C 0 60, -10 40, 5 25 Z M 105 25 C 120 10, 140 30, 150 40 C 160 50, 140 80, 120 70 C 100 60, 90 40, 105 25 Z"/></g></g><defs><clipPath id="earth-clip"><circle cx="50" cy="50" r="40"/></clipPath></defs></svg></div>
+                    <h3 id="srv3-title" class="text-2xl font-bold mb-4">Digital Advocacy</h3>
+                    <p id="srv3-desc" class="text-gray-400 text-sm">Leveraging visual storytelling for social justice awareness.</p>
                 </div>
             </div>
 
@@ -241,7 +234,7 @@
                     <div class="space-y-10 timeline-line mb-12">
                         <div class="relative reveal"><div class="timeline-dot bg-orange-500 shadow-[0_0_10px_#f97316]"></div><h4 id="edu1-t" class="text-xl font-bold uppercase">Master in Cinema</h4><p id="edu1-d" class="text-orange-500 text-sm font-bold">ISTINYE UNIVERSITY | 2024 - Present</p></div>
                     </div>
-                    <div class="glass p-6 rounded-3xl border border-blue-500/30 group flex items-center gap-6 reveal">
+                    <div class="mt-12 glass p-6 rounded-3xl border border-blue-500/30 group flex items-center gap-6 reveal">
                         <div class="w-16 h-16 bg-blue-500/10 text-blue-500 border border-blue-500/50 rounded-full flex items-center justify-center text-2xl font-black shrink-0">125</div>
                         <div><h4 id="iq-title" class="text-lg font-bold text-white uppercase">IQ Score</h4><a href="https://myiq.com/certificate?i=eyJlbWFpbCI6ImJvdXJrYWRpLmFsYmFyYWVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJBTEJBUkFFIEJPVVJLQURJIiwiaXFfc2NvcmUiOiIxMjUiLCJmdW5uZWwiOiJteWlxIn0%253D" target="_blank" class="text-blue-400 text-sm" id="iq-link">View Certificate</a></div>
                     </div>
@@ -306,6 +299,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+            setLanguage('en'); 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -319,18 +313,27 @@
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
 
+        window.onscroll = function() {
+            const btn = document.getElementById("backToTop");
+            if (document.documentElement.scrollTop > 500) btn.classList.add("show");
+            else btn.classList.remove("show");
+        };
+
         const translations = {
             en: {
                 nav_home: "Home", nav_port: "Portfolio", nav_contact: "Contact",
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
+                
+                /* English Inverted Pyramid */
                 desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br class='block md:hidden'> <span class='whitespace-nowrap'>Moroccan 🇲🇦</span>, <br class='hidden md:block'>Founder of <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span><br class='block md:hidden'> I bridge the gap between high-end<br class='block md:hidden'> storytelling <br class='hidden md:block'>and digital growth<br class='block md:hidden'> strategies.",
+                
                 film_t: "Selected <span class='gradient-text'>Works.</span>", film1_t: "Better Days (2019)", film5_t: "WC Short Film (2019)", ind_t: "International Films Credits :",
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be.\"", attribution: "— Albarae Bourkadi",
                 btn: "Let's Talk", btn2: "Who is Albarae?", skills_title: "Who is <span class='gradient-text'>Albarae?</span>",
                 srv1_t: "Cinematic Branding", srv1_d: "Mastering the creation of high-end cinematic visual identities.",
-                srv2_t: "AI Integration", srv2_d: "Pioneering the use of advanced AI in creative production workflows.",
-                srv3_t: "Digital Advocacy", srv3_d: "Leveraging visual storytelling for social justice awareness.",
+                srv2_t: "AI Integration", s2_d: "Pioneering the use of advanced AI in creative production workflows.",
+                srv3_t: "Digital Advocacy", s3_d: "Leveraging visual storytelling for social justice awareness.",
                 cv_main: "Digital <span class='gradient-text'>Resume.</span>", cv_exp: "Experience", cv_edu: "Education",
                 lang1: "Arabic", lang1_lvl: "Native", lang2: "English", lang2_lvl: "Upper Int",
                 exp2_c: "Headquartered in Agdal, Rabat. Operations in Turkey & soon China.",
@@ -341,13 +344,16 @@
                 nav_home: "الرئيسية", nav_port: "أعمالي", nav_contact: "تواصل معي",
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
+                
+                /* Arabic Inverted Pyramid */
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر <span class='whitespace-nowrap'>🇲🇦</span>،<br class='block md:hidden'> مؤسس <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span> أربط بين السرد القصصي<br class='block md:hidden'> الاحترافي واستراتيجيات النمو<br class='block md:hidden'> الرقمي.",
+                
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>", film1_t: "أيام أفضل (2019)", film5_t: "فيلم WC القصير (2019)", ind_t: "أعمال سينمائية عالمية :",
                 quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يُتوقع مني، بل تماماً حيث أتوقع أنا أن أكون.\"", attribution: "— البراء البرقادي",
                 btn: "تحدث معي", btn2: "من هو البراء؟", skills_title: "من هو <span class='gradient-text'>البراء؟</span>",
                 srv1_t: "الهوية السينمائية", srv1_d: "إتقان فن بناء الهوية البصرية السينمائية الراقية.",
-                srv2_t: "دمج الذكاء الاصطناعي", srv2_d: "الريادة في توظيف الذكاء الاصطناعي داخل بيئات الإنتاج الإبداعي.",
-                srv3_t: "المناصرة الرقمية", srv3_d: "توظيف السرد البصري لدعم قضايا العدالة الاجتماعية ورفع الوعي العالمي.",
+                srv2_t: "دمج الذكاء الاصطناعي", s2_d: "الريادة في توظيف الذكاء الاصطناعي داخل بيئات الإنتاج الإبداعي.",
+                srv3_t: "المناصرة الرقمية", s3_d: "توظيف السرد البصري لدعم قضايا العدالة الاجتماعية ورفع الوعي العالمي.",
                 cv_main: "السيرة <span class='gradient-text'>الرقمية.</span>", cv_exp: "الخبرات المهنية", cv_edu: "التعليم الأكاديمي",
                 lang1: "العربية", lang1_lvl: "اللغة الأم", lang2: "الإنجليزية", lang2_lvl: "فوق المتوسط",
                 exp2_c: "المقر الرئيسي في أكدال، الرباط. العمل حالياً في تركيا وقريباً في الصين.",
@@ -358,7 +364,10 @@
                 nav_home: "Ana Sayfa", nav_port: "Portfolyo", nav_contact: "İletişim",
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
-                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br class='block md:hidden'> bir Faslıyım <span class='whitespace-nowrap'>🇲🇦</span>, <span class='whitespace-nowrap'>DIGIPWORLD LLC</span>'nin kurucusuyum.<br class='block md:hidden'> Üst düzey hikaye anlatımı ile dijital büyüme<br class='block md:hidden'> stratejileri arasındaki köprüyü<br class='block md:hidden'> kuruyorum.",
+                
+                /* Turkish Inverted Pyramid (Fixed & Adjusted) */
+                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br class='block md:hidden'> bir Faslıyım <span class='whitespace-nowrap'>🇲🇦</span>, <span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span><br class='block md:hidden'> kurucusuyum. Üst düzey hikaye<br class='block md:hidden'> anlatımı ile dijital büyüme<br class='block md:hidden'> stratejileri arasındaki<br class='block md:hidden'> köprüyü kuruyorum.",
+                
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", film1_t: "Better Days (2019)", film5_t: "WC Kısa Filmi (2019)", ind_t: "Uluslararası Film Kredileri :",
                 quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—beklenilen yerde değil, tam olarak kendi beklediğim yerde.\"", attribution: "— Albarae Bourkadi",
                 btn: "Konuşalım", btn2: "Albarae Kimdir?", skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
