@@ -149,9 +149,10 @@
                 <a href="https://www.facebook.com/balbarae" target="_blank" class="social-link hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
                 <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
             </div>
-            <div class="flex flex-col md:flex-row justify-center w-full gap-3 md:gap-4 HeroButtons px-2 md:px-4 reveal active" style="transition-delay: 0.4s;">
-                <a href="#contact" id="btn-main" class="w-full md:w-auto bg-yellow-500 text-black px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition flex items-center justify-center">Let's Talk</a>
+            
+            <div class="flex flex-col-reverse md:flex-row justify-center w-full gap-3 md:gap-4 HeroButtons px-2 md:px-4 reveal active" style="transition-delay: 0.4s;" dir="ltr">
                 <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 250);" class="w-full md:w-auto glass px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-white/5 transition cursor-pointer flex items-center justify-center">Who is Albarae?</a>
+                <a href="#contact" id="btn-main" class="w-full md:w-auto bg-yellow-500 text-black px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition flex items-center justify-center">Let's Talk</a>
             </div>
         </div>
     </section>
@@ -327,7 +328,10 @@
                 nav_home: "Home", nav_port: "Portfolio", nav_contact: "Contact",
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
-                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br class='block md:hidden'> <span class='whitespace-nowrap'>Moroccan 🇲🇦</span>, Founder of <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span><br class='hidden md:block'><br class='block md:hidden'> I bridge the gap between high-end<br class='block md:hidden'> storytelling <br class='hidden md:block'>and digital growth<br class='block md:hidden'> strategies.",
+                
+                // التنسيق الهرمي المقلوب المثالي للإنجليزية
+                desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br class='block md:hidden'> <span class='whitespace-nowrap'>Moroccan 🇲🇦</span>, Founder of <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span><br class='hidden md:block'><br class='block md:hidden'> I bridge the gap between high-end<br class='block md:hidden'> storytelling and digital<br class='block md:hidden'> growth strategies.",
+                
                 film_t: "Selected <span class='gradient-text'>Works.</span>", film1_t: "Better Days (2019)", film5_t: "WC Short Film (2019)", ind_t: "International Films Credits :",
                 quote: "\"A filmmaker who markets, a marketer who shoots—not where expected, but exactly where I expect to be.\"", attribution: "— Albarae Bourkadi",
                 btn: "Let's Talk", btn2: "Who is Albarae?", skills_title: "Who is <span class='gradient-text'>Albarae?</span>",
@@ -347,7 +351,10 @@
                 nav_home: "الرئيسية", nav_port: "أعمالي", nav_contact: "تواصل معي",
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
-                desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر <span class='whitespace-nowrap'>🇲🇦</span>،<br class='block md:hidden'> مؤسس <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span> <br class='hidden md:block'><br class='block md:hidden'>أربط بين السرد القصصي<br class='block md:hidden'> الاحترافي واستراتيجيات النمو<br class='block md:hidden'> الرقمي.",
+                
+                // التنسيق الهرمي المقلوب للعربية + إنزال "أربط بين" في الحاسوب
+                desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر <span class='whitespace-nowrap'>🇲🇦</span>،<br class='block md:hidden'> مؤسس <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span> <br class='hidden md:block'>أربط بين السرد القصصي<br class='block md:hidden'> الاحترافي واستراتيجيات النمو<br class='block md:hidden'> الرقمي.",
+                
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>", film1_t: "أيام أفضل (2019)", film5_t: "فيلم WC القصير (2019)", ind_t: "أعمال سينمائية عالمية :",
                 quote: "\"صانع أفلام يسوّق، ومسوّق يصوّر—لستُ حيث يُتوقع مني، بل تماماً حيث أتوقع أنا أن أكون.\"", attribution: "— البراء البرقادي",
                 btn: "تحدث معي", btn2: "من هو البراء؟", skills_title: "من هو <span class='gradient-text'>البراء؟</span>",
@@ -367,7 +374,10 @@
                 nav_home: "Ana Sayfa", nav_port: "Portfolyo", nav_contact: "İletişim",
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
-                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br class='block md:hidden'> <span class='whitespace-nowrap'>bir Faslıyım 🇲🇦</span>, <br class='hidden md:block'><span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span><br class='block md:hidden'> kurucusuyum. Üst düzey hikaye<br class='hidden md:block'><br class='block md:hidden'> anlatımı ile dijital büyüme<br class='block md:hidden'> stratejileri <br class='hidden md:block'>arasındaki<br class='block md:hidden'> köprüyü kuruyorum.",
+                
+                // التنسيق الهرمي المقلوب والمثالي للتركية (مع منع انقسام bir Faslıyım)
+                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir<br class='block md:hidden'> <span class='whitespace-nowrap'>Faslıyım 🇲🇦</span>, <span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span> kurucusuyum.<br class='hidden md:block'><br class='block md:hidden'> Üst düzey hikaye anlatımı ile dijital<br class='block md:hidden'> büyüme stratejileri arasındaki<br class='block md:hidden'> köprüyü kuruyorum.",
+                
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", film1_t: "Better Days (2019)", film5_t: "WC Kısa Filmi (2019)", ind_t: "Uluslararası Film Kredileri :",
                 quote: "\"Pazarlayan bir yönetmen, çekim yapan bir pazarlamacı—beklenilen yerde değil, tam olarak kendi beklediğim yerde.\"", attribution: "— Albarae Bourkadi",
                 btn: "Konuşalım", btn2: "Albarae Kimdir?", skills_title: "<span class='gradient-text'>Albarae</span> Kimdir?",
