@@ -476,16 +476,17 @@
             document.getElementById('btn-download').innerText = t.btn_dl;
             document.getElementById('contact-title').innerText = t.contact_t;
             
+            // الكود النهائي الذي يحل المشكلة دون المساس بأي شيء آخر
             const heroSection = document.getElementById('hero-section');
             if (heroSection) {
-                heroSection.classList.remove('md:pt-48', 'md:pt-36', 'md:pt-24', 'md:pt-16', 'pt-36', 'pt-32', 'pt-24', 'md:pb-20', 'md:pb-28', 'md:pb-32', 'md:pb-36');
+                heroSection.classList.remove('md:pt-48', 'md:pt-36', 'md:pt-24', 'md:pt-16', 'pt-40', 'pt-36', 'pt-32', 'pt-24', 'md:pb-20', 'md:pb-28', 'md:pb-32', 'md:pb-36');
                 if (lang === 'ar') {
-                    // العربية: الحاسوب كما كان (مثالي)، والهاتف يتم إرجاع مساحته العلوية للأصل (pt-32) لكي ينزل المحتوى ويختفي الشريط الأسود
-                    heroSection.classList.add('md:pt-48', 'pt-32', 'md:pb-20'); 
+                    // العربية: الحاسوب pt-48 (لم يُلمس)، الهاتف pt-40 (تم إرجاعه لإنزال المحتوى وإخفاء الشريط الأسود)
+                    heroSection.classList.add('md:pt-48', 'pt-40', 'md:pb-20'); 
                 } else if (lang === 'en') {
                     heroSection.classList.add('md:pt-36', 'pt-32', 'md:pb-28');
                 } else if (lang === 'tr') {
-                    // التركية: تقليص المسافة العلوية بشكل قليل (md:pt-36) لكي لا تلتصق بالقائمة، وزيادة المسافة السفلية (md:pb-36) لإبعاد الشريط الأسود وإظهار اللون البني
+                    // التركية: الحاسوب pt-36 (تقليص طفيف جداً عن 48 لكي لا تلتصق بالقائمة)، مع إضافة pb-36 لإنزال الشريط الأسود
                     heroSection.classList.add('md:pt-36', 'pt-32', 'md:pb-36'); 
                 }
             }
