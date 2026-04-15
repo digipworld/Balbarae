@@ -362,6 +362,7 @@
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 
+                // تعديل النسخة العربية (الهاتف) لتكون 3 أسطر بالكلمات المحددة، مع ترك الحاسوب كما كان
                 desc: "<span class='hidden md:block'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦، مؤسس DIGIPWORLD LLC.<br>أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.</span><span class='block md:hidden'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦،<br>مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي<br>الاحترافي واستراتيجيات النمو الرقمي.</span>",
                 
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>",
@@ -476,18 +477,16 @@
             document.getElementById('btn-download').innerText = t.btn_dl;
             document.getElementById('contact-title').innerText = t.contact_t;
             
-            // الكود الجراحي النهائي: تقليص المساحة العلوية للتركية والانجليزية لرفع المحتوى مع الحفاظ على العربية وحذف ظهور القسم الأسود في الهاتف
+            // الكود العبقري المحدث: تقليل الرفع للهاتف (pt-24) لمنع ظهور القسم الأسود، مع تقليص الحاسوب في الإنجليزية والتركية لتوفير مساحة أسفل الأزرار.
             const heroSection = document.getElementById('hero-section');
             if (heroSection) {
-                heroSection.classList.remove('md:pt-48', 'md:pt-36', 'md:pt-24', 'md:pt-16', 'pt-32', 'pt-36', 'pt-24');
+                heroSection.classList.remove('md:pt-48', 'md:pt-36', 'md:pt-24', 'pt-32', 'pt-24');
                 if (lang === 'ar') {
-                    // العربية: الحاسوب كما كان (مثالي)، والهاتف يتم دفع المحتوى فيه للأسفل قليلاً لإخفاء الشريط الأسود
-                    heroSection.classList.add('md:pt-48', 'pt-36'); 
+                    heroSection.classList.add('md:pt-48', 'pt-24'); // خفضنا الرفع لكي لا يظهر القسم الأسود في الهاتف
                 } else if (lang === 'en') {
-                    heroSection.classList.add('md:pt-24', 'pt-32');
+                    heroSection.classList.add('md:pt-36', 'pt-32');
                 } else if (lang === 'tr') {
-                    // التركية: تقليص المسافة العلوية في الحاسوب لرفع النص وتوفير مساحة أسفل الأزرار
-                    heroSection.classList.add('md:pt-16', 'pt-32'); 
+                    heroSection.classList.add('md:pt-24', 'pt-32'); // تقليص الحاسوب لرفع النص قليلاً عن الأزرار
                 }
             }
 
