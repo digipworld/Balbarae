@@ -135,7 +135,7 @@
         </div>
     </div>
 
-    <section id="hero-section" class="pt-32 md:pt-48 pb-[108px] px-4 md:px-6 text-center HeroContent">
+    <section id="hero-section" class="pt-32 md:pt-48 pb-[108px] md:pb-20 px-4 md:px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto w-full">
             <span id="hero-tag" class="px-4 py-1.5 md:py-2 rounded-full glass text-[10px] md:text-sm font-bold text-yellow-500 mb-4 md:mb-6 inline-block reveal active">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-4 md:mb-8 leading-tight reveal active" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
@@ -333,7 +333,6 @@
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 
-                // الهندسة الحرفية للـ "خشيبات"
                 desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br class='block md:hidden'> <span class='whitespace-nowrap'>Moroccan 🇲🇦</span>, Founder of<br class='hidden md:block'><span class='whitespace-nowrap'>DIGIPWORLD LLC.</span><br class='block md:hidden'> I bridge the gap between high-end<br class='block md:hidden'> storytelling <br class='hidden md:block'>and digital growth<br class='block md:hidden'> strategies.",
                 
                 film_t: "Selected <span class='gradient-text'>Works.</span>", 
@@ -392,8 +391,7 @@
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 
-                // الهندسة الحرفية للـ "خشيبات" التركية
-                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br class='block md:hidden'> bir <span class='whitespace-nowrap'>Faslıyım 🇲🇦</span>, <br class='hidden md:block'><span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span><br class='block md:hidden'> kurucusuyum. Üst düzey hikaye<br class='hidden md:block'><br class='block md:hidden'> anlatımı ile dijital büyüme<br class='block md:hidden'> stratejileri arasındaki<br class='hidden md:block'><br class='block md:hidden'> köprüyü kuruyorum.",
+                desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br class='block md:hidden'> bir <span class='whitespace-nowrap'>Faslıyım 🇲🇦</span>, <span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span><br class='hidden md:block'><br class='block md:hidden'> kurucusuyum. Üst düzey hikaye<br class='hidden md:block'><br class='block md:hidden'> anlatımı ile dijital büyüme<br class='block md:hidden'> stratejileri arasındaki<br class='hidden md:block'><br class='block md:hidden'> köprüyü kuruyorum.",
                 
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", 
                 film1_t: "BETTER DAYS KISA FİLM (2019)", film1_d: "Tüm filmin yapımcısı",
@@ -428,7 +426,6 @@
             document.getElementById('hero-desc').innerHTML = t.desc;
             document.getElementById('film-title').innerHTML = t.film_t;
             
-            // استعادة جميع الفيديوهات الـ 6 برمجياً
             if(document.getElementById('film1-t')) {
                 document.getElementById('film1-t').innerText = t.film1_t; document.getElementById('film1-d').innerText = t.film1_d;
                 document.getElementById('film2-t').innerText = t.film2_t; document.getElementById('film2-d').innerText = t.film2_d;
@@ -451,10 +448,8 @@
             document.getElementById('cv-exp-title').innerHTML = `<i class="fas fa-briefcase mr-2"></i> ${t.cv_exp}`;
             document.getElementById('cv-edu-title').innerHTML = `<i class="fas fa-graduation-cap mr-2"></i> ${t.cv_edu}`;
             
-            // إضافة أيقونة اللغات مع العنوان
             if(document.getElementById('cv-lang-title')) document.getElementById('cv-lang-title').innerHTML = `<i class="fas fa-language text-gray-400"></i> ${t.lang_t}`;
             
-            // Languages Mapping مع الحفاظ على الأعلام
             if(document.getElementById('lang1-n')) {
                 document.getElementById('lang1-n').innerHTML = `${t.lang1} 🇲🇦`;
                 document.getElementById('lang1-lvl').innerText = t.lang1_lvl;
@@ -466,7 +461,6 @@
                 document.getElementById('lang4-lvl').innerText = t.lang4_lvl;
             }
             
-            // Experience mapping
             if(document.getElementById('exp1-t')) {
                 document.getElementById('exp1-t').innerText = t.exp1_t; document.getElementById('exp1-d').innerText = t.exp1_d; document.getElementById('exp1-c').innerText = t.exp1_c; document.getElementById('exp1-link').innerText = t.exp1_l;
                 document.getElementById('exp2-t').innerText = t.exp2_t; document.getElementById('exp2-d').innerText = t.exp2_d; document.getElementById('exp2-c').innerText = t.exp2_c;
@@ -482,20 +476,21 @@
             document.getElementById('btn-download').innerText = t.btn_dl;
             document.getElementById('contact-title').innerText = t.contact_t;
             
-            // تعديل مساحة التنفس السفلية في الحاسوب بناءً على اللغة لضمان تساوي الفراغ أسفل الأزرار
+            // الكود العبقري للتحكم في المساحة العلوية بناءً على اللغة لرفع المحتوى للأعلى
             const heroSection = document.getElementById('hero-section');
             if (heroSection) {
-                heroSection.classList.remove('md:pb-20', 'md:pb-28', 'md:pb-36');
+                // مسح الأكواد السابقة لضمان التحديث النظيف
+                heroSection.classList.remove('md:pt-48', 'md:pt-36', 'md:pt-24');
+                
                 if (lang === 'ar') {
-                    heroSection.classList.add('md:pb-20');
+                    heroSection.classList.add('md:pt-48');
                 } else if (lang === 'en') {
-                    heroSection.classList.add('md:pb-28');
+                    heroSection.classList.add('md:pt-36');
                 } else if (lang === 'tr') {
-                    heroSection.classList.add('md:pb-36');
+                    heroSection.classList.add('md:pt-24');
                 }
             }
 
-            // تعديل اتجاه ترتيب الأزرار بناءً على اللغة ليكون الأصفر دائمًا على اليمين في الحاسوب
             const heroBtns = document.getElementById('hero-buttons');
             if(heroBtns) {
                 if(t.dir === 'rtl') {
