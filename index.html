@@ -333,7 +333,7 @@
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 
-                /* فصل النص حرفيا للخشيبات الانجليزية */
+                // الإنجليزية: حاسوب (3 أسطر) / هاتف (هرمي مقلوب كما كان)
                 desc: "<span class='hidden md:block'>I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly Moroccan 🇲🇦, Founder of<br>DIGIPWORLD LLC. I bridge the gap between high-end storytelling<br>and digital growth strategies.</span><span class='block md:hidden'>I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br>Moroccan 🇲🇦, Founder of DIGIPWORLD LLC.<br>I bridge the gap between high-end<br>storytelling and digital growth<br>strategies.</span>",
                 
                 film_t: "Selected <span class='gradient-text'>Works.</span>", 
@@ -363,8 +363,8 @@
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 
-                /* فصل النص حرفيا للخشيبات العربية */
-                desc: "<span class='hidden md:block'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦، مؤسس DIGIPWORLD LLC.<br>أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.</span><span class='block md:hidden'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦،<br>مؤسس DIGIPWORLD LLC.<br>أربط بين السرد القصصي<br>الاحترافي واستراتيجيات النمو<br>الرقمي.</span>",
+                // العربية: حاسوب (بقي كما هو) / هاتف (تم تعديله كما طلبت ليكون 3 أسطر مضبوطة)
+                desc: "<span class='hidden md:block'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦، مؤسس DIGIPWORLD LLC.<br>أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.</span><span class='block md:hidden'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر <span class='whitespace-nowrap'>🇲🇦</span>،<br>مؤسس <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span> أربط بين السرد القصصي<br>الاحترافي واستراتيجيات النمو الرقمي.</span>",
                 
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>",
                 film1_t: "فيلم قصير BETTER DAYS (2019)", film1_d: "صانع الفيلم بالكامل",
@@ -393,8 +393,8 @@
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 
-                /* فصل النص حرفيا للخشيبات التركية */
-                desc: "<span class='hidden md:block'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir Faslıyım 🇲🇦,<br>DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye<br>anlatımı ile dijital büyüme stratejileri arasındaki<br>köprüyü kuruyorum.</span><span class='block md:hidden'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br>bir Faslıyım 🇲🇦, DIGIPWORLD LLC'nin<br>kurucusuyum. Üst düzey hikaye<br>anlatımı ile dijital büyüme<br>stratejileri arasındaki<br>köprüyü kuruyorum.</span>",
+                // التركية: حاسوب (4 أسطر هرمية) / هاتف (6 أسطر هرمية) كما الخشيبات
+                desc: "<span class='hidden md:block'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir Faslıyım 🇲🇦,<br>DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye<br>anlatımı ile dijital büyüme stratejileri arasındaki<br>köprüyü kuruyorum.</span><span class='block md:hidden'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br>bir <span class='whitespace-nowrap'>Faslıyım 🇲🇦</span>, DIGIPWORLD LLC'nin<br>kurucusuyum. Üst düzey hikaye<br>anlatımı ile dijital büyüme<br>stratejileri arasındaki<br>köprüyü kuruyorum.</span>",
                 
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", 
                 film1_t: "BETTER DAYS KISA FİLM (2019)", film1_d: "Tüm filmin yapımcısı",
@@ -479,6 +479,19 @@
             document.getElementById('btn-download').innerText = t.btn_dl;
             document.getElementById('contact-title').innerText = t.contact_t;
             
+            // رفع المحتوى للأعلى في اللغات الإنجليزية والتركية لتوفير مساحة التنفس السفلية
+            const heroSection = document.getElementById('hero-section');
+            if (heroSection) {
+                heroSection.classList.remove('md:pt-48', 'md:pt-24', 'md:pt-16');
+                if (lang === 'ar') {
+                    heroSection.classList.add('md:pt-48'); // العربية كما كانت (مثالية)
+                } else if (lang === 'en') {
+                    heroSection.classList.add('md:pt-24'); // رفع المحتوى الإنجليزي لتوفير مساحة أسفل الأزرار
+                } else if (lang === 'tr') {
+                    heroSection.classList.add('md:pt-16'); // رفع المحتوى التركي أكثر لأن الأسطر أكثر
+                }
+            }
+
             const heroBtns = document.getElementById('hero-buttons');
             if(heroBtns) {
                 if(t.dir === 'rtl') {
