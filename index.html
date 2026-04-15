@@ -135,7 +135,7 @@
         </div>
     </div>
 
-    <section class="pt-32 md:pt-48 pb-[108px] md:pb-20 px-4 md:px-6 text-center HeroContent">
+    <section id="hero-section" class="pt-32 md:pt-48 pb-[108px] px-4 md:px-6 text-center HeroContent">
         <div class="max-w-5xl mx-auto w-full">
             <span id="hero-tag" class="px-4 py-1.5 md:py-2 rounded-full glass text-[10px] md:text-sm font-bold text-yellow-500 mb-4 md:mb-6 inline-block reveal active">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-4 md:mb-8 leading-tight reveal active" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
@@ -150,7 +150,7 @@
                 <a href="#contact" class="social-link hover:text-yellow-500"><i class="fas fa-envelope"></i></a>
             </div>
             
-            <div id="hero-buttons" class="flex flex-col md:flex-row-reverse justify-center w-full gap-3 md:gap-4 px-2 md:px-4 reveal active mb-8" style="transition-delay: 0.4s;" dir="ltr">
+            <div id="hero-buttons" class="flex flex-col md:flex-row-reverse justify-center w-full gap-3 md:gap-4 px-2 md:px-4 reveal active" style="transition-delay: 0.4s;" dir="ltr">
                 <a href="#contact" id="btn-main" class="w-full md:w-auto bg-yellow-500 text-black px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-yellow-400 shadow-lg shadow-yellow-500/20 transition flex items-center justify-center">Let's Talk</a>
                 <a href="#manifesto" id="btn-sec" onclick="event.preventDefault(); slowScrollTo('manifesto', 250);" class="w-full md:w-auto glass px-8 md:px-10 py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-white/5 transition cursor-pointer flex items-center justify-center">Who is Albarae?</a>
             </div>
@@ -191,8 +191,12 @@
 
             <div id="filmography" class="max-w-4xl mx-auto space-y-20 scroll-mt-24">
                 <h2 id="film-title" class="text-4xl md:text-5xl font-black text-center mb-16 italic reveal">Selected <span class="gradient-text">Works.</span></h2>
-                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film1-t" class="text-2xl font-bold text-yellow-500 uppercase">Better Days (2019)</h4><p id="film1-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
-                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://player.vimeo.com/video/369136311" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film5-t" class="text-2xl font-bold text-yellow-500 uppercase">WC Short Film (2019)</h4><p id="film5-d" class="text-gray-400 italic">Editor - VFX Supervisor - Sound Design</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZoVSs-yVXzw" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film1-t" class="text-2xl font-bold text-yellow-500 uppercase">BETTER DAYS SHORT FILM (2019)</h4><p id="film1-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/UD4UYnAtwp4" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film2-t" class="text-2xl font-bold text-yellow-500 uppercase">Behind scenes of Better Days (2019)</h4><p id="film2-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yyoPEFQ_Pe8" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film3-t" class="text-2xl font-bold text-yellow-500 uppercase">NOT ACHIEVED SHORT FILM (2020)</h4><p id="film3-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://player.vimeo.com/video/357218069" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film4-t" class="text-2xl font-bold text-yellow-500 uppercase">100 YEARS ELECTROLUX VIDEO PROMOTION (2019)</h4><p id="film4-d" class="text-gray-400 italic">1st Director Assistant and Editor</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://player.vimeo.com/video/369136311" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film5-t" class="text-2xl font-bold text-yellow-500 uppercase">WC SHORT FILM (2019)</h4><p id="film5-d" class="text-gray-400 italic">Editor - VFX Supervisor - Sound Operator & Designer</p></div></div>
+                <div class="space-y-6 reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/33FBhr-dD7w" allowfullscreen></iframe></div><div class="px-4 text-center"><h4 id="film6-t" class="text-2xl font-bold text-yellow-500 uppercase">THE OTHER SIDE SHORT FILM (2018)</h4><p id="film6-d" class="text-gray-400 italic">Filmmaker of all movie</p></div></div>
                 
                 <div class="glass p-8 md:p-12 rounded-3xl border-2 border-yellow-500/50 shadow-xl reveal text-left rtl:text-right">
                     <h3 id="ind-credits-title" class="text-2xl md:text-3xl font-black mb-8 gradient-text">International Films Credits :</h3>
@@ -329,7 +333,7 @@
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
                 
-                // الهندسة الحرفية للـ "خشيبات" - إنجليزي (حاسوب 3 أسطر، هاتف كما كان)
+                // الهندسة الحرفية للـ "خشيبات"
                 desc: "I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br class='block md:hidden'> <span class='whitespace-nowrap'>Moroccan 🇲🇦</span>, Founder of<br class='hidden md:block'><span class='whitespace-nowrap'>DIGIPWORLD LLC.</span><br class='block md:hidden'> I bridge the gap between high-end<br class='block md:hidden'> storytelling <br class='hidden md:block'>and digital growth<br class='block md:hidden'> strategies.",
                 
                 film_t: "Selected <span class='gradient-text'>Works.</span>", 
@@ -359,7 +363,6 @@
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
                 
-                // النسخة العربية المحترمة (كما هي)
                 desc: "أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر <span class='whitespace-nowrap'>🇲🇦</span>،<br class='block md:hidden'> مؤسس <span class='whitespace-nowrap'>DIGIPWORLD LLC.</span> <br class='hidden md:block'>أربط بين السرد القصصي<br class='block md:hidden'> الاحترافي واستراتيجيات النمو<br class='block md:hidden'> الرقمي.",
                 
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>",
@@ -389,7 +392,7 @@
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
                 
-                // الهندسة الحرفية للـ "خشيبات" - تركي (حاسوب 4 أسطر، هاتف 6 أسطر)
+                // الهندسة الحرفية للـ "خشيبات" التركية
                 desc: "Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br class='block md:hidden'> bir <span class='whitespace-nowrap'>Faslıyım 🇲🇦</span>, <br class='hidden md:block'><span class='whitespace-nowrap'>DIGIPWORLD LLC'nin</span><br class='block md:hidden'> kurucusuyum. Üst düzey hikaye<br class='hidden md:block'><br class='block md:hidden'> anlatımı ile dijital büyüme<br class='block md:hidden'> stratejileri arasındaki<br class='hidden md:block'><br class='block md:hidden'> köprüyü kuruyorum.",
                 
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", 
@@ -479,6 +482,19 @@
             document.getElementById('btn-download').innerText = t.btn_dl;
             document.getElementById('contact-title').innerText = t.contact_t;
             
+            // تعديل مساحة التنفس السفلية في الحاسوب بناءً على اللغة لضمان تساوي الفراغ أسفل الأزرار
+            const heroSection = document.getElementById('hero-section');
+            if (heroSection) {
+                heroSection.classList.remove('md:pb-20', 'md:pb-28', 'md:pb-36');
+                if (lang === 'ar') {
+                    heroSection.classList.add('md:pb-20');
+                } else if (lang === 'en') {
+                    heroSection.classList.add('md:pb-28');
+                } else if (lang === 'tr') {
+                    heroSection.classList.add('md:pb-36');
+                }
+            }
+
             // تعديل اتجاه ترتيب الأزرار بناءً على اللغة ليكون الأصفر دائمًا على اليمين في الحاسوب
             const heroBtns = document.getElementById('hero-buttons');
             if(heroBtns) {
