@@ -29,7 +29,8 @@
 
     <style>
         :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
-        html { scroll-behavior: smooth; overflow-x: hidden; background-color: #0a0a0a; }
+        /* تمت إضافة text-size-adjust لمنع متصفح انستغرام من تغيير حجم الخط */
+        html { scroll-behavior: smooth; overflow-x: hidden; background-color: #0a0a0a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
         body { font-family: var(--font-en); transition: background-color 0.3s ease, color 0.3s ease; overflow-x: hidden; margin: 0; }
         body.rtl { font-family: var(--font-ar); direction: rtl; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 213, 0, 0.1); }
@@ -140,7 +141,7 @@
             <span id="hero-tag" class="px-4 py-1.5 md:py-2 rounded-full glass text-[10px] md:text-sm font-bold text-yellow-500 mb-4 md:mb-6 inline-block reveal active">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-4 md:mb-8 leading-tight reveal active" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
             <p id="hero-desc" class="text-gray-400 text-[15px] md:text-2xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-1 reveal active" style="transition-delay: 0.2s;">
-            </p>
+                </p>
             <div class="flex flex-wrap justify-center gap-4 md:gap-5 mb-8 md:mb-12 text-xl md:text-2xl reveal active" style="transition-delay: 0.3s;" dir="ltr">
                 <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/balbarae" target="_blank" class="social-link hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
@@ -397,7 +398,7 @@
                 nav_home: "Home", nav_port: "Portfolio", nav_contact: "Contact",
                 tag: "Filmmaker, AI Consultant & Digital Visionary",
                 title: "Blending <span class='gradient-text'>Cinematic Art</span> with AI Innovation.",
-                desc: "<span class='hidden md:block'>I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly Moroccan 🇲🇦, Founder of<br>DIGIPWORLD LLC. I bridge the gap between high-end storytelling<br>and digital growth strategies.</span><span class='block md:hidden'>I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly<br>Moroccan 🇲🇦, Founder of DIGIPWORLD LLC.<br>I bridge the gap between high-end<br>storytelling and digital growth<br>strategies.</span>",
+                desc: "<span class='hidden md:block'><span class='inline-block whitespace-nowrap'>I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly Moroccan 🇲🇦, Founder of</span><br><span class='inline-block whitespace-nowrap'>DIGIPWORLD LLC. I bridge the gap between high-end storytelling</span><br><span class='inline-block whitespace-nowrap'>and digital growth strategies.</span></span><span class='block md:hidden'><span class='inline-block whitespace-nowrap'>I am <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 Years old, proudly</span><br><span class='inline-block whitespace-nowrap'>Moroccan 🇲🇦, Founder of DIGIPWORLD LLC.</span><br><span class='inline-block whitespace-nowrap'>I bridge the gap between high-end</span><br><span class='inline-block whitespace-nowrap'>storytelling and digital growth</span><br><span class='inline-block whitespace-nowrap'>strategies.</span></span>",
                 film_t: "Selected <span class='gradient-text'>Works.</span>", 
                 film1_t: "BETTER DAYS SHORT FILM (2019)", film1_d: "Filmmaker of all movie",
                 film2_t: "Behind scenes of Better Days (2019)", film2_d: "Filmmaker of all movie",
@@ -446,7 +447,7 @@
                 nav_home: "الرئيسية", nav_port: "أعمالي", nav_contact: "تواصل معي",
                 tag: "صانع أفلام، مستشار ذكاء اصطناعي، وصاحب رؤية رقمية",
                 title: "نمزج <span class='gradient-text'>الفن السينمائي</span> بابتكارات الذكاء الاصطناعي.",
-                desc: "<span class='hidden md:block'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦، مؤسس DIGIPWORLD LLC.<br>أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.</span><span class='block md:hidden'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦،<br>مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي<br>الاحترافي واستراتيجيات النمو الرقمي.</span>",
+                desc: "<span class='hidden md:block'><span class='inline-block whitespace-nowrap'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦، مؤسس DIGIPWORLD LLC.</span><br><span class='inline-block whitespace-nowrap'>أربط بين السرد القصصي الاحترافي واستراتيجيات النمو الرقمي.</span></span><span class='block md:hidden'><span class='inline-block whitespace-nowrap'>أنا <span class='text-white font-bold'>البراء البرقادي</span>، عمري 27 عاماً، مغربي وأفتخر 🇲🇦،</span><br><span class='inline-block whitespace-nowrap'>مؤسس DIGIPWORLD LLC. أربط بين السرد القصصي</span><br><span class='inline-block whitespace-nowrap'>الاحترافي واستراتيجيات النمو الرقمي.</span></span>",
                 film_t: "أعمال <span class='gradient-text'>مختارة.</span>",
                 film1_t: "فيلم قصير BETTER DAYS (2019)", film1_d: "صانع الفيلم بالكامل",
                 film2_t: "كواليس فيلم Better Days (2019)", film2_d: "صانع الفيلم بالكامل",
@@ -495,7 +496,7 @@
                 nav_home: "Ana Sayfa", nav_port: "Portfolyo", nav_contact: "İletişim",
                 tag: "Film Yapımcısı, Yapay Zeka Danışmanı ve Dijital Vizyoner",
                 title: "<span class='gradient-text'>Sinematik Sanatı</span> Yapay Zeka ile Harmanlıyoruz.",
-                desc: "<span class='hidden md:block'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir Faslıyım 🇲🇦,<br>DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye<br>anlatımı ile dijital büyüme stratejileri arasındaki<br>köprüyü kuruyorum.</span><span class='block md:hidden'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu<br>bir Faslıyım 🇲🇦, DIGIPWORLD LLC'nin<br>kurucusuyum. Üst düzey hikaye<br>anlatımı ile dijital büyüme<br>stratejileri arasındaki<br>köprüyü kuruyorum.</span>",
+                desc: "<span class='hidden md:block'><span class='inline-block whitespace-nowrap'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu bir Faslıyım 🇲🇦,</span><br><span class='inline-block whitespace-nowrap'>DIGIPWORLD LLC'nin kurucusuyum. Üst düzey hikaye</span><br><span class='inline-block whitespace-nowrap'>anlatımı ile dijital büyüme stratejileri arasındaki</span><br><span class='inline-block whitespace-nowrap'>köprüyü kuruyorum.</span></span><span class='block md:hidden'><span class='inline-block whitespace-nowrap'>Ben <span class='text-white font-bold'>Albarae Bourkadi</span>, 27 yaşındayım, gururlu</span><br><span class='inline-block whitespace-nowrap'>bir Faslıyım 🇲🇦, DIGIPWORLD LLC'nin</span><br><span class='inline-block whitespace-nowrap'>kurucusuyum. Üst düzey hikaye</span><br><span class='inline-block whitespace-nowrap'>anlatımı ile dijital büyüme</span><br><span class='inline-block whitespace-nowrap'>stratejileri arasındaki</span><br><span class='inline-block whitespace-nowrap'>köprüyü kuruyorum.</span></span>",
                 film_t: "Seçilmiş <span class='gradient-text'>Eserler.</span>", 
                 film1_t: "BETTER DAYS KISA FİLM (2019)", film1_d: "Tüm filmin yapımcısı",
                 film2_t: "Better Days Kamera Arkası (2019)", film2_d: "Tüm filmin yapımcısı",
