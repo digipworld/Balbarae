@@ -29,7 +29,6 @@
 
     <style>
         :root { --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif; }
-        /* تمت إضافة text-size-adjust لمنع متصفح انستغرام من تغيير حجم الخط */
         html { scroll-behavior: smooth; overflow-x: hidden; background-color: #0a0a0a; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
         body { font-family: var(--font-en); transition: background-color 0.3s ease, color 0.3s ease; overflow-x: hidden; margin: 0; }
         body.rtl { font-family: var(--font-ar); direction: rtl; }
@@ -141,7 +140,7 @@
             <span id="hero-tag" class="px-4 py-1.5 md:py-2 rounded-full glass text-[10px] md:text-sm font-bold text-yellow-500 mb-4 md:mb-6 inline-block reveal active">Filmmaker, AI Consultant & Digital Visionary</span>
             <h2 id="hero-title" class="text-4xl md:text-8xl font-black mb-4 md:mb-8 leading-tight reveal active" style="transition-delay: 0.1s;">Blending <span class="gradient-text">Cinematic Art</span> with AI Innovation.</h2>
             <p id="hero-desc" class="text-gray-400 text-[15px] md:text-2xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-1 reveal active" style="transition-delay: 0.2s;">
-                </p>
+            </p>
             <div class="flex flex-wrap justify-center gap-4 md:gap-5 mb-8 md:mb-12 text-xl md:text-2xl reveal active" style="transition-delay: 0.3s;" dir="ltr">
                 <a href="https://www.instagram.com/balbarae" target="_blank" class="social-link hover:text-pink-500"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/balbarae" target="_blank" class="social-link hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
@@ -267,42 +266,56 @@
                             <h4 id="edu1-t" class="text-xl font-bold uppercase">Master in Cinema</h4>
                             <p id="edu1-d" class="text-orange-500 text-sm font-bold mb-2">ISTINYE UNIVERSITY | February 2024 - February 2026</p>
                             <p id="edu1-c" class="text-gray-400 text-sm mb-2"></p>
-                            <a href="https://www.istinye.edu.tr/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20 mt-1" dir="ltr"><i class="fas fa-globe"></i> <span id="edu1-link">Website</span></a>
+                            <div class="flex flex-wrap gap-2 mt-1" dir="ltr">
+                                <a href="https://www.istinye.edu.tr/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20"><i class="fas fa-globe"></i> <span id="edu1-link">Website</span></a>
+                            </div>
                         </div>
                         <div class="relative reveal">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="edu2-t" class="text-xl font-bold uppercase">TÖMER TURKISH PROGRAM B1</h4>
                             <p id="edu2-d" class="text-orange-500 text-sm font-bold mb-2">OCTOBER 2022 - DECEMBER 2023 | AYDIN UNIVERSITY</p>
                             <p id="edu2-c" class="text-gray-400 text-sm mb-2"></p>
-                            <a href="https://www.aydin.edu.tr/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20 mt-1" dir="ltr"><i class="fas fa-globe"></i> <span id="edu2-link">Website</span></a>
+                            <div class="flex flex-wrap gap-2 mt-1" dir="ltr">
+                                <a href="https://www.aydin.edu.tr/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20"><i class="fas fa-globe"></i> <span id="edu2-link">Website</span></a>
+                            </div>
                         </div>
                         <div class="relative reveal">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="edu3-t" class="text-xl font-bold uppercase">TÖMER TURKISH PROGRAM A1 AND A2</h4>
                             <p id="edu3-d" class="text-orange-500 text-sm font-bold mb-2">OCTOBER 2021 - JANUARY 2022 | GALATA UNIVERSITY</p>
                             <p id="edu3-c" class="text-gray-400 text-sm mb-2"></p>
-                            <a href="https://www.galata.edu.tr/tr" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20 mt-1" dir="ltr"><i class="fas fa-globe"></i> <span id="edu3-link">Website</span></a>
+                            <div class="flex flex-wrap gap-2 mt-1" dir="ltr">
+                                <a href="https://www.galata.edu.tr/tr" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20"><i class="fas fa-globe"></i> <span id="edu3-link">Website</span></a>
+                            </div>
                         </div>
                         <div class="relative reveal">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="edu4-t" class="text-xl font-bold uppercase">Bachelor Degree</h4>
                             <p id="edu4-d" class="text-orange-500 text-sm font-bold mb-2">IBN ZOHR UNIVERSITY | December 2020 - August 2021</p>
                             <p id="edu4-c" class="text-gray-400 text-sm mb-2"></p>
-                            <a href="https://www.uiz.ac.ma/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20 mt-1" dir="ltr"><i class="fas fa-globe"></i> <span id="edu4-link">Website</span></a>
+                            <div class="flex flex-wrap gap-2 mt-1" dir="ltr">
+                                <a href="https://www.uiz.ac.ma/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20"><i class="fas fa-globe"></i> <span id="edu4-link">Website</span></a>
+                                <a href="https://www.youtube.com/watch?v=yyoPEFQ_Pe8" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-lg border border-red-500/20"><i class="fab fa-youtube"></i> <span id="edu4-yt">YouTube</span></a>
+                            </div>
                         </div>
                         <div class="relative reveal">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="edu5-t" class="text-xl font-bold uppercase">Cinema & Audiovisual Studies</h4>
                             <p id="edu5-d" class="text-orange-500 text-sm font-bold mb-2">ISCA Institute | October 2017 - October 2020</p>
                             <p id="edu5-c" class="text-gray-400 text-sm mb-2"></p>
-                            <a href="https://www.isca.ma/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20 mt-1" dir="ltr"><i class="fas fa-globe"></i> <span id="edu5-link">Website</span></a>
+                            <div class="flex flex-wrap gap-2 mt-1" dir="ltr">
+                                <a href="https://www.isca.ma/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20"><i class="fas fa-globe"></i> <span id="edu5-link">Website</span></a>
+                                <a href="https://www.youtube.com/watch?v=ZoVSs-yVXzw" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-lg border border-red-500/20"><i class="fab fa-youtube"></i> <span id="edu5-yt">YouTube</span></a>
+                            </div>
                         </div>
                         <div class="relative reveal">
                             <div class="timeline-dot bg-white/20"></div>
                             <h4 id="edu6-t" class="text-xl font-bold uppercase">Baccalaureate Degree</h4>
                             <p id="edu6-d" class="text-orange-500 text-sm font-bold mb-2">GROUPE SCOLAIRE ALMOUWATANA | July 2017</p>
                             <p id="edu6-c" class="text-gray-400 text-sm mb-2"></p>
-                            <a href="https://www.almouwatana.com/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20 mt-1" dir="ltr"><i class="fas fa-globe"></i> <span id="edu6-link">Website</span></a>
+                            <div class="flex flex-wrap gap-2 mt-1" dir="ltr">
+                                <a href="https://www.almouwatana.com/" target="_blank" class="inline-flex items-center gap-2 text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20"><i class="fas fa-globe"></i> <span id="edu6-link">Website</span></a>
+                            </div>
                         </div>
                     </div>
 
@@ -433,11 +446,11 @@
                 edu2_t: "TÖMER TURKISH PROGRAM B1", edu2_d: "OCTOBER 2022 - DECEMBER 2023 | AYDIN UNIVERSITY",
                 edu2_c: "I started learning B1 level with \"ESRA KIRTAN\" professor and I get passed in Listening (dinleme) writing (Yazma) and speaking (Konuşma) Final Exam.",
                 edu3_t: "TÖMER TURKISH PROGRAM A1 AND A2", edu3_d: "OCTOBER 2021 - JANUARY 2022 | GALATA UNIVERSITY",
-                edu3_c: "I start learning Turkish language with the Tomer director program \"YASSIN KURT\" and I get passed from A1.",
+                edu3_c: "I start learning Turkish language with the Tomer director program \"YASSIN KURT\" and I get passed from A1 level to A2 level, then I started learning A2 level with \"HÜLYA KUK\" professor and I get passed to B1 level.",
                 edu4_t: "Bachelor Degree", edu4_d: "IBN ZOHR UNIVERSITY | December 2020 - August 2021",
-                edu4_c: "I got my licence degree in cinematography & Audiovisual's writing & Analysing from the Faculty of Letters and Human Sciences of IBN ZOHR AGADIR university in Agadir city.",
+                edu4_c: "I got my licence degree in cinematography & Audiovisual's writing & Analysing from the Faculty of Letters and Human Sciences of IBN ZOHR AGADIR university in Agadir city. I concluded my bachelor's year with a graduation short film project titled 'Not Achieved'.",
                 edu5_t: "Cinema & Audiovisual Studies", edu5_d: "ISCA Institute | October 2017 - October 2020",
-                edu5_c: "I got my DTS degree from ISCA institue (L'INSTITUT SPÉCIALISÉ du CINEMA et de l'AUDIO-VISUEL) in Rabat, Morocco.",
+                edu5_c: "I got my DTS degree from ISCA institue (L'INSTITUT SPÉCIALISÉ du CINEMA et de l'AUDIO-VISUEL) in Rabat, Morocco. I concluded my studies at ISCA with a graduation short film titled 'Better Days', which received the highest 'Excellent' grade from the entire committee.",
                 edu6_t: "Baccalaureate Degree", edu6_d: "GROUPE SCOLAIRE ALMOUWATANA | July 2017",
                 edu6_c: "I obtained my Baccalaureate degree from AlMouwatana School in Rabat, Morocco.",
                 
@@ -482,11 +495,11 @@
                 edu2_t: "برنامج تومر للغة التركية B1", edu2_d: "أكتوبر 2022 - ديسمبر 2023 | جامعة أيدن",
                 edu2_c: "بدأت تعلم المستوى B1 مع الأستاذة \"إسراء كيرتان\" واجتزت الامتحان النهائي في الاستماع (dinleme)، الكتابة (Yazma)، والتحدث (Konuşma).",
                 edu3_t: "برنامج تومر للغة التركية A1 و A2", edu3_d: "أكتوبر 2021 - يناير 2022 | جامعة غالاطة",
-                edu3_c: "بدأت تعلم اللغة التركية مع مدير برنامج تومر \"ياسين كورت\" واجتزت مستوى A1 بنجاح.",
+                edu3_c: "بدأت تعلم اللغة التركية مع مدير برنامج تومر \"ياسين كورت\" وانتقلت من المستوى A1 إلى A2، ثم بدأت تعلم المستوى A2 مع الأستاذة \"هوليا كوك\" (HÜLYA KUK) واجتزته بنجاح للانتقال إلى المستوى B1.",
                 edu4_t: "الإجازة الجامعية", edu4_d: "جامعة ابن زهر | ديسمبر 2020 - غشت 2021",
-                edu4_c: "حصلت على الإجازة في السينما والكتابة والتحليل السمعي البصري من كلية الآداب والعلوم الإنسانية بجامعة ابن زهر بأكادير.",
+                edu4_c: "حصلت على الإجازة في السينما والكتابة والتحليل السمعي البصري من كلية الآداب والعلوم الإنسانية بجامعة ابن زهر بأكادير. وختمت سنة الإجازة بمشروع فيلم تخرج قصير بعنوان 'Not Achieved'.",
                 edu5_t: "دراسات السينما والسمعي البصري", edu5_d: "معهد ISCA | أكتوبر 2017 - أكتوبر 2020",
-                edu5_c: "حصلت على دبلوم تقني متخصص (DTS) من المعهد المتخصص للسينما والسمعي البصري (ISCA) في الرباط، المغرب.",
+                edu5_c: "حصلت على دبلوم تقني متخصص (DTS) من المعهد المتخصص للسينما والسمعي البصري (ISCA) في الرباط، المغرب. وختمت مسيرتي الدراسية في المعهد بمشروع تخرج فيلم قصير بعنوان 'Better Days' والذي حصل على أعلى نقطة 'ممتاز' من اللجنة بأكملها.",
                 edu6_t: "شهادة البكالوريا", edu6_d: "مجموعة مدارس المواطنة | يوليوز 2017",
                 edu6_c: "حصلت على شهادة البكالوريا من مجموعة مدارس المواطنة بمدينة الرباط، المغرب.",
                 
@@ -531,11 +544,11 @@
                 edu2_t: "TÖMER TÜRKÇE PROGRAMI B1", edu2_d: "EKİM 2022 - ARALIK 2023 | AYDIN ÜNİVERSİTESİ",
                 edu2_c: "B1 seviyesini \"ESRA KIRTAN\" hoca ile öğrenmeye başladım ve Dinleme, Yazma ve Konuşma final sınavlarını geçtim.",
                 edu3_t: "TÖMER TÜRKÇE PROGRAMI A1 VE A2", edu3_d: "EKİM 2021 - OCAK 2022 | GALATA ÜNİVERSİTESİ",
-                edu3_c: "Tömer müdürü \"YASSIN KURT\" ile Türkçe öğrenmeye başladım ve A1 seviyesini başarıyla geçtim.",
+                edu3_c: "Tömer müdürü \"YASSIN KURT\" ile Türkçe öğrenmeye başladım ve A1 seviyesinden A2 seviyesine geçtim, ardından \"HÜLYA KUK\" hocayla A2 seviyesini öğrenmeye başladım ve B1 seviyesine geçmeye hak kazandım.",
                 edu4_t: "Lisans Derecesi", edu4_d: "IBN ZOHR ÜNİVERSİTESİ | Aralık 2020 - Ağustos 2021",
-                edu4_c: "Agadir şehrindeki IBN ZOHR AGADIR Üniversitesi Edebiyat ve İnsani Bilimler Fakültesi'nden Sinematografi ve Görsel-İşitsel Yazım ve Analiz alanında lisans derecemi aldım.",
+                edu4_c: "Agadir şehrindeki IBN ZOHR AGADIR Üniversitesi Edebiyat ve İnsani Bilimler Fakültesi'nden Sinematografi ve Görsel-İşitsel Yazım ve Analiz alanında lisans derecemi aldım. Lisans yılımı 'Not Achieved' adlı mezuniyet kısa film projesi ile tamamladım.",
                 edu5_t: "Sinema ve Görsel-İşitsel Çalışmalar", edu5_d: "ISCA Enstitüsü | Ekim 2017 - Ekim 2020",
-                edu5_c: "Fas'ın Rabat şehrindeki ISCA enstitüsünden (L'INSTITUT SPÉCIALISÉ du CINEMA et de l'AUDIO-VISUEL) DTS derecemi aldım.",
+                edu5_c: "Fas'ın Rabat şehrindeki ISCA enstitüsünden (L'INSTITUT SPÉCIALISÉ du CINEMA et de l'AUDIO-VISUEL) DTS derecemi aldım. ISCA'daki eğitimimi, tüm jüriden en yüksek 'Mükemmel' notunu alan 'Better Days' adlı mezuniyet kısa film projesiyle tamamladım.",
                 edu6_t: "Bakalorya Derecesi", edu6_d: "ALMOUWATANA OKULLARI | Temmuz 2017",
                 edu6_c: "Bakalorya derecemi Fas'ın Rabat şehrindeki AlMouwatana Okulu'ndan aldım.",
                 
@@ -638,6 +651,10 @@
             if(document.getElementById('edu4-link')) document.getElementById('edu4-link').innerText = t.exp2_l1;
             if(document.getElementById('edu5-link')) document.getElementById('edu5-link').innerText = t.exp2_l1;
             if(document.getElementById('edu6-link')) document.getElementById('edu6-link').innerText = t.exp2_l1;
+            
+            // ترجمة أزرار اليوتيوب المضافة لمشاريع التخرج
+            if(document.getElementById('edu4-yt')) document.getElementById('edu4-yt').innerText = t.exp2_l3;
+            if(document.getElementById('edu5-yt')) document.getElementById('edu5-yt').innerText = t.exp2_l3;
 
             document.getElementById('cv-link').href = t.cv_url;
             document.getElementById('btn-download').innerText = t.btn_dl;
@@ -645,7 +662,7 @@
             
             const heroSection = document.getElementById('hero-section');
             if (heroSection) {
-                heroSection.classList.remove('md:pt-48', 'md:pt-36', 'md:pt-24', 'md:pt-16', 'pt-44', 'pt-40', 'pt-36', 'pt-32', 'pt-24', 'md:pb-20', 'md:pb-28', 'md:pb-32', 'md:pb-36');
+                heroSection.classList.remove('md:pt-48', 'md:pt-36', 'md:pt-24', 'md:pt-16', 'pt-48', 'pt-44', 'pt-40', 'pt-36', 'pt-32', 'pt-24', 'md:pb-20', 'md:pb-28', 'md:pb-32', 'md:pb-36');
                 if (lang === 'ar') {
                     heroSection.classList.add('md:pt-48', 'pt-44', 'md:pb-20'); 
                 } else if (lang === 'en') {
